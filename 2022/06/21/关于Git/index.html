@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/foundblog.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/foundblog.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/foundblog.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/foundblog.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/foundblog.io/css/main.css">
+
+
+<link rel="stylesheet" href="/foundblog.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/foundblog.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="什么是GitGit是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。 特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性! Git的特性Git之所以快速和高效，主要依赖于它的如下两个特性:  直接记录快照，而非差异比较 近乎所有操作都是本地执行  Git记录快照Git快照是在原有文件版本的基础.上重新生成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FØund404">
+<meta property="og:url" content="http://example.com/2022/06/21/%E5%85%B3%E4%BA%8EGit/index.html">
+<meta property="og:site_name" content="FØund404">
+<meta property="og:description" content="什么是GitGit是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。 特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性! Git的特性Git之所以快速和高效，主要依赖于它的如下两个特性:  直接记录快照，而非差异比较 近乎所有操作都是本地执行  Git记录快照Git快照是在原有文件版本的基础.上重新生成">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png">
+<meta property="article:published_time" content="2022-06-21T06:23:53.514Z">
+<meta property="article:modified_time" content="2022-06-21T06:23:46.187Z">
+<meta property="article:author" content="FØund404">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png">
+
+<link rel="canonical" href="http://example.com/2022/06/21/%E5%85%B3%E4%BA%8EGit/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | FØund404</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/foundblog.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FØund404</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/foundblog.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/foundblog.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间线</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/21/%E5%85%B3%E4%BA%8EGit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-21 14:23:53 / 修改时间：14:23:46" itemprop="dateCreated datePublished" datetime="2022-06-21T14:23:53+08:00">2022-06-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
+<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
+<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
+<ul>
+<li>直接记录快照，而非差异比较</li>
+<li>近乎所有操作都是本地执行</li>
+</ul>
+<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
+<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
+<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png" alt="img"></p>
+<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png" alt="img"></p>
+<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png" alt="img"></p>
+<ul>
+<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
+<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
+<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
+</ul>
+<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
+<p><strong>StagingArea</strong>	（暂存区）</p>
+<p>**.git directory(Repository)**（Git仓库）</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png" alt="img"></p>
+<p>基本的Git工作流程如下:</p>
+<p>①在工作区中修改文件</p>
+<p>②将你想要下次提交的更改进行暂存</p>
+<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png" alt="img"></p>
+<p>–golbal选项只需执行一次就可以永久生效</p>
+<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
+<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
+<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
+<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
+<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
+<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
+<p>②从其它服务器克隆一个已存在的Git仓库</p>
+<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
+<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
+<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
+<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
+<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
+<p>文件，这些文件是Git仓库的必要组成部分。</p>
+<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
+<p>未跟踪	??</p>
+<p>已暂存  	A</p>
+<p>被修改	M</p>
+<p>被修改并且放入暂存	M </p>
+<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
+<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
+<p><strong>以精简的方式显示文件状态</strong></p>
+<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
+<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
+<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
+<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
+<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
+<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
+<p>提交成功后会显示如下信息：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
+<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
+<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
+<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
+<p><strong>但还没有放到暂存区。</strong></p>
+<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
+<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
+<p>是个多功能的命令，主要有如下3个功效:</p>
+<ol>
+<li>可以用它开始跟踪新文件</li>
+<li>把已跟踪的、且已修改的文件放到暂存区</li>
+<li>把有冲突的文件标记为已解决状态</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
+<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
+<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
+<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
+<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
+<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
+<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
+<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
+<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
+<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
+<p>文件.gitignore的格式规范如下: .</p>
+<p>①以  <strong>#开头</strong>  的是注释</p>
+<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
+<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
+<p>④以  <strong>!开头</strong>  表示取反</p>
+<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
+<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
+<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
+<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
+<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
+<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
+<p>所有0到9的数字)</p>
+<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
+<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
+<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
+<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
+<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
+<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
+<ol>
+<li><p>BSD (Berkeley Software Distribution)</p>
+</li>
+<li><p>Apache Licence 2.0</p>
+</li>
+<li><p>GPL ( GNU General Public License)</p>
+</li>
+<li><ol>
+<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
+<li>使用 GPL的最著名的软件项目是: Linux</li>
+</ol>
+</li>
+<li><p>LGPL (GNU Lesser General Public License)</p>
+</li>
+<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
+</li>
+<li><ol>
+<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
+<li>使用 MIT的软件项目有: jquery. Node.js</li>
+</ol>
+</li>
+</ol>
+<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
+<ul>
+<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
+<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
+<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
+</ul>
+<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
+<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
+<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
+<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
+<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
+<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
+<ol>
+<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
+<li>在你要上传的库中打开 Git Bash控制台</li>
+<li>依次输入官方提示的命令</li>
+<li>在弹出框中输入你的密钥</li>
+</ol>
+<p><strong>注意：要先在官网绑定令牌</strong></p>
+<p>绑定令牌的方式：</p>
+<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
+<p>2.在github官网个人设置中找到绑定令牌</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
+<p>3.选择new SSH key 添加绑定令牌</p>
+<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
+<p>关于密钥的生成：</p>
+<ol>
+<li><p>个人设置中的Developer settings</p>
+</li>
+<li><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
+</li>
+<li><p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
+<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
+<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
+<p>原帖子：<a target="_blank" rel="noopener" href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
+<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><strong>git remote rm origin</strong> 删除远程库</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
+<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
+<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
+<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
+<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
+<p>再次查看所关联的远程仓库：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
+<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
+<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/foundblog.io/2022/06/25/my-firstBlog/" rel="next" title="my_firstBlog">
+      my_firstBlog <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGit"><span class="nav-number">1.</span> <span class="nav-text">什么是Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">Git的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E8%AE%B0%E5%BD%95%E5%BF%AB%E7%85%A7"><span class="nav-number">1.2.</span> <span class="nav-text">Git记录快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E6%93%8D%E4%BD%9C%E9%83%BD%E6%98%AF%E6%9C%AC%E5%9C%B0%E6%89%A7%E8%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">所有操作都是本地执行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E4%B8%AD%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8C%BA%E5%9F%9F"><span class="nav-number">2.</span> <span class="nav-text">Git中的三个区域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E4%B8%AD%E7%9A%84%E4%B8%89%E4%B8%AA%E7%8A%B6%E6%80%81"><span class="nav-number">3.</span> <span class="nav-text">Git中的三个状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84Git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">基本的Git工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEGit"><span class="nav-number">5.</span> <span class="nav-text">配置Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEGit%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">5.1.</span> <span class="nav-text">配置Git用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E7%9A%84%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.</span> <span class="nav-text">Git的全局配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">5.3.</span> <span class="nav-text">检查配置信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF"><span class="nav-number">6.</span> <span class="nav-text">获取帮助信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96Git%E4%BB%93%E5%BA%93%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">获取Git仓库两种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9C%A8%E7%8E%B0%E6%9C%89%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="nav-number">7.1.</span> <span class="nav-text">1.在现有目录中初始化仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E6%96%87%E4%BB%B6%E7%9A%844%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">8.</span> <span class="nav-text">工作区中文件的4种状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E4%B8%AD%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C-%E5%BF%85%E9%A1%BB%E5%85%88%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="nav-number">9.</span> <span class="nav-text">Git中对文件的操作  必须先初始化仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81-git-status"><span class="nav-number">9.1.</span> <span class="nav-text">检查文件状态  git status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9F%E8%B8%AA%E6%96%B0%E6%96%87%E4%BB%B6-%EF%BC%88%E5%90%91%E6%9A%82%E5%AD%98%E5%8C%BA%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%EF%BC%89-git-add-%E6%96%87%E4%BB%B6"><span class="nav-number">9.2.</span> <span class="nav-text">跟踪新文件  （向暂存区添加文件） git add 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%AD%E4%B8%80%E6%AC%A1%E6%80%A7%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6-git-add"><span class="nav-number">9.3.</span> <span class="nav-text">向暂存区中一次性添加多个文件    git add .</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%96%B0-git-commit-m-%E2%80%9C%E6%8F%90%E7%A4%BAtext%E2%80%9D"><span class="nav-number">9.4.</span> <span class="nav-text">提交更新  git commit -m “提示text”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9%E5%90%8E-M%E6%A0%87%E8%AE%B0"><span class="nav-number">9.5.</span> <span class="nav-text">对已提交的文件进行修改后 M标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E5%AD%98%E5%B7%B2%E4%BF%AE%E6%94%B9%E7%9A%84%E6%96%87%E4%BB%B6-git-add"><span class="nav-number">9.6.</span> <span class="nav-text">暂存已修改的文件  git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%B7%B2%E6%9A%82%E5%AD%98%E7%9A%84%E6%96%87%E4%BB%B6-git-commit-m-%E2%80%9C%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E2%80%9D"><span class="nav-number">9.7.</span> <span class="nav-text">提交已暂存的文件 git commit -m “提交消息”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9-git-checkout-%E2%80%93-index-html"><span class="nav-number">9.8.</span> <span class="nav-text">撤销对文件的修改  git checkout – index.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E6%9A%82%E5%AD%98%E7%9A%84%E6%96%87%E4%BB%B6gti-reset-HEAD-%E8%A6%81%E7%A7%BB%E9%99%A4%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="nav-number">9.9.</span> <span class="nav-text">取消暂存的文件	gti reset HEAD 要移除的文件名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%B3%E8%BF%87%E4%BD%BF%E7%94%A8%E6%9A%82%E5%AD%98%E5%8C%BA%E5%9F%9F"><span class="nav-number">9.10.</span> <span class="nav-text">跳过使用暂存区域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E4%BB%93%E5%BA%93%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-number">10.</span> <span class="nav-text">Git仓库移除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%8EGit%E4%BB%93%E5%BA%93%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E5%90%8C%E6%97%B6%E7%A7%BB%E9%99%A4%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">10.1.</span> <span class="nav-text">1.从Git仓库和工作区中同时移除对应的文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%AA%E4%BB%8EGit%E4%BB%93%E5%BA%93%E4%B8%AD%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E4%BD%86%E4%BF%9D%E7%95%99%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E5%AF%B9%E5%BA%94%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">10.2.</span> <span class="nav-text">2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-number">11.</span> <span class="nav-text">Git忽略文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2-git-log"><span class="nav-number">12.</span> <span class="nav-text">查看提交历史  git log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">13.</span> <span class="nav-text">回退指定版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gitbub"><span class="nav-number">14.</span> <span class="nav-text">Gitbub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%80%E6%BA%90"><span class="nav-number">14.1.</span> <span class="nav-text">1.什么是开源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE"><span class="nav-number">14.2.</span> <span class="nav-text">2.什么是开源许可协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0"><span class="nav-number">14.3.</span> <span class="nav-text">3.开源项目托管平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">14.4.</span> <span class="nav-text">4.远程仓库的两种访问方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%85%B3%E4%BA%8EGit%E4%B8%8A%E4%BC%A0%E5%BA%93"><span class="nav-number">14.5.</span> <span class="nav-text">5.关于Git上传库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS%E4%B8%8A%E4%BC%A0%EF%BC%9A"><span class="nav-number">14.5.1.</span> <span class="nav-text">HTTPS上传：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%B8%8A%E4%BC%A0%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E4%BB%93%E5%BA%93"><span class="nav-number">14.6.</span> <span class="nav-text">6.上传修改后的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%8B%E9%9A%86%E5%B7%B2%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%BA%93"><span class="nav-number">14.7.</span> <span class="nav-text">7.克隆已上传的库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-FLS"><span class="nav-number">15.</span> <span class="nav-text">Git FLS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E5%BA%93%E5%85%B1%E5%AD%98"><span class="nav-number">16.</span> <span class="nav-text">多库共存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1%EF%BC%9A%E6%AF%8F%E6%AC%A1push-x2F-pull%E6%97%B6%E9%9C%80%E5%88%86%E5%BC%80%E6%93%8D%E4%BD%9C"><span class="nav-number">16.1.</span> <span class="nav-text">方法 1：每次push&#x2F;pull时需分开操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-2%EF%BC%9A%E6%AF%8F%E6%AC%A1push-x2F-pull%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%90%8C%E6%97%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">16.2.</span> <span class="nav-text">方法 2：每次push&#x2F;pull时可以同时操作</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FØund404"
+      src="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+  <p class="site-author-name" itemprop="name">FØund404</p>
+  <div class="site-description" itemprop="description">is not FOund</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/foundblog.io/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Found-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Found-404" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FØund404</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/foundblog.io/lib/anime.min.js"></script>
+  <script src="/foundblog.io/lib/velocity/velocity.min.js"></script>
+  <script src="/foundblog.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/foundblog.io/js/utils.js"></script>
+
+<script src="/foundblog.io/js/motion.js"></script>
+
+
+<script src="/foundblog.io/js/schemes/pisces.js"></script>
+
+
+<script src="/foundblog.io/js/next-boot.js"></script>
+
+
+  <script defer src="/foundblog.io/lib/three/three.min.js"></script>
+    <script defer src="/foundblog.io/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
