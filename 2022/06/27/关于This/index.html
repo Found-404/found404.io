@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="this指向this指向问题一般情况下this的最终指向的是那个调用它的对象 1.全局作用域或者普通函数中this指向全局对象window(注意定时器里面的this指向window) 123456&lt;script&gt;    &#x2F;&#x2F; this指向问题一般情况下this的最终指向的是那个调用它的对象    &#x2F;&#x2F; 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的thi">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png">
 <meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png">
 <meta property="article:published_time" content="2022-06-27T07:09:17.000Z">
-<meta property="article:modified_time" content="2022-06-27T07:10:29.934Z">
+<meta property="article:modified_time" content="2022-06-27T15:07:01.425Z">
 <meta property="article:author" content="FØund404">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -86,6 +86,7 @@
   </style>
 </noscript>
 
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -113,6 +114,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -127,16 +129,53 @@
     <a href="/found404.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-tags">
 
-    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间线</a>
+    <a href="/found404.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/found404.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -146,9 +185,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
-  <a href="https://github.com/Found-404" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://github.com/Found-404" class="github-corner" title="前往Github主页" aria-label="前往Github主页" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -166,7 +204,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/%E5%85%B3%E4%BA%8EThis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -187,10 +225,26 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-27 15:09:17 / 修改时间：15:10:29" itemprop="dateCreated datePublished" datetime="2022-06-27T15:09:17+08:00">2022-06-27</time>
+              <time title="创建时间：2022-06-27 15:09:17 / 修改时间：23:07:01" itemprop="dateCreated datePublished" datetime="2022-06-27T15:09:17+08:00">2022-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -205,7 +259,7 @@
 <h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
+<span id="more"></span>
 
 <h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
 <p><strong>注：<strong><strong>匿名函数</strong></strong>中的<strong><strong>this</strong></strong>也同样指向****windows</strong></p>
@@ -276,7 +330,10 @@
     <a href="/found404.io/2022/06/27/BOMplus/" rel="prev" title="BOMplus">
       <i class="fa fa-chevron-left"></i> BOMplus
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/" rel="next" title="CSS函数">
+      CSS函数 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -342,7 +399,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="FØund404"
-      src="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
   <p class="site-author-name" itemprop="name">FØund404</p>
   <div class="site-description" itemprop="description">is not FOund</div>
 </div>
@@ -351,26 +408,27 @@
       <div class="site-state-item site-state-posts">
           <a href="/found404.io/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/found404.io/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/found404.io/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/Found-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Found-404" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/found404.io/2247124474@qq.com" title="E-Mail → 2247124474@qq.com"><i class="fab fa-qq fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -401,10 +459,18 @@
   </span>
   <span class="author" itemprop="copyrightHolder">FØund404</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
+<span id="busuanzi_container_site_uv">
+  本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
 
 
 
@@ -433,8 +499,6 @@
 <script src="/found404.io/js/next-boot.js"></script>
 
 
-  <script defer src="/found404.io/lib/three/three.min.js"></script>
-    <script defer src="/found404.io/lib/three/three-waves.min.js"></script>
 
 
   
@@ -442,20 +506,12 @@
 
 
 
+  
+<script src="/found404.io/js/local-search.js"></script>
 
 
-  <script>
-    (function(d, w, c) {
-      w.ChatraID = '<ChatraID>';
-      var s = d.createElement('script');
-      w[c] = w[c] || function() {
-        (w[c].q = w[c].q || []).push(arguments);
-      };
-      s.async = true;
-      s.src = 'https://call.chatra.io/chatra.js';
-      if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-  </script>
+
+
 
 
 
@@ -468,6 +524,21 @@
   
 
   
+
+  
+
+<script type="text/javascript"
+color="77,77,77" opacity='0.7' zIndex="-2" count="180" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
 
 </body>
+
 </html>

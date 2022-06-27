@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="is not FOund">
@@ -74,6 +74,7 @@
   </style>
 </noscript>
 
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -101,6 +102,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -115,16 +117,53 @@
     <a href="/found404.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-tags">
 
-    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间线</a>
+    <a href="/found404.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/found404.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -134,9 +173,8 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
-  <a href="https://github.com/Found-404" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://github.com/Found-404" class="github-corner" title="前往Github主页" aria-label="前往Github主页" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main class="main">
@@ -150,10 +188,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/CSS%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">CSS函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-27 23:14:28 / 修改时间：23:16:10" itemprop="dateCreated datePublished" datetime="2022-06-27T23:14:28+08:00">2022-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/%E5%85%B3%E4%BA%8EThis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -175,7 +289,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-27 15:09:17 / 修改时间：15:10:29" itemprop="dateCreated datePublished" datetime="2022-06-27T15:09:17+08:00">2022-06-27</time>
+              <time title="创建时间：2022-06-27 15:09:17 / 修改时间：23:07:01" itemprop="dateCreated datePublished" datetime="2022-06-27T15:09:17+08:00">2022-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
             </span>
 
           
@@ -192,58 +315,14 @@
           <h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
 <h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
-<p><strong>注：<strong><strong>匿名函数</strong></strong>中的<strong><strong>this</strong></strong>也同样指向****windows</strong></p>
-<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
-<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>对象中的<strong>this</strong>指向它本身</li>
-<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
-</ul>
-<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
-<p><strong>new的整个过程：</strong></p>
-<ol>
-<li>new会在内存中创建一个新的空对像</li>
-<li>new会让this指向这个新对象</li>
-<li>执行构造函数中的代码</li>
-<li>return这个新对象</li>
-</ol>
-<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
-<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
-<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
-<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
-<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：实参</li>
-<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
-<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：数组或者伪数组（里面为实参）</li>
-<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
-<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数之后：实参</li>
-<li>返回值为一个新的函数</li>
-<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
-<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
-<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
-<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -265,7 +344,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/BOMplus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -287,7 +366,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-27 14:25:40 / 修改时间：14:27:04" itemprop="dateCreated datePublished" datetime="2022-06-27T14:25:40+08:00">2022-06-27</time>
+              <time title="创建时间：2022-06-27 14:25:40 / 修改时间：23:07:14" itemprop="dateCreated datePublished" datetime="2022-06-27T14:25:40+08:00">2022-06-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
             </span>
 
           
@@ -302,91 +390,14 @@
 
       
           <h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
-<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
-<table>
-<thead>
-<tr>
-<th align="center">location对象属性</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">返回主机(域名) <del><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></del></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">返回路径</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">返回参数</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">返回片段 #后面内容，常用于链接锚点</td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">返回协议</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">location对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign()</td>
-<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
-</tr>
-<tr>
-<td align="center">location.replace()</td>
-<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
-</tr>
-<tr>
-<td align="center">location.reload()</td>
-<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
-<table>
-<thead>
-<tr>
-<th align="center">history对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">back()</td>
-<td align="center">可以后退功能</td>
-</tr>
-<tr>
-<td align="center">forward()</td>
-<td align="center">前进功能</td>
-</tr>
-<tr>
-<td align="center">go(参数)</td>
-<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/06/27/BOMplus/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -408,7 +419,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/GIT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -430,7 +441,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-27 14:15:13 / 修改时间：14:23:19" itemprop="dateCreated datePublished" datetime="2022-06-27T14:15:13+08:00">2022-06-27</time>
+              <time title="创建时间：2022-06-27 14:15:13 / 修改时间：22:49:09" itemprop="dateCreated datePublished" datetime="2022-06-27T14:15:13+08:00">2022-06-27</time>
             </span>
 
           
@@ -446,202 +457,14 @@
       
           <h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
 <p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
-<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
-<ul>
-<li>直接记录快照，而非差异比较</li>
-<li>近乎所有操作都是本地执行</li>
-</ul>
-<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
-<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
-<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<ul>
-<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
-<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
-<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
-</ul>
-<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
-<p><strong>StagingArea</strong>	（暂存区）</p>
-<p>**.git directory(Repository)**（Git仓库）</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<p>基本的Git工作流程如下:</p>
-<p>①在工作区中修改文件</p>
-<p>②将你想要下次提交的更改进行暂存</p>
-<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
-<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<p>–golbal选项只需执行一次就可以永久生效</p>
-<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
-<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
-<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</verb></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
-<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
-<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
-<p>②从其它服务器克隆一个已存在的Git仓库</p>
-<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
-<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
-<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
-<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
-<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
-<p>文件，这些文件是Git仓库的必要组成部分。</p>
-<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
-<p>未跟踪	??</p>
-<p>已暂存  	A</p>
-<p>被修改	M</p>
-<p>被修改并且放入暂存	M </p>
-<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
-<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
-<p><strong>以精简的方式显示文件状态</strong></p>
-<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
-<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
-<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
-<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
-<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
-<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
-<p>提交成功后会显示如下信息：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
-<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
-<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
-<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
-<p><strong>但还没有放到暂存区。</strong></p>
-<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
-<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
-<p>是个多功能的命令，主要有如下3个功效:</p>
-<ol>
-<li>可以用它开始跟踪新文件</li>
-<li>把已跟踪的、且已修改的文件放到暂存区</li>
-<li>把有冲突的文件标记为已解决状态</li>
-</ol>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
-<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
-<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
-<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
-<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
-<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
-<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
-<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
-<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
-<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
-<p>文件.gitignore的格式规范如下: .</p>
-<p>①以  <strong>#开头</strong>  的是注释</p>
-<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
-<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
-<p>④以  <strong>!开头</strong>  表示取反</p>
-<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
-<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
-<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
-<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
-<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
-<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
-<p>所有0到9的数字)</p>
-<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
-<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
-<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
-<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
-<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
-<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
-<ol>
-<li><p>BSD (Berkeley Software Distribution)</p>
-</li>
-<li><p>Apache Licence 2.0</p>
-</li>
-<li><p>GPL ( GNU General Public License)</p>
-</li>
-<li><ol>
-<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
-<li>使用 GPL的最著名的软件项目是: Linux</li>
-</ol>
-</li>
-<li><p>LGPL (GNU Lesser General Public License)</p>
-</li>
-<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
-</li>
-<li><ol>
-<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
-<li>使用 MIT的软件项目有: jquery. Node.js</li>
-</ol>
-</li>
-</ol>
-<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
-<ul>
-<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
-<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
-<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
-</ul>
-<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
-<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
-<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
-<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
-<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
-<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
-<ol>
-<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
-<li>在你要上传的库中打开 Git Bash控制台</li>
-<li>依次输入官方提示的命令</li>
-<li>在弹出框中输入你的密钥</li>
-</ol>
-<p><strong>注意：要先在官网绑定令牌</strong></p>
-<p>绑定令牌的方式：</p>
-<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
-<p>2.在github官网个人设置中找到绑定令牌</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
-<p>3.选择new SSH key 添加绑定令牌</p>
-<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
-<p>关于密钥的生成：</p>
-<ol>
-<li><p>个人设置中的Developer settings</p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
-</li>
-</ol>
-<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
-<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
-<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
-<p>原帖子：<a target="_blank" rel="noopener" href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
-<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><strong>git remote rm origin</strong> 删除远程库</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
-<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
-<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
-<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
-<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
-<p>再次查看所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
-<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
-<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/06/27/GIT/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -663,7 +486,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/AJAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -685,7 +508,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-06-27 14:12:18 / 修改时间：14:13:38" itemprop="dateCreated datePublished" datetime="2022-06-27T14:12:18+08:00">2022-06-27</time>
+              <time title="创建时间：2022-06-27 14:12:18 / 修改时间：22:49:47" itemprop="dateCreated datePublished" datetime="2022-06-27T14:12:18+08:00">2022-06-27</time>
             </span>
 
           
@@ -714,369 +537,14 @@
 <li>eg：登陆时向服务器提交登录信息</li>
 </ul>
 </blockquote>
-<h2 id="jQuery中的AJAX"><a href="#jQuery中的AJAX" class="headerlink" title="jQuery中的AJAX"></a>jQuery中的AJAX</h2><h3 id="get-获取数据"><a href="#get-获取数据" class="headerlink" title="$.get()获取数据"></a>$.get()获取数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">get</span>(url,[data],[callback])</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ul>
-<li>url          字符串型    <strong>必须</strong>    要请求的资源地址</li>
-<li>data         Object      <strong>非必须</strong>  请求资源期间要携带的参数</li>
-<li>callback     function    <strong>非必须</strong>  请求成功时回调函数</li>
-</ul>
-</blockquote>
-<p><strong>代码示例：</strong></p>
-<p><strong>发起不带参数的请求：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnGet&quot;</span>&gt;</span>发起不带参数的请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#btnGet&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span></span><br><span class="line"><span class="language-javascript">                $.<span class="title function_">get</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>,<span class="keyword">function</span>(<span class="params">res</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">//res 是请求服务器返回来的数据</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;);</span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>发起带参数的请求：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnGet&quot;</span>&gt;</span>发起带参数的请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#btnGet&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">                $.<span class="title function_">get</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>,&#123;<span class="attr">id</span>:<span class="number">1</span>&#125;,<span class="keyword">function</span>(<span class="params">res</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// 此时的res是服务器id为1的对象数据</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="post-发送post请求"><a href="#post-发送post请求" class="headerlink" title="$.post()发送post请求"></a>$.post()发送post请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">post</span>(url,[data],[callback])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>url          字符串型    <strong>必须</strong>    提交数据的地址</li>
-<li>data         Object      <strong>非必须</strong>  要提交的数据</li>
-<li>callback     function    <strong>非必须</strong>  数据提交成功的回调函数</li>
-</ul>
-</blockquote>
-<p><strong>代码示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;postBtn&quot;</span>&gt;</span>post提交数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#postBtn&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                $.<span class="title function_">post</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/addbooks&#x27;</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">bookname</span>: <span class="string">&#x27;水浒传&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">author</span>: <span class="string">&#x27;施耐庵&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">publisher</span>: <span class="string">&#x27;天津出版社&#x27;</span></span></span><br><span class="line"><span class="language-javascript">                &#125;, <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;);</span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ajax-函数"><a href="#ajax-函数" class="headerlink" title="$ajax()函数"></a>$ajax()函数</h2><blockquote>
-<p>相比于$.get0 和$.post0函数, jQuery中提供的$.ajax()函数,是一个功能比较综合的函数， 它允许我们对Ajax请求进行更详细的配置。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">//请求的方式 如 get 或 post</span></span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">//请求的url地址</span></span><br><span class="line">    <span class="attr">data</span>: &#123;&#125;, <span class="comment">//这次请求携带的数据</span></span><br><span class="line">    <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;, <span class="comment">//请求完成过后回调函数</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>代码示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//GET请求</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#ajaxGet&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;GET&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">id</span>: <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">                &#125;,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//POST请求</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#ajaxPost&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;PSOT&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/addbooks&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">bookname</span>: <span class="string">&#x27;水浒传&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">author</span>: <span class="string">&#x27;施耐庵&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">publisher</span>: <span class="string">&#x27;天津出版社&#x27;</span></span></span><br><span class="line"><span class="language-javascript">                &#125;,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><blockquote>
-<p>使用Ajax请求数据时，被请求的URL地址，就叫做数据接口(简称接口)。同时，每个接口必须有请求方式(get&#x2F;post)。</p>
-<p><a target="_blank" rel="noopener" href="https://web.postman.co/workspace/My-Workspace~71c70ac7-23a9-4d8c-8f5b-ccd1b8d539e6/overview?workspaceOnboarding=show">接口测试工具 Postman</a></p>
-</blockquote>
-<h3 id="什么是接口文档？"><a href="#什么是接口文档？" class="headerlink" title="什么是接口文档？"></a>什么是接口文档？</h3><blockquote>
-<p>接口文档，顾名思义就是接口的说明文档，它是我们调用接口的依据。好的接口文档包含了对接口URL,参数以及输出内容的说明,我们参照接口文档就能方便的知道接口的作用，以及接口如何进行调用。</p>
-</blockquote>
-<p>接口文档可以包含很多信息，也可以按需进行精简，不过, 一个合格的接口文档,应该包含以下6项内容,从而为接口的调用提供依据:</p>
-<blockquote>
-<ol>
-<li><p>接口名称：用来标识各个接口的简单说明，如登录接口，获取图书列表接口等。</p>
-</li>
-<li><p>接口URL：接口的调用地址。</p>
-</li>
-<li><p>调用方式： 接口的调用方式，如<strong>GET</strong>或<strong>POST</strong>.</p>
-</li>
-<li><p>参数格式：接口需要传递的参数，每个参数必须包含参数名称、参数类型、是否必选、参数说明这4项内容。</p>
-</li>
-<li><p>响应格式：接口的返回值的详细描述，一 般包含数据名称、数据类型、说明3项内容。</p>
-</li>
-<li><p>返回示例 (可选)：通过对象的形式，例举服务器返回数据的结构。</p>
-</li>
-</ol>
-</blockquote>
-<h2 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/login&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_self&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单标签 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单域 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text &quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password &quot;</span> <span class="attr">name</span>=<span class="string">&quot; &quot;</span> <span class="attr">id</span>=<span class="string">&quot; &quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单提交 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;发送 &quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>form的属性:</strong></p>
-<blockquote>
-<ul>
-<li>action   &amp;emsp;&amp;emsp;规定当提交表单时候向何处发送表单数据  如果没有内容则默认当前URL地址</li>
-<li>target   &amp;emsp;&amp;emsp;_blank  &amp;emsp;&amp;emsp;在新窗口中打开</li>
-<li>&amp;emsp;&amp;emsp;_self  &amp;emsp;&amp;emsp;默认,在相同框架中打开</li>
-<li>&amp;emsp;&amp;emsp;_parent&amp;emsp;&amp;emsp;在父框架集中打开</li>
-<li>&amp;emsp;&amp;emsp;_top&amp;emsp;&amp;emsp;在整个窗口中打开</li>
-<li>&amp;emsp;&amp;emsp;framename    &amp;emsp;&amp;emsp;在指定的框架中打开</li>
-<li>method &amp;emsp;&amp;emsp;GET&#x2F;POST  &amp;emsp;&amp;emsp;默认为GET  </li>
-<li>&amp;emsp;&amp;emsp;get&amp;emsp;&amp;emsp;适合提交少量简单数据</li>
-<li>&amp;emsp;&amp;emsp;post&amp;emsp;&amp;emsp;适合提交大量复杂包含文件上传的数据</li>
-<li>enctype&amp;emsp;&amp;emsp;application&#x2F;x-www-form-urlencoded &amp;emsp;&amp;emsp;在发送前编码所有字符</li>
-<li>&amp;emsp;&amp;emsp;multipart&#x2F;form-data    &amp;emsp;&amp;emsp;部队字符编码 在使用包含文件上传控件的表单时必须使用该值(文件上传)</li>
-<li>&amp;emsp;&amp;emsp;text&#x2F;plain    &amp;emsp;&amp;emsp;空格转换为“+”加号 但不对特殊字符编码</li>
-<li>autocomplete&amp;emsp;&amp;emsp;on&amp;emsp;&amp;emsp;开启表单自动补全内容</li>
-<li>&amp;emsp;&amp;emsp;off&amp;emsp;&amp;emsp;关闭表单自动补全内容</li>
-</ul>
-</blockquote>
-<h3 id="什么是表单的同步提交"><a href="#什么是表单的同步提交" class="headerlink" title="什么是表单的同步提交"></a>什么是表单的同步提交</h3><p>通过点击submit按钮 触发表单提交的操作 从而使页面跳转到action URL的行为叫做表单的同步提交:</p>
-<p><strong>同步提交缺点:</strong></p>
-<blockquote>
-<ol>
-<li>整个页面跳转 </li>
-<li>页面之前的状态和数据会丢失</li>
-</ol>
-</blockquote>
-<p><strong>解决方法:</strong></p>
-<blockquote>
-<ul>
-<li>表单只负责采集数据</li>
-<li>Ajax负责将数据提交到服务器</li>
-</ul>
-</blockquote>
-<h3 id="监听表单提交事件和阻止默认行为"><a href="#监听表单提交事件和阻止默认行为" class="headerlink" title="监听表单提交事件和阻止默认行为"></a>监听表单提交事件和阻止默认行为</h3><blockquote>
-<p><strong>serialize( )</strong> 获取表单中的所有数据</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/login&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">id</span>=<span class="string">&quot;f1&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 监听表单提交事件</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 第一种方式</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// $(&quot;#f1&quot;).submit(function(e) &#123;</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//     alert(&#x27;第一种&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//     // 第一种阻止表单默认提交行为</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//     e.preventDefault();</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// &#125;);</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 第二种方式</span></span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">alert</span>(<span class="string">&#x27;第二种&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 第二种阻止表单默认提交行为(跟第一种一样)</span></span></span><br><span class="line"><span class="language-javascript">                e.<span class="title function_">preventDefault</span>();</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 利用serialize()获取表单中的所有数据</span></span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 前提是被获取表单必须有name属性</span></span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">let</span> shujv = $(<span class="variable language_">this</span>).<span class="title function_">serialize</span>();</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(shujv);</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="jQuery文件上传"><a href="#jQuery文件上传" class="headerlink" title="jQuery文件上传"></a>jQuery文件上传</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 文件选择框 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;file&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上传文件按钮 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnUpload&quot;</span>&gt;</span>上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../loadingImgGif/20140524124233131.gif&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: none;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// ajaxStart监听到Ajax请求被发起了</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="variable language_">document</span>).<span class="title function_">ajaxStart</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#loading&#x27;</span>).<span class="title function_">show</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// ajaxStop监听到AJAX完成的事件</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="variable language_">document</span>).<span class="title function_">ajaxStop</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $(<span class="string">&#x27;#loading&#x27;</span>).<span class="title function_">hide</span>();</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#btnUpload&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 将jQuery转换为DOM</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> files = $(<span class="string">&#x27;#file&#x27;</span>)[<span class="number">0</span>].<span class="property">files</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (files.<span class="property">length</span> &lt;= <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span> <span class="title function_">alert</span>(<span class="string">&#x27;请选择文件后上传&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 向formData中追加文件</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span></span><br><span class="line"><span class="language-javascript">            fd.<span class="title function_">append</span>(<span class="string">&#x27;avatar&#x27;</span>, files[<span class="number">0</span>]);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 发起jQuery的AJAX请求，上传文件</span></span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/upload/avatar&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: fd,</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 不修改content-type属性，使用FormData默认的Content-Type值</span></span></span><br><span class="line"><span class="language-javascript">                <span class="attr">processData</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// 不对FormData中的数据进行url编码，而是将FormData数据原样发送到服务器</span></span></span><br><span class="line"><span class="language-javascript">                <span class="attr">contentType</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="初识XMLHttpRequest"><a href="#初识XMLHttpRequest" class="headerlink" title="初识XMLHttpRequest"></a>初识XMLHttpRequest</h1><blockquote>
-<p><strong>XMLHttpRequest</strong> (简称xhr) 是浏览器提供的Javascript 对象，通过它，可以请求服务器上的数据资源。之前所学的jQuery中的Ajax函数，就是基于xhr对象封装出来的。</p>
-</blockquote>
-<h2 id="使用xhr发送get请求"><a href="#使用xhr发送get请求" class="headerlink" title="使用xhr发送get请求"></a>使用xhr发送get请求</h2><p><strong>步骤：</strong></p>
-<blockquote>
-<ol>
-<li>创建xhr对象</li>
-<li>调用xhr.open()函数</li>
-<li>调用xhr.send()函数</li>
-<li>监听xhr.onreadystatechange事件</li>
-</ol>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 1.创建xhr对象</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    <span class="comment">// 2.调用xhr.open()函数</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>);</span><br><span class="line">    <span class="comment">// 3.调用xhr.send()函数</span></span><br><span class="line">    xhr.<span class="title function_">send</span>();</span><br><span class="line">    <span class="comment">// 4.监听xhr.onreadystatechange事件</span></span><br><span class="line">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 固定判断条件</span></span><br><span class="line">        <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取服务器相应的数据成功</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">            <span class="comment">// 传过来一个JSON结构的字符串</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="XMLHttpRequest对象的readyState属性："><a href="#XMLHttpRequest对象的readyState属性：" class="headerlink" title="XMLHttpRequest对象的readyState属性："></a>XMLHttpRequest对象的readyState属性：</h3><table>
-<thead>
-<tr>
-<th align="center">值</th>
-<th align="center">状态</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">UNSENT</td>
-<td align="center">XMLHttpRequest对象已被创建，但尚未调用open方法</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">OPENED</td>
-<td align="center">open()方法已经被调用</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">HEADERS_RECEIVED</td>
-<td align="center">send()方法已经被调用,响应头也已经被接收</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">LOADING</td>
-<td align="center">数据接收中,此时response属性中已经包含部分数据</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">DONE</td>
-<td align="center">Ajax请求完成,这就意味着数据传输已经彻底完成或失败</td>
-</tr>
-</tbody></table>
-<h2 id="发起带参数的get请求"><a href="#发起带参数的get请求" class="headerlink" title="发起带参数的get请求"></a>发起带参数的get请求</h2><p><strong>代码示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 在url末尾添加向服务器发送信息的字符串  ?id=1</span></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks?id=1&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 固定判断条件</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 获取服务器相应的数据成功</span></span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>带一个参数</p>
-<p><a target="_blank" rel="noopener" href="http://www.liulongbin.top:3006/api/getbooks?id=1">http://www.liulongbin.top:3006/api/getbooks?id=1</a></p>
-<p>带二个参数</p>
-<p><a target="_blank" rel="noopener" href="http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=%E8%A5%BF%E6%B8%B8%E8%AE%B0">http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=西游记</a></p>
-</blockquote>
-<p><strong>GET请求携带参数的本质:</strong></p>
-<blockquote>
-<p>无论使用$.ajax(), 还是使用$.get(),又或者直接使用xhr对象发起GET请求，当需要携带参数的时候，本质上,都是直<br>接将参数以查询字符串的形式，追加到URL地址的后面，发送到服务器的。</p>
-</blockquote>
-<h3 id="URL的编码与解码"><a href="#URL的编码与解码" class="headerlink" title="URL的编码与解码"></a>URL的编码与解码</h3><blockquote>
-<p>1.什么是URL编码：</p>
-<ul>
-<li>URL地址中，只允许出现英文相关的字母、标点符号、数字,因此，在URL地址中不允许出现中文字符。</li>
-<li>如果URL中需要包含中文这样的字符，则必须对中文字符进行编码(转义)。</li>
-<li>URL编码的原则:使用安全的字符(没有特殊用途或者特殊意义的可打印字符)去表示那些不安全的字符。</li>
-<li>URL编码原则的通俗理解:使用英文字符去表示非英文字符。</li>
-</ul>
-</blockquote>
-<p><code>http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=西游记</code></p>
-<p>👇👇👇经过url编码之后，url地址变成了如下格式👇👇👇</p>
-<p><code>http://www.liulongbin.top:3006/api/getbooks?id=1&amp;bookname=%E8%A5%BF%E6%B8%B8%E8%AE%B0</code></p>
-<blockquote>
-<p>2.如何对URL进行编码与解码</p>
-<ul>
-<li>浏览器提供了URL编码与解码的API,分别是:</li>
-<li><strong>encodeURI( )</strong>  编码的函数</li>
-<li><strong>decodeURI( )</strong>  解码的函数</li>
-</ul>
-</blockquote>
-<p><strong>示例：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">encodeURI</span>(<span class="string">&#x27;黑马程序员&#x27;</span>)); <span class="comment">//%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">decodeURI</span>(<span class="string">&#x27;%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98&#x27;</span>)); <span class="comment">// 黑马程序员</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用xhr发送post请求"><a href="#使用xhr发送post请求" class="headerlink" title="使用xhr发送post请求"></a>使用xhr发送post请求</h2><blockquote>
-<p>步骤:</p>
-<ol>
-<li>创建<strong>xhr</strong>对象</li>
-<li>调用 <strong>xhr.open()</strong> 函数</li>
-<li>设置<strong>Content-Type</strong>属性(固定写法)</li>
-<li>调用 <strong>xhr.send()</strong> 函数，同时指定要发送的数据（携带的参数）</li>
-<li>监听<strong>xhr.onreadystatechange</strong>事件</li>
-</ol>
-</blockquote>
-<p><strong>代码示例：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.创建xhr对象</span></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"><span class="comment">// 2.调用.open()方法</span></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/addbook&#x27;</span>);</span><br><span class="line"><span class="comment">// 3.设置Content-Type属性(固定写法)</span></span><br><span class="line">xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span>);</span><br><span class="line"><span class="comment">// 4.调用xhr.send()函数</span></span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="string">&#x27;bookname=三体&amp;author=刘慈欣&amp;publisher=河南图书&#x27;</span>);</span><br><span class="line"><span class="comment">// 5.监听事件</span></span><br><span class="line">xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="数据交换格式："><a href="#数据交换格式：" class="headerlink" title="数据交换格式："></a>数据交换格式：</h2><p><strong>什么是XML?</strong><br>XML的英文全称是EXtensible Markup Language,即可扩展标记语言。因此，XML 和HTML类似，也是一种标记语言。</p>
-<blockquote>
-<ul>
-<li>虽然html和XML都是标记语言.但是两者没有任何关系</li>
-<li>HTML被设计用来描述网页上的内容,就是网页内容的载体 </li>
-<li>XML被设计用来传输和 存储数据，是数据的载体</li>
-</ul>
-</blockquote>
-<p><strong>XML缺点：</strong></p>
-<blockquote>
-<ul>
-<li>XML格式臃肿,和数据无关的代码多,体积大，传输效率低</li>
-<li>在Javascript中解析XML比较麻烦 –&gt;</li>
-</ul>
-</blockquote>
-<p><strong>什么是JSON?:</strong></p>
-<blockquote>
-<p>概念:</p>
-<p>JSON的英文全称是JavaScript Object Notation,即”JavaScript 对象表示法”。简单来讲,JSON就是Javascript对象和数组的字符串表示法，它使用文本表示一个JS对象或数组的信息，因此,JSON的本质是字符串。</p>
-</blockquote>
-<blockquote>
-<p>作用: </p>
-<p>JSON 是一种轻量级的文本数据交换格式，在作用上类似于XML,专门用于存储和传输数据，但是JSON比XML更小更快、更易解析。</p>
-</blockquote>
-<blockquote>
-<p>现状: </p>
-<p>JSON是在2001年开始被推广和使用的数据格式，到现今为止，JSON已经成为了主流的数据交换格式。</p>
-</blockquote>
-<h2 id="JSON的两种结构"><a href="#JSON的两种结构" class="headerlink" title="JSON的两种结构"></a>JSON的两种结构</h2><p><strong>1.对象结构:</strong></p>
-<blockquote>
-<p>对象结构在JSON中表示为{}括起来的内容。数据结构为 <u>{ key: value, key: value, …}</u> 的键值对结构。其中, key 必须是使用英文的双引号包事的字符串, value 的数据类型可以是数字、字符串、布尔值、null. 数组、对象6种类型。</p>
-</blockquote>
-<p><strong>2.数组结构:</strong></p>
-<blockquote>
-<p>数组结构:数组结构在JSON中表示为[]括起来的内容。数据结构为 <u>[“java””javascript”, 30, true … ]</u> 数组中数据的类型可以是数字、字符串、布尔值、null. 数组、对象6种类型。</p>
-</blockquote>
-<p><strong>3. JSON语法注意事项</strong></p>
-<blockquote>
-<ol>
-<li>属性名必须使用双引号包裹</li>
-<li>字符串类型的值必须使用双引号包裹</li>
-<li>JSON中不允许使用单引号表示字符串</li>
-<li>JSON中不能写注释</li>
-<li>JSON的最外层必须是对象或数组格式</li>
-<li>不能使用undefined或函数作为JSON的值</li>
-</ol>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>JSON的作用:</strong> 在计算机与网络之间存储和传输数据。</li>
-<li><strong>JSON的本质:</strong> 用字符串来表示Javascript对象数据或数组数据</li>
-</ul>
-</blockquote>
-<h3 id="JSON和js对象的关系"><a href="#JSON和js对象的关系" class="headerlink" title="JSON和js对象的关系"></a>JSON和js对象的关系</h3><blockquote>
-<p>JSON是JS对象的字符串表示法，它使用文本表示个JS对象的信息，本质是一个字符串。</p>
-</blockquote>
-<p><strong>例如:</strong></p>
-<ul>
-<li><strong>JSON.stringify(obj2)</strong>&amp;emsp;&amp;emsp;序列化(对象转换为字符串)</li>
-<li><strong>JSON.parse(jsonStr)</strong>&amp;emsp;&amp;emsp;反序列化 (字符串转换为对象)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是一个对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&#x27;world&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 这是一个json字符串，本质上是一个字符串</span></span><br><span class="line"><span class="keyword">var</span> json = <span class="string">&#x27;&#123;&quot;a&quot;:&quot;hello&quot;,&quot;b&quot;:&quot;world&quot;&#125;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JSON和js对象互转</span></span><br><span class="line"><span class="keyword">var</span> jsonStr = <span class="string">&#x27;&#123;&quot;a&quot;:&quot;hello&quot;,&quot;b&quot;:&quot;world&quot;&#125;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// JSON转换为js  叫做反序列化 (字符串转换为对象)</span></span><br><span class="line"><span class="keyword">var</span> objnew = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(jsonStr);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(objnew);</span><br><span class="line"></span><br><span class="line"><span class="comment">// js转换为JSON  叫做序列化(对象转换为字符串)</span></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&#x27;world&#x27;</span>,</span><br><span class="line">    <span class="attr">c</span>: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> string = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(string);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="演示JSON-parse函数的应用场景"><a href="#演示JSON-parse函数的应用场景" class="headerlink" title="演示JSON.parse函数的应用场景"></a>演示JSON.parse函数的应用场景</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xhr.<span class="title function_">send</span>();</span><br><span class="line"></span><br><span class="line">xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 固定判断条件</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="comment">// 获取服务器相应的数据成功</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">        <span class="comment">// 传输过来JSON结构的字符串</span></span><br><span class="line">        <span class="keyword">var</span> result = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(result); <span class="comment">// 被转换成对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="XMLHttpRequest-Level2的新特性"><a href="#XMLHttpRequest-Level2的新特性" class="headerlink" title="XMLHttpRequest Level2的新特性"></a>XMLHttpRequest Level2的新特性</h2><p>旧版<strong>XMLHttpRequest</strong>的缺点</p>
-<blockquote>
-<p>只支持文本数据传输，无法用来读取和上传文件传送和接收数据时，没有进度信息，只提示有没有完成</p>
-</blockquote>
-<p><strong>-XMLHttpRequest Level2的新特性</strong></p>
-<blockquote>
-<ol>
-<li>可以设置HTTP请求的时限</li>
-<li>可以使用formData对象管理表单数据</li>
-<li>可以上传文件</li>
-<li>可以获得数据传输的进度信息</li>
-</ol>
-</blockquote>
-<p>有时，Ajax 操作很耗时，而且无法预知要花少时间。如果网速很慢，用户可能要等很久。新版本的XMLHttpRequest对象，增加了timeout 属性，可以设置HTTP请求的时限:</p>
-<h3 id="设置HTTP请求的时限"><a href="#设置HTTP请求的时限" class="headerlink" title="设置HTTP请求的时限:"></a>设置HTTP请求的时限:</h3><p><strong>代码示例：</strong></p>
-<ul>
-<li>设置超时时间10ms<ul>
-<li><strong>xhr.timeout &#x3D; 10;</strong></li>
-</ul>
-</li>
-<li>设置超时后触发的函数<ul>
-<li><strong>xhr.ontimeout &#x3D; function( ) { };</strong></li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 1.创建xhr对象</span></span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    <span class="comment">// 设置超时时间为10毫秒</span></span><br><span class="line">    xhr.<span class="property">timeout</span> = <span class="number">10</span>;</span><br><span class="line">    xhr.<span class="property">ontimeout</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;请求超时!&#x27;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 2.调用xhr.open()函数</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>);</span><br><span class="line">    <span class="comment">// 3.调用xhr.send()函数</span></span><br><span class="line">    xhr.<span class="title function_">send</span>();</span><br><span class="line">    <span class="comment">// 4.监听xhr.onreadystatechange事件</span></span><br><span class="line">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 固定判断条件</span></span><br><span class="line">        <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取服务器相应的数据成功</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(xhr.<span class="property">responseText</span>);</span><br><span class="line">            <span class="comment">// 传过来一个JSON结构的字符串</span></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="FormData对象的基本使用："><a href="#FormData对象的基本使用：" class="headerlink" title="FormData对象的基本使用："></a>FormData对象的基本使用：</h3><blockquote>
-<ol>
-<li>调用 <strong>append</strong> 函数向fd中追加数据</li>
-<li>向 <strong>send( )</strong> 函数中追加数据</li>
-</ol>
-</blockquote>
-<p>代码示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建FormData实例</span></span><br><span class="line"><span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span><br><span class="line"><span class="comment">// 调用append函数 向fd中追加数据</span></span><br><span class="line">fd.<span class="title function_">append</span>(<span class="string">&#x27;uname&#x27;</span>, <span class="string">&#x27;zs&#x27;</span>);</span><br><span class="line">fd.<span class="title function_">append</span>(<span class="string">&#x27;upwd&#x27;</span>, <span class="string">&#x27;123456&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line"></span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/formdata&#x27;</span>);</span><br><span class="line">xhr.<span class="title function_">send</span>(fd);</span><br><span class="line"></span><br><span class="line">xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 固定判断条件</span></span><br><span class="line">    <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="comment">// 获取服务器相应的数据成功</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>));</span><br><span class="line">        <span class="comment">// 传过来一个JSON结构的字符串</span></span><br><span class="line">        <span class="comment">// 使用反序列化转换</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="FormData获取表单中的数据："><a href="#FormData获取表单中的数据：" class="headerlink" title="FormData获取表单中的数据："></a>FormData获取表单中的数据：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">&quot;form1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;upwd&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">// 通过dom操作获取到form表单元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">var</span> form = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#form1&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        form.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="comment">// 阻止表单默e认提交</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            e.<span class="title function_">preventDefault</span>();</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="comment">// 创建formData 快速获取到form表单中的数据</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>(form);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            xhr.<span class="title function_">open</span>(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/formdata&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            xhr.<span class="title function_">send</span>(fd);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                <span class="comment">// 固定判断条件</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                    <span class="comment">// 获取服务器相应的数据成功</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>));</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                    <span class="comment">// 传过来一个JSON结构的字符串</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                    <span class="comment">// 使用反序列化转换</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="XMLHttpRequest-Level2上传文件"><a href="#XMLHttpRequest-Level2上传文件" class="headerlink" title="XMLHttpRequest Level2上传文件"></a>XMLHttpRequest Level2上传文件</h3><p>新版XML HttpRequest对象，不仅可以发送文本信息，还可以上传文件</p>
-<p><strong>实现步骤:</strong></p>
-<ol>
-<li>定义UI结构</li>
-<li>验证是否选择了文件</li>
-<li>向FormData中追加文件</li>
-<li>使用xhr发起上传文件的请求</li>
-<li>监听onreadystatechange事件</li>
-</ol>
-<p><strong>代码示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 1.定义UI结构 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;file1&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上传文件按钮 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnUpload&quot;</span>&gt;</span>上传文件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- img标签 显示上传后的图片 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;img&quot;</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.验证是否选择了文件</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 获取上传文件的按钮</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> btnUpload = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#btnUpload&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 添加点击事件</span></span></span><br><span class="line"><span class="language-javascript">        btnUpload.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 获取到用户选择的文件列表</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> files = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#file1&#x27;</span>).<span class="property">files</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(files);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (files.<span class="property">length</span> &lt;= <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span> <span class="title function_">alert</span>(<span class="string">&#x27;请选择上传的文件&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 3.向FormData中追加文件</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span></span><br><span class="line"><span class="language-javascript">            fd.<span class="title function_">append</span>(<span class="string">&#x27;avatar&#x27;</span>, files[<span class="number">0</span>]); <span class="comment">//avatar翻译为头像</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 4.使用xhr发起上传文件的请求</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="title function_">open</span>(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/upload/avatar&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="title function_">send</span>(fd);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 5.监听onreadystatechange事件</span></span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">var</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span> (data.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="comment">// 上传成功</span></span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;上传成功&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#img&#x27;</span>).<span class="property">src</span> = <span class="string">&#x27;http://www.liulongbin.top:3006&#x27;</span> + data.<span class="property">url</span>;</span></span><br><span class="line"><span class="language-javascript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="comment">// 上传失败</span></span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;图片上传失败&#x27;</span> + data.<span class="property">message</span>);</span></span><br><span class="line"><span class="language-javascript">                    &#125;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="显示文件上传进度"><a href="#显示文件上传进度" class="headerlink" title="显示文件上传进度"></a>显示文件上传进度</h3><p><strong>主要使用到：</strong></p>
-<ol>
-<li><strong>onprogress</strong>文件上传中事件</li>
-<li><strong>onload</strong>文件上传成功事件</li>
-<li>以及内置<strong>event</strong>对象<ul>
-<li><u>e.lengthComputable</u>返回布尔值  <em>判断传输数据是否是可以计算长度</em></li>
-<li><u>e.loaded</u>已经上传的进度</li>
-<li><u>e.total</u>总进度</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 1.定义UI结构 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">id</span>=<span class="string">&quot;file1&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上传文件按钮 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnUpload&quot;</span>&gt;</span>上传文件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- bootstrap中的进度条 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;progress&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width:500px; margin:10px; &quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;progress-bar progress-bar-striped active&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 0%&quot;</span> <span class="attr">id</span>=<span class="string">&quot;percent&quot;</span>&gt;</span></span><br><span class="line">            0%</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- img标签 显示上传后的图片 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;img&quot;</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.验证是否选择了文件</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 获取上传文件的按钮</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> btnUpload = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#btnUpload&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 添加点击事件</span></span></span><br><span class="line"><span class="language-javascript">        btnUpload.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 获取到用户选择的文件列表</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> files = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#file1&#x27;</span>).<span class="property">files</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(files);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">if</span> (files.<span class="property">length</span> &lt;= <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">return</span> <span class="title function_">alert</span>(<span class="string">&#x27;请选择上传的文件&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 3.向FormData中追加文件</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span></span><br><span class="line"><span class="language-javascript">            fd.<span class="title function_">append</span>(<span class="string">&#x27;avatar&#x27;</span>, files[<span class="number">0</span>]); <span class="comment">//avatar翻译为头像</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 4.使用xhr发起上传文件的请求</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 监听文件上传进度------------------------------------------------------------------</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// onprogress文件上传中事件</span></span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="property">upload</span>.<span class="property">onprogress</span> = <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="comment">// e.lengthComputable返回布尔值  判断传输数据是否是可以计算长度</span></span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (e.<span class="property">lengthComputable</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// 计算出上传的进度</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// e.loaded 已将上传的进度</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// e.total  总进度</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">var</span> procent = <span class="title class_">Math</span>.<span class="title function_">ceil</span>((e.<span class="property">loaded</span> / e.<span class="property">total</span>) * <span class="number">100</span>);</span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// console.log(procent + &#x27;%&#x27;);</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// !!!!!!!!!!!!!!!动态设置进度条!!!!!!!!!!!!!!!</span></span></span><br><span class="line"><span class="language-javascript">                    <span class="comment">// attr()jQuery封装的设置自定义属性方法</span></span></span><br><span class="line"><span class="language-javascript">                    $(<span class="string">&#x27;#percent&#x27;</span>).<span class="title function_">attr</span>(<span class="string">&#x27;style&#x27;</span>, <span class="string">&#x27;width:&#x27;</span> + procent + <span class="string">&#x27;%&#x27;</span>).<span class="title function_">html</span>(procent + <span class="string">&#x27;%&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// onload文件上传成功事件</span></span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="property">upload</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                $(<span class="string">&#x27;#percent&#x27;</span>).<span class="title function_">removeClass</span>().<span class="title function_">addClass</span>(<span class="string">&#x27;progress-bar progress-bar-success&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 监听文件上传进度------------------------------------------------------------------</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="title function_">open</span>(<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;http://www.liulongbin.top:3006/api/upload/avatar&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="title function_">send</span>(fd);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 5.监听onreadystatechange事件</span></span></span><br><span class="line"><span class="language-javascript">            xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (xhr.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">var</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>);</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span> (data.<span class="property">status</span> === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="comment">// 上传成功</span></span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;上传成功&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#img&#x27;</span>).<span class="property">src</span> = <span class="string">&#x27;http://www.liulongbin.top:3006&#x27;</span> + data.<span class="property">url</span>;</span></span><br><span class="line"><span class="language-javascript">                    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                        <span class="comment">// 上传失败</span></span></span><br><span class="line"><span class="language-javascript">                        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;图片上传失败&#x27;</span> + data.<span class="property">message</span>);</span></span><br><span class="line"><span class="language-javascript">                    &#125;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="什么是Axios库"><a href="#什么是Axios库" class="headerlink" title="什么是Axios库"></a>什么是Axios库</h1><p><strong>1.什么是axios</strong></p>
-<blockquote>
-<p>Axios是专注于网络数据请求的库。<br>相比于原生的XMLHttpRequest对象，axios 简单易用。<br>相比于jQuery, axios 更加轻量化，只专注于网络数据请求。</p>
-</blockquote>
-<h2 id="发起get请求"><a href="#发起get请求" class="headerlink" title="发起get请求"></a>发起get请求</h2><p><img src="https://i.bmp.ovh/imgs/2022/06/24/7f26d3041bfe3351.png" alt="png"></p>
-<h2 id="发起post请求"><a href="#发起post请求" class="headerlink" title="发起post请求"></a>发起post请求</h2><p><img src="https://i.bmp.ovh/imgs/2022/06/24/7f26d3041bfe3351.png" alt="png"></p>
-<h2 id="Axios中的ajax请求"><a href="#Axios中的ajax请求" class="headerlink" title="Axios中的ajax请求"></a>Axios中的ajax请求</h2><h3 id="直接使用axios发起GET请求-类似于ajax中的-ajax"><a href="#直接使用axios发起GET请求-类似于ajax中的-ajax" class="headerlink" title="直接使用axios发起GET请求 类似于ajax中的$.ajax()"></a>直接使用axios发起GET请求 类似于ajax中的$.ajax()</h3><p><img src="https://i.bmp.ovh/imgs/2022/06/24/39b2bb46022a6ee5.png" alt="png"></p>
-<h3 id="直接使用axios发起POST请求-类似于ajax中的-ajax"><a href="#直接使用axios发起POST请求-类似于ajax中的-ajax" class="headerlink" title="直接使用axios发起POST请求 类似于ajax中的$.ajax()"></a>直接使用axios发起POST请求 类似于ajax中的$.ajax()</h3><p><img src="https://i.bmp.ovh/imgs/2022/06/24/d2d956e157587721.png" alt="png"></p>
-<h1 id="了解同源策略和跨域"><a href="#了解同源策略和跨域" class="headerlink" title="了解同源策略和跨域"></a>了解同源策略和跨域</h1><p><strong>1.什么是同源:</strong><br>如果两个页面的协议，域名和端口都相同，则两个页面具有相同的源。</p>
-<p>例如:下表给出了相对于<code>http://www.test.com/index.html</code>页面的同源检测:<br><code>http://www.test.com:80/index.html(默认端口80)</code></p>
-<p><strong>2.什么是同源策略:</strong><br>同源策略(英文全称Same origin policy) 是浏览器提供的一个安全功能。</p>
-<p>MDN官方给定的概念:同源策略限制了从同一个源加载的文档或脚本如何与来自另一个源的资源进行交互。 这是一个用于隔离潜在恶意文件的重要安全机制。</p>
-<p>通俗的理解:浏览器规定，A网站的JavaScript, 不允许和非同源的网站C之间，进行资源的交互</p>
-<blockquote>
-<p>例如:</p>
-<ol>
-<li>无法读取非同源网页的Cookie. LocalStorage 和IndexedDB</li>
-<li>无法接触非同源网页的DOM</li>
-<li>无法向非同源地址发送Ajax请求</li>
-</ol>
-</blockquote>
-<p><strong>什么是跨域:</strong></p>
-<blockquote>
-<p>同源指的是两个URL的协议、域名、端口-致，反之，则是跨域。<br>出现跨域的根本原因:浏览器的同源策略不允许非同源的URL之间进行资源的交互。<br>网页: <code>http://www.test.com/index.html</code><br>接口: <code>http://www.api.com/userlist</code></p>
-</blockquote>
-<p><strong>如何实现跨域数据请求:</strong></p>
-<blockquote>
-<p>现如今,实现跨域数据请求，最主要的两种解决方案，分别是JSONP和CORS.</p>
-</blockquote>
-<blockquote>
-<p><strong>JSONP</strong>:出现的早,兼容性好(兼容低版本IE)。是前端程序员为 了解决跨域问题，被迫想出来的一种临时解决方案。缺点是只支持GET请求,不支持POST请求。</p>
-</blockquote>
-<blockquote>
-<p><strong>CORS</strong>:出现的较晚，它是W3C标准，属于跨域Ajax请求的根本解决方案。支持GET和POST请求。缺点是不兼容某些低版本的浏览器。</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/06/27/AJAX/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1098,7 +566,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/25/my-firstBlog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
       <meta itemprop="name" content="FØund404">
       <meta itemprop="description" content="is not FOund">
     </span>
@@ -1218,7 +686,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="FØund404"
-      src="https://s3.bmp.ovh/imgs/2022/06/22/dbad4cd7d92cc373.png">
+      src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
   <p class="site-author-name" itemprop="name">FØund404</p>
   <div class="site-description" itemprop="description">is not FOund</div>
 </div>
@@ -1227,26 +695,27 @@
       <div class="site-state-item site-state-posts">
           <a href="/found404.io/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/found404.io/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/found404.io/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/Found-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Found-404" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/found404.io/2247124474@qq.com" title="E-Mail → 2247124474@qq.com"><i class="fab fa-qq fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -1277,10 +746,18 @@
   </span>
   <span class="author" itemprop="copyrightHolder">FØund404</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
+<span id="busuanzi_container_site_uv">
+  本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+
+
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
 
 
 
@@ -1309,8 +786,6 @@
 <script src="/found404.io/js/next-boot.js"></script>
 
 
-  <script defer src="/found404.io/lib/three/three.min.js"></script>
-    <script defer src="/found404.io/lib/three/three-waves.min.js"></script>
 
 
   
@@ -1318,20 +793,12 @@
 
 
 
+  
+<script src="/found404.io/js/local-search.js"></script>
 
 
-  <script>
-    (function(d, w, c) {
-      w.ChatraID = '<ChatraID>';
-      var s = d.createElement('script');
-      w[c] = w[c] || function() {
-        (w[c].q = w[c].q || []).push(arguments);
-      };
-      s.async = true;
-      s.src = 'https://call.chatra.io/chatra.js';
-      if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-  </script>
+
+
 
 
 
@@ -1344,6 +811,21 @@
   
 
   
+
+  
+
+<script type="text/javascript"
+color="77,77,77" opacity='0.7' zIndex="-2" count="180" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
 
 </body>
+
 </html>
