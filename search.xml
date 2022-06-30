@@ -80,25 +80,71 @@
 </blockquote>
 <h2 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/login&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_self&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单标签 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单域 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text &quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password &quot;</span> <span class="attr">name</span>=<span class="string">&quot; &quot;</span> <span class="attr">id</span>=<span class="string">&quot; &quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 表单提交 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;发送 &quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>form的属性:</strong></p>
-<blockquote>
-<ul>
-<li>action   &amp;emsp;&amp;emsp;规定当提交表单时候向何处发送表单数据  如果没有内容则默认当前URL地址</li>
-<li>target   &amp;emsp;&amp;emsp;_blank  &amp;emsp;&amp;emsp;在新窗口中打开</li>
-<li>&amp;emsp;&amp;emsp;_self  &amp;emsp;&amp;emsp;默认,在相同框架中打开</li>
-<li>&amp;emsp;&amp;emsp;_parent&amp;emsp;&amp;emsp;在父框架集中打开</li>
-<li>&amp;emsp;&amp;emsp;_top&amp;emsp;&amp;emsp;在整个窗口中打开</li>
-<li>&amp;emsp;&amp;emsp;framename    &amp;emsp;&amp;emsp;在指定的框架中打开</li>
-<li>method &amp;emsp;&amp;emsp;GET&#x2F;POST  &amp;emsp;&amp;emsp;默认为GET  </li>
-<li>&amp;emsp;&amp;emsp;get&amp;emsp;&amp;emsp;适合提交少量简单数据</li>
-<li>&amp;emsp;&amp;emsp;post&amp;emsp;&amp;emsp;适合提交大量复杂包含文件上传的数据</li>
-<li>enctype&amp;emsp;&amp;emsp;application&#x2F;x-www-form-urlencoded &amp;emsp;&amp;emsp;在发送前编码所有字符</li>
-<li>&amp;emsp;&amp;emsp;multipart&#x2F;form-data    &amp;emsp;&amp;emsp;部队字符编码 在使用包含文件上传控件的表单时必须使用该值(文件上传)</li>
-<li>&amp;emsp;&amp;emsp;text&#x2F;plain    &amp;emsp;&amp;emsp;空格转换为“+”加号 但不对特殊字符编码</li>
-<li>autocomplete&amp;emsp;&amp;emsp;on&amp;emsp;&amp;emsp;开启表单自动补全内容</li>
-<li>&amp;emsp;&amp;emsp;off&amp;emsp;&amp;emsp;关闭表单自动补全内容</li>
-</ul>
-</blockquote>
+<p><strong>form的属性:</strong><br><strong>action</strong>  规定当提交表单时候向何处发送表单数据  如果没有内容则默认当前URL地址</p>
+<table>
+<thead>
+<tr>
+<th align="center">target：</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">_blank</td>
+<td align="center">在新窗口中打开</td>
+</tr>
+<tr>
+<td align="center">_self</td>
+<td align="center">默认在相同框架中打开</td>
+</tr>
+<tr>
+<td align="center">_parent</td>
+<td align="center">在父框架集中打开</td>
+</tr>
+<tr>
+<td align="center">_top</td>
+<td align="center">在整个窗口中打开</td>
+</tr>
+<tr>
+<td align="center">framename</td>
+<td align="center">在指定的框架中打开</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">method:</th>
+<th align="center">GET&#x2F;POST</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">GET</td>
+<td align="center">get适合提交少量简单数据</td>
+</tr>
+<tr>
+<td align="center">POST</td>
+<td align="center">post适合提交大量复杂包含文件上传的数据</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">enctype:</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">application&#x2F;x-www-form-urlencoded</td>
+<td align="center">在发送前编码所有字符</td>
+</tr>
+<tr>
+<td align="center">multipart&#x2F;form-data</td>
+<td align="center">部队字符编码 在使用包含文件上传控件的表单时必须使用该值(文件上传)</td>
+</tr>
+<tr>
+<td align="center">text&#x2F;plain</td>
+<td align="center">空格转换为“+”加号 但不对特殊字符编码</td>
+</tr>
+</tbody></table>
 <h3 id="什么是表单的同步提交"><a href="#什么是表单的同步提交" class="headerlink" title="什么是表单的同步提交"></a>什么是表单的同步提交</h3><p>通过点击submit按钮 触发表单提交的操作 从而使页面跳转到action URL的行为叫做表单的同步提交:</p>
 <p><strong>同步提交缺点:</strong></p>
 <blockquote>
@@ -391,6 +437,29 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS函数</title>
+    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
+<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
+<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
+<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
+<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
+<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BOMplus</title>
     <url>/found404.io/2022/06/27/BOMplus/</url>
     <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
@@ -486,29 +555,6 @@
       </categories>
       <tags>
         <tag>BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS函数</title>
-    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
-<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
-<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
-<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
-<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
-<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -731,6 +777,71 @@
 ]]></content>
       <tags>
         <tag>Hello hexo!</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于This</title>
+    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
+    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
+<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
+<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
+<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
+<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象中的<strong>this</strong>指向它本身</li>
+<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
+</ul>
+<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
+<p><strong>new的整个过程：</strong></p>
+<ol>
+<li>new会在内存中创建一个新的空对像</li>
+<li>new会让this指向这个新对象</li>
+<li>执行构造函数中的代码</li>
+<li>return这个新对象</li>
+</ol>
+<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
+<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
+<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
+<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
+<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：实参</li>
+<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
+<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：数组或者伪数组（里面为实参）</li>
+<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
+<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数之后：实参</li>
+<li>返回值为一个新的函数</li>
+<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
+<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
+<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
+<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -1125,71 +1236,6 @@
       </categories>
       <tags>
         <tag>DOM BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于This</title>
-    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
-    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
-<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
-<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
-<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
-<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>对象中的<strong>this</strong>指向它本身</li>
-<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
-</ul>
-<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
-<p><strong>new的整个过程：</strong></p>
-<ol>
-<li>new会在内存中创建一个新的空对像</li>
-<li>new会让this指向这个新对象</li>
-<li>执行构造函数中的代码</li>
-<li>return这个新对象</li>
-</ol>
-<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
-<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
-<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
-<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
-<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：实参</li>
-<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
-<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：数组或者伪数组（里面为实参）</li>
-<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
-<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数之后：实参</li>
-<li>返回值为一个新的函数</li>
-<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
-<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
-<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
-<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
       </tags>
   </entry>
 </search>
