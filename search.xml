@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS函数</title>
-    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
-<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
-<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
-<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
-<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
-<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BOMplus</title>
     <url>/found404.io/2022/06/27/BOMplus/</url>
     <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
@@ -119,6 +96,29 @@
       </categories>
       <tags>
         <tag>BOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS函数</title>
+    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
+<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
+<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
+<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
+<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
+<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -660,6 +660,583 @@
       </tags>
   </entry>
   <entry>
+    <title>GIT</title>
+    <url>/found404.io/2022/06/27/GIT/</url>
+    <content><![CDATA[<h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
+<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
+<span id="more"></span>
+
+<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
+<ul>
+<li>直接记录快照，而非差异比较</li>
+<li>近乎所有操作都是本地执行</li>
+</ul>
+<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
+<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
+<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png" alt="img"></p>
+<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png" alt="img"></p>
+<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png" alt="img"></p>
+<ul>
+<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
+<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
+<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
+</ul>
+<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
+<p><strong>StagingArea</strong>	（暂存区）</p>
+<p>**.git directory(Repository)**（Git仓库）</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png" alt="img"></p>
+<p>基本的Git工作流程如下:</p>
+<p>①在工作区中修改文件</p>
+<p>②将你想要下次提交的更改进行暂存</p>
+<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png" alt="img"></p>
+<p>–golbal选项只需执行一次就可以永久生效</p>
+<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
+<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
+<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
+<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</verb></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
+<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
+<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
+<p>②从其它服务器克隆一个已存在的Git仓库</p>
+<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
+<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
+<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
+<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
+<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
+<p>文件，这些文件是Git仓库的必要组成部分。</p>
+<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
+<p>未跟踪	??</p>
+<p>已暂存  	A</p>
+<p>被修改	M</p>
+<p>被修改并且放入暂存	M </p>
+<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
+<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
+<p><strong>以精简的方式显示文件状态</strong></p>
+<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
+<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
+<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
+<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
+<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
+<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
+<p>提交成功后会显示如下信息：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
+<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
+<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
+<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
+<p><strong>但还没有放到暂存区。</strong></p>
+<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
+<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
+<p>是个多功能的命令，主要有如下3个功效:</p>
+<ol>
+<li>可以用它开始跟踪新文件</li>
+<li>把已跟踪的、且已修改的文件放到暂存区</li>
+<li>把有冲突的文件标记为已解决状态</li>
+</ol>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
+<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
+<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
+<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
+<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
+<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
+<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
+<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
+<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
+<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
+<p>文件.gitignore的格式规范如下: .</p>
+<p>①以  <strong>#开头</strong>  的是注释</p>
+<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
+<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
+<p>④以  <strong>!开头</strong>  表示取反</p>
+<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
+<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
+<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
+<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
+<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
+<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
+<p>所有0到9的数字)</p>
+<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
+<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
+<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
+<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
+<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
+<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
+<ol>
+<li><p>BSD (Berkeley Software Distribution)</p>
+</li>
+<li><p>Apache Licence 2.0</p>
+</li>
+<li><p>GPL ( GNU General Public License)</p>
+</li>
+<li><ol>
+<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
+<li>使用 GPL的最著名的软件项目是: Linux</li>
+</ol>
+</li>
+<li><p>LGPL (GNU Lesser General Public License)</p>
+</li>
+<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
+</li>
+<li><ol>
+<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
+<li>使用 MIT的软件项目有: jquery. Node.js</li>
+</ol>
+</li>
+</ol>
+<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
+<ul>
+<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
+<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
+<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
+</ul>
+<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
+<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
+<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
+<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
+<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
+<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
+<ol>
+<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
+<li>在你要上传的库中打开 Git Bash控制台</li>
+<li>依次输入官方提示的命令</li>
+<li>在弹出框中输入你的密钥</li>
+</ol>
+<p><strong>注意：要先在官网绑定令牌</strong></p>
+<p>绑定令牌的方式：</p>
+<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
+<p>2.在github官网个人设置中找到绑定令牌</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
+<p>3.选择new SSH key 添加绑定令牌</p>
+<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
+<p>关于密钥的生成：</p>
+<ol>
+<li><p>个人设置中的Developer settings</p>
+</li>
+<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
+</li>
+<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
+<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
+<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
+<p>原帖子：<a href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
+<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><strong>git remote rm origin</strong> 删除远程库</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
+<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
+<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
+<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
+<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
+<p>再次查看所关联的远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
+<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
+<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>my_firstBlog</title>
+    <url>/found404.io/2022/06/25/my-firstBlog/</url>
+    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
+<p>第一篇blog</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hello hexo!</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于This</title>
+    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
+    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
+<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
+<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
+<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
+<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象中的<strong>this</strong>指向它本身</li>
+<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
+</ul>
+<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
+<p><strong>new的整个过程：</strong></p>
+<ol>
+<li>new会在内存中创建一个新的空对像</li>
+<li>new会让this指向这个新对象</li>
+<li>执行构造函数中的代码</li>
+<li>return这个新对象</li>
+</ol>
+<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
+<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
+<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
+<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
+<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：实参</li>
+<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
+<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：数组或者伪数组（里面为实参）</li>
+<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
+<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数之后：实参</li>
+<li>返回值为一个新的函数</li>
+<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
+<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
+<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
+<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js</title>
+    <url>/found404.io/2022/06/30/Node-js/</url>
+    <content><![CDATA[<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p><strong>Node.js</strong>是一个基于Chrome V8引擎的JavaScript运行环境</p>
+<h2 id="Node-js中的JavaScript运行环境"><a href="#Node-js中的JavaScript运行环境" class="headerlink" title="Node.js中的JavaScript运行环境"></a>Node.js中的JavaScript运行环境</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655822357450-119a84ee-f87e-471f-adeb-96b9c664695e.png" alt="img"></p>
+<p>注意：</p>
+<ol>
+<li>浏览器是JavaScript的前端运行环境</li>
+<li>Node.js是JavaScript的后端运行环境</li>
+<li>Node.js中无法调用DOM和BOM等浏览器内置API</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="Node-js框架"><a href="#Node-js框架" class="headerlink" title="Node.js框架"></a>Node.js框架</h2><p>Node.js作为-个JavaScript的运行环境,仅仅提供了基础的功能和API。然而，基于Node.js提供的这些基础能，很多强大</p>
+<p>的工具和框架如雨后春笋，层出不穷,所以学会了Node.jis ，可以让前端程序员胜任更多的工作和岗位:</p>
+<p>①基于Express框架(<a href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a>) ，可以快速构建Web应用</p>
+<p>②基于Electron框架(<a href="https://electronjs.org/">https://electronjs.org/</a>) , 可以构建跨平台的桌面应用</p>
+<p>③基于restify框架<a href="http://restify.com/">http://restify.com/</a>) ，可以快速构建API接口项目</p>
+<p>④读写和操作数据库、创建实用的命令行工具辅助前端开发、etc..</p>
+<h1 id="关于终端"><a href="#关于终端" class="headerlink" title="关于终端"></a>关于终端</h1><p>转为开发人员设计，用于实现人机交互的一种方式。</p>
+<ul>
+<li>win+r 打开运行输入cmd打开终端</li>
+<li>在文件路径中输入cmd打开终端</li>
+<li>按住shift+右键有一个powershell终端</li>
+</ul>
+<p><strong>常用的终端命令：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">node -v</td>
+<td align="center">查看node.js版本</td>
+</tr>
+<tr>
+<td align="center">cd  &#x2F;</td>
+<td align="center">进入根目录</td>
+</tr>
+<tr>
+<td align="center">cd ..</td>
+<td align="center">去到上一层目录</td>
+</tr>
+<tr>
+<td align="center">f:</td>
+<td align="center">进入F盘</td>
+</tr>
+<tr>
+<td align="center">cls</td>
+<td align="center">清空终端</td>
+</tr>
+</tbody></table>
+<p><strong>终端快捷键：</strong></p>
+<ol>
+<li><strong>使用↑键可以快速定位到上一次执行的命令</strong></li>
+<li><strong>使用tab键能够快速补全路径</strong></li>
+<li><strong>使用esc键能够快速清空当前输入的命令</strong></li>
+</ol>
+<h1 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h1><p>fs模块是Node.js官方提供的，用来操作文件的模块，它提供了一系列的方法和属性。用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>**fs.readFile( )**方法，用来读取指定文件中的内容</li>
+<li>**fs.writeFile( )**方法，用来向指定文件中写入内容</li>
+</ul>
+<p>如果在javaScript代码中，使用fs模块来操作文件，则需要使用如下方式导入他：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655904379652-fb60eeb1-f9a9-4703-864e-e83eea12097f.png" alt="img"></p>
+<h2 id="fs-readFile-的语法格式-读取文件内容"><a href="#fs-readFile-的语法格式-读取文件内容" class="headerlink" title="fs.readFile()的语法格式      读取文件内容"></a>fs.readFile()的语法格式      <em>读取文件内容</em></h2><p>使用fs.readFile()方法，可以读取指定文件中的内容，语法格式如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/a205835e3c0951ef.png" alt="png"></p>
+<p>参数解读：</p>
+<ul>
+<li>参数1：<strong>必选</strong>参数，字符串，表示文件的路径。</li>
+<li>参数2：可选参数，表示以什么<strong>编码格式</strong>来读取文件。</li>
+<li>参数3：<strong>必选</strong>参数，文件读取完成后，通过回调函数拿到读取的结果。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs模块  来操作文件</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 调用fs.readFile()方法读取文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数1：读取文件的存放路径</span></span><br><span class="line"><span class="comment">// 参数2：读取文件时候采用的编码格式 一般默认指定utf8</span></span><br><span class="line"><span class="comment">// 参数3：回调函数，拿到读取失败和成功的结果 err dataStr</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./files/11.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1 打印失败的结果</span></span><br><span class="line">    <span class="comment">//如果读取成功，则err的值为null</span></span><br><span class="line">    <span class="comment">//如果读取失败，则err的值为错误对象 dataStr的值为undefined</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;----------&#x27;</span>);</span><br><span class="line">    <span class="comment">// 2.2 打印成功的结果</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>成功：</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e41f9d8c61cbe03b.png" alt="png"></p>
+<p><strong>失败：</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/58cc12468873bbe8.png" alt="png"></p>
+<p>优化写法：</p>
+<blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1a6b2b72ed2946a8.png" alt="png"></p>
+</blockquote>
+<h2 id="fs-writeFile-的语法格式-写入文件内容"><a href="#fs-writeFile-的语法格式-写入文件内容" class="headerlink" title="fs.writeFile( )的语法格式      写入文件内容"></a>fs.writeFile( )的语法格式      <em>写入文件内容</em></h2><p>使用fs.writeFile()方法，可以向指定文件中写入内容。语法格式如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/adf82be76daf111c.png" alt="png"></p>
+<p>参数解读：</p>
+<ul>
+<li>参数1：<strong>必选</strong>参数，指定一个文件路径的字符串，表示文件的存放路径。</li>
+<li>参数2：<strong>必选</strong>参数，表示要写入的内容。</li>
+<li>参数3：可选参数，表示以什么格式写入文件内容，默认utf8。</li>
+<li>参数4：<strong>必选</strong>参数，文件写入完成后的回调函数。</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs文件系统模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用fs.writeFile()方法，写入文件内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数1：表示文件的存放路径</span></span><br><span class="line"><span class="comment">//参数2：表示要写入的内容</span></span><br><span class="line"><span class="comment">//参数3：省略</span></span><br><span class="line"><span class="comment">//参数4：回调函数</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;f:/files/2.txt&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1如果文件写入成功，则err的值等于null</span></span><br><span class="line">    <span class="comment">// 2.2如果文件写入失败，则err的值等于一个错误对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>优化写法：</p>
+<blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/edd1798ffc5eec30.png" alt="png"></p>
+</blockquote>
+<h2 id="dirname解决路径拼接错误"><a href="#dirname解决路径拼接错误" class="headerlink" title="__dirname解决路径拼接错误"></a>__dirname解决路径拼接错误</h2><p>有时候出现路径拼接错误是因为提供了.&#x2F;或者..&#x2F;开头的相对路径导致</p>
+<blockquote>
+<p>解决方法:</p>
+<ul>
+<li>提供一个完整路径</li>
+<li>但是移植性差,不利用代码维护</li>
+<li>使用__dirname</li>
+<li>__dirname代表的是当前目录路径</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(__dirname + <span class="string">&#x27;/files/2.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取失败&#x27;</span> + err.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取成功&#x27;</span> + dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h1><blockquote>
+<p><strong>path模块</strong>是Node.js官方提供的,用来<strong>处理路径</strong>的模块.它提供了一系列的方法和属性,用来满足用户对路径的处理需求.</p>
+<p>例如:</p>
+<ul>
+<li>path.join()方法,用来<strong>将多个路径片段拼接成一个完整的路径字符串</strong></li>
+<li>path.basename()方法,用来从路径字符串中,将文件名解析出来</li>
+</ul>
+</blockquote>
+<p>如果要在JavaScript代码中使用path模块来处理路径,则需要使用如下方式导入他:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="path-join-的语法格式"><a href="#path-join-的语法格式" class="headerlink" title="path.join()的语法格式"></a>path.join()的语法格式</h2><p>使用path.join()方法,可以把多个路径片段拼接为完整的路径字符串,语法格式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">join</span>([...paths])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解读:</p>
+<ul>
+<li>..paths&lt; string &gt;路径片段的序列</li>
+<li>返回值:&lt; string &gt;</li>
+</ul>
+</blockquote>
+<p>代码示例:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/2883715f9505b5a9.png" alt="png"></p>
+<h2 id="path-basename-的语法格式"><a href="#path-basename-的语法格式" class="headerlink" title="path.basename()的语法格式"></a>path.basename()的语法格式</h2><p>使用path.basename()方法,可以获取路径中的最后一部分,经常通过这个方法获取路径中的文件名,语法格式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(path[,ext])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解读:</p>
+<ul>
+<li>path<code>&lt;string&gt;</code>必选参数,表示一个路径的字符串</li>
+<li>ext<code>&lt;string&gt;</code>可选参数,表示文件扩展名</li>
+<li>返回:<code>&lt;string&gt;</code>表示路径中的最后一部分</li>
+</ul>
+</blockquote>
+<p>示例代码：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e6b7240594ea3cf6.png" alt="png"></p>
+<h2 id="path-extname-代码示例"><a href="#path-extname-代码示例" class="headerlink" title="path.extname()代码示例"></a>path.extname()代码示例</h2><blockquote>
+<p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
+</blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/6f381844b033d682.png" alt="png"></p>
+<h1 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h1><blockquote>
+<p>什么是客户端？什么是服务器？</p>
+<ol>
+<li>在网络节点中，负责消耗资源的电脑，叫做<strong>客户端</strong></li>
+<li><u>负责对外提供网络资源的电脑</u>，叫做<strong>服务器</strong></li>
+</ol>
+</blockquote>
+<p>http模块是Node.js官方提供的，用来创建web服务器的模块，通过http模块提供的http.createServer()方法，就能方便把一台普通的电脑，变成一台web服务器，从而对外提供web资源服务。</p>
+<p>如果希望使用http模块创建Web服务器，则需要导入他：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="进一步理解http模块的作用"><a href="#进一步理解http模块的作用" class="headerlink" title="进一步理解http模块的作用"></a>进一步理解http模块的作用</h2><blockquote>
+<p>服务器和普通电脑的区别在于，服务器上安装了web服务器插件。例如：IIS，Apache等。通过安装这些服务器软件，就能把一台普通电脑变成一台web服务器。</p>
+</blockquote>
+<blockquote>
+<p>在node.js中我们不需要使用IIS、Apache等这些第三方web服务器软件，因为我们可以基于Node.js提供的http模块，通过几行代码就能轻松手写一个服务器软件，从而对外提供web服务。</p>
+</blockquote>
+<h2 id="服务器相关概念"><a href="#服务器相关概念" class="headerlink" title="服务器相关概念"></a>服务器相关概念</h2><h3 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1.IP地址"></a>1.IP地址</h3><p>IP地址就是互联网上每台计算机的唯-地址,因此IP地址具有唯一性。 如果把“个人电脑”比作”-台电话”，那么”IP地址”就相当于“电话号码”，只有在知道对方IP地址的前提下，才能与对应的电脑之间进行数据通信。</p>
+<p>IP地址的格式:通常用”点分十进制”表示成(a.b.c.d) 的形式，其中, a,b,c,d 都是0~255之间的十进制整数。例如:用点分十进表示的IP地址(192.168.1.1)</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>互联网中每台Web服务器，都有自己的IP地址，例如:大家可以在Windows的终端中运行ping www baidu.com命令,即可查看到百度服务器的IP地址。</li>
+<li>在开发期间，自己的电脑既是一台服务器, 也是-个客户端，为了方便测试，可以在自己的浏览器中输入127.0.0.1 这个IP地址,就能把自己的电脑当做一台服务 器进行访问了.</li>
+</ol>
+<h3 id="2-域名和域名服务器"><a href="#2-域名和域名服务器" class="headerlink" title="2.域名和域名服务器"></a>2.域名和域名服务器</h3><p>尽管IP地址能够唯-地标记网络上的计算机，但IP地址是一长串数字,不直观，而且不便于记忆，于是人们又发明了另一套字符型的地址方案，即所谓的域名(Domain Name)地址</p>
+<p>IP地址和域名是一对应的关系， 这份对应关系存放在一种叫做域名服务器(DNS, Domain name server)的电脑中。使用者只需通过好记的域名访问对应的服务器即可，对应的转换工作由域名服务器实现。因此，域名服务器就是提供IP地址和域名之间的转换服务的服务器。</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>单纯使用IP地址，互联网中的电脑也能够正常工作。但是有了域名的加持，能让互联网的世界变得更加方便。</li>
+<li>在开发测试期间，<strong>127.0.0.1</strong> 对应的域名是<strong>localhost</strong>,它们都代表我们自己的这台电脑，在使用效果上没有任何区别。</li>
+</ol>
+<h3 id="3-端口号"><a href="#3-端口号" class="headerlink" title="3.端口号"></a>3.端口号</h3><p>计算机中的端口号,就好像是现实生活中的门牌号一样。 通过门牌号,外卖小哥可以在整栋大楼众多的房间中，准确把外卖送到你的手中。<br>同样的道理，在一台电脑中,可以运行成百上千个web服务。每个web服务都对应-个唯的端口号. 客户端发送过来的网络请求,通过端口号,可以被准确地交给<strong>对应的web服务</strong>进行处理。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220628214815281.png" alt="image-20220628214815281"></p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>每个端口号不能同时被多个web服务器占用</li>
+<li>在实际运用中URL中的80端口可以被省略</li>
+</ol>
+<h2 id="创建最基本的web服务器"><a href="#创建最基本的web服务器" class="headerlink" title="创建最基本的web服务器"></a>创建最基本的web服务器</h2><p><strong>创建web服务器的基本步骤</strong></p>
+<blockquote>
+<ol>
+<li>导入http模块</li>
+<li>创建web服务器实例</li>
+<li>为服务器实例绑定<strong>require</strong>事件，<strong>监听客户端的请求</strong></li>
+<li>启动服务器</li>
+</ol>
+</blockquote>
+<h3 id="步骤1-导入http模块"><a href="#步骤1-导入http模块" class="headerlink" title="步骤1-导入http模块"></a>步骤1-导入http模块</h3><p>如果希望在自己电脑上创建一个web服务器，从而对外提供web服务，则需要导入http模块：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤2-创建web服务器实例"><a href="#步骤2-创建web服务器实例" class="headerlink" title="步骤2-创建web服务器实例"></a>步骤2-创建web服务器实例</h3><p>调用**http.sreateServer()**方法，即可快速创建一个web服务器实例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤3-为服务器实例绑定request事件"><a href="#步骤3-为服务器实例绑定request事件" class="headerlink" title="步骤3-为服务器实例绑定request事件"></a>步骤3-为服务器实例绑定request事件</h3><p>为服务器实例绑定request事件，即可监听客户端发送过来的网络请求：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用服务器实例的.on()方法，为服务器绑定一个request事件</span></span><br><span class="line">sever.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 只要有客户端来请求我们的服务器，就会触发request事件，从而调用这个事件处理函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Someone visit our web server&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收了客户端的请求，就会调用server.on()为服务器绑定的request事件处理函数。如果想在事件处理函数中，访问与客户端相关的<strong>数据</strong>或者<strong>属性</strong>，就可以使用如下方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// req 是请求对象，它包含了与客户端相关的数据和属性，例如：</span></span><br><span class="line">    <span class="comment">// req.url 是客户端请求的url地址</span></span><br><span class="line">    <span class="comment">// req.method 是客户端的method请求类型</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;req.url&#125;</span>,and request method is <span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request使事件处理函数中，如果想访问与服务器相关的<strong>数据</strong>或<strong>属性</strong>，可以使用如下方式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//req是请求对象，包含了与客户端相关的数据和属性</span></span><br><span class="line">    <span class="comment">// req.url是客户端请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// req.method是客户端请求的method类型</span></span><br><span class="line">    <span class="keyword">const</span> method = req.<span class="property">method</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;url&#125;</span>,and request method is <span class="subst">$&#123;method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>当调用res.end()方法，向客户端发送中文内容时候，就会出现乱码问题，此时，需要手动设置内容的编码格式：</p>
+<p><code>res.setHeader(&#39;Content-Type&#39;, &#39;text/html;charset=utf-8&#39;);</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发送内容包含中文</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`你请求的url地址是<span class="subst">$&#123;req.url&#125;</span>,请求的method类型是<span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="comment">// 调用res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/html;charset=utf-8&#x27;)方法</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤4-启动服务器"><a href="#步骤4-启动服务器" class="headerlink" title="步骤4-启动服务器"></a>步骤4-启动服务器</h3><p>调用服务器实例的.listen()方法，即可启动当前的web服务器实例:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用server.listen(端口号，callback回调函数)方法，即可启动web服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">80</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http server running at http//127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="根据不同的url相应不同的html内容"><a href="#根据不同的url相应不同的html内容" class="headerlink" title="根据不同的url相应不同的html内容"></a>根据不同的url相应不同的html内容</h2><p><strong>核心实现步骤：</strong></p>
+<ol>
+<li>获取<strong>请求的url地址</strong></li>
+<li>设置<strong>默认的响应内容</strong>为<u>404 Not found</u></li>
+<li>判断用户请求的是否为**&#x2F;<strong>或</strong>&#x2F;index.html**首页</li>
+<li>判断用户请求的是否为**&#x2F;about.html**关于页面</li>
+<li>设置<strong>Content-Type响应头</strong>,防止中文乱码</li>
+<li>使用**res.end( )**把内容响应给客户端</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 获取请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// 2. 设置默认的响应内容为&lt;u&gt;404 Not found&lt;/u&gt;</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`&lt;h1&gt;404 Not Found&lt;/h1&gt;`</span>;</span><br><span class="line">    <span class="comment">// 3. 判断用户请求的是否为/或/index.html首页</span></span><br><span class="line">    <span class="comment">// 4. 判断用户请求的是否为/about.html关于页面</span></span><br><span class="line">    <span class="keyword">if</span> (url === <span class="string">&#x27;/&#x27;</span> || url === <span class="string">&#x27;/index.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;首页&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">&#x27;/about.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;关于页面&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 5. 设置Content-Type响应头,防止中文乱码</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 6. 使用res.end( )把内容响应给客户端</span></span><br><span class="line">    res.<span class="title function_">end</span>(content);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 4. 启动服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1:8080&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="什么是模块化？"><a href="#什么是模块化？" class="headerlink" title="什么是模块化？"></a>什么是模块化？</h2><p><strong>模块化</strong>是指解决一个复杂问题时，自顶向下逐层<strong>把系统划分为若干模块的过程</strong>。对整个系统来说，<strong>模块是可以组合，分解，更换的单元</strong>。</p>
+<p>编程领域中的模块化，就是遵守固定的规则，把一个大文件拆分成独立并相互依赖的多个小模块：</p>
+<blockquote>
+<p>把代码进行模块化拆分的好处：</p>
+<ol>
+<li>提高了代码的<strong>复用性</strong></li>
+<li>提高了代码的<strong>可维护性</strong></li>
+<li>可以实现<strong>按需加载</strong></li>
+</ol>
+</blockquote>
+<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><p><strong>模块化规范</strong>就是对代码进行模块化的拆分与组合时，需要遵循的那些规则。</p>
+<p>例如：</p>
+<ul>
+<li>使用什么样的语法格式来<em>引入模块</em></li>
+<li>在模块中使用什么样的语法格式<em>向外暴露成员</em></li>
+</ul>
+<p><strong>模块化的好处</strong>：大家都遵循同样的模块化规范写代码，降低了沟通的成本，极大方便了各个模块之间的相互调用，利人利己。</p>
+<h2 id="Node-js中模块的分类"><a href="#Node-js中模块的分类" class="headerlink" title="Node.js中模块的分类"></a>Node.js中模块的分类</h2><p>Node.js中根据模块来源的不同，将模块分为了3大类，分别是：</p>
+<ul>
+<li><strong>内置模块</strong>（内置模块是Node.js官方提供的，例如：fs，path，http等）</li>
+<li><strong>自定义模块</strong>（用户创建的每个js文件，都是自定义模块）</li>
+<li><strong>第三方模块</strong>（由第三方开发出来的模块，并非官方提供的内置模块，也不用用户创建的自定义模块。使用前要先下载）</li>
+</ul>
+<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><p>使用强大的require()方法，可以加在需要的内置模块，用户自定义模块，第三方模块进行使用。例如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630212456568.png" alt="image-20220630212456568"></p>
+<p><strong>注意：</strong>使用require()方法加载其他模块时候，会执行被加载模块中的代码。</p>
+<h2 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a>Node.js中的模块作用域</h2><h3 id="1-什么是模块作用域"><a href="#1-什么是模块作用域" class="headerlink" title="1.什么是模块作用域"></a>1.什么是模块作用域</h3><p>和函数作用域类似，在自定义模块中定义的变量，方法。等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做<strong>模块作用域</strong>；</p>
+<h3 id="2-模块作用域的好处"><a href="#2-模块作用域的好处" class="headerlink" title="2.模块作用域的好处"></a>2.模块作用域的好处</h3><p><strong>防止全局变量污染的问题</strong></p>
+<p>当两个js文件中有相同的变量，就会造成全局变量污染</p>
+<h3 id="3-向外共享模块作用域中的成员"><a href="#3-向外共享模块作用域中的成员" class="headerlink" title="3.向外共享模块作用域中的成员"></a>3.向外共享模块作用域中的成员</h3><h4 id="1-module对象"><a href="#1-module对象" class="headerlink" title="1.module对象"></a>1.module对象</h4><p>在每个.js自定义模块中都有一个module对象，它里面存储了和当前模块有关的信息，打印如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630221520536.png" alt="image-20220630221520536"></p>
+<h4 id="2-module-exports对象"><a href="#2-module-exports对象" class="headerlink" title="2.module.exports对象"></a>2.module.exports对象</h4><p>在自定义模块中。可以使用module.exports对象，将模块内的成员共享出去，供外界使用。</p>
+<p>外界用**require( )**方法导入自定义模块时候。得到的就是module.exports所指向对象。</p>
+<blockquote>
+<p>如果想要公开自定义模块中的一部分，可以直接为<code>module.exports</code>添加属性或者方法</p>
+</blockquote>
+<h4 id="3-共享成员时的注意点"><a href="#3-共享成员时的注意点" class="headerlink" title="3.共享成员时的注意点"></a>3.共享成员时的注意点</h4><p>使用require()方法导入模块时，导入的结果，<strong>永远以module.exports指向的对象为准。</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630223935943.png" alt="image-20220630223935943"></p>
+<h4 id="4-exports对象"><a href="#4-exports对象" class="headerlink" title="4.exports对象"></a>4.exports对象</h4><p>由于module.exports单词写起来比较复杂，为了简化向外共享成员的代码，Node 提供了<strong>exports</strong> 对象。默认情况下，<strong>exports 和module.exports指向同一个对象</strong>。最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630224730743.png" alt="image-20220630224730743"></p>
+<p>注意：</p>
+<p>最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
+<blockquote>
+<p>如果module.exports这个老六偷偷指向了另一个对象，则以它为准😅</p>
+</blockquote>
+<h4 id="5-exports和module-exports的使用误区"><a href="#5-exports和module-exports的使用误区" class="headerlink" title="5.exports和module.exports的使用误区"></a>5.exports和module.exports的使用误区</h4><p>时刻谨记，<strong>require()<strong>模块时,得到的永远是</strong>module exports</strong>指向的对象:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630225810795.png" alt="image-20220630225810795"></p>
+<h2 id="Node-js中的模块化规范"><a href="#Node-js中的模块化规范" class="headerlink" title="Node.js中的模块化规范"></a>Node.js中的模块化规范</h2>]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DOM/BOM</title>
     <url>/found404.io/2022/06/28/DOM-BOM/</url>
     <content><![CDATA[<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654481169296-a0d9f0e5-2ada-4ab7-ad58-2d34e893cd58.png" alt="img"></p>
@@ -1051,581 +1628,6 @@
       </categories>
       <tags>
         <tag>DOM BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIT</title>
-    <url>/found404.io/2022/06/27/GIT/</url>
-    <content><![CDATA[<h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
-<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
-<span id="more"></span>
-
-<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
-<ul>
-<li>直接记录快照，而非差异比较</li>
-<li>近乎所有操作都是本地执行</li>
-</ul>
-<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
-<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
-<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png" alt="img"></p>
-<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png" alt="img"></p>
-<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png" alt="img"></p>
-<ul>
-<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
-<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
-<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
-</ul>
-<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
-<p><strong>StagingArea</strong>	（暂存区）</p>
-<p>**.git directory(Repository)**（Git仓库）</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png" alt="img"></p>
-<p>基本的Git工作流程如下:</p>
-<p>①在工作区中修改文件</p>
-<p>②将你想要下次提交的更改进行暂存</p>
-<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
-<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png" alt="img"></p>
-<p>–golbal选项只需执行一次就可以永久生效</p>
-<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
-<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
-<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</verb></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
-<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
-<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
-<p>②从其它服务器克隆一个已存在的Git仓库</p>
-<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
-<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
-<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
-<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
-<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
-<p>文件，这些文件是Git仓库的必要组成部分。</p>
-<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
-<p>未跟踪	??</p>
-<p>已暂存  	A</p>
-<p>被修改	M</p>
-<p>被修改并且放入暂存	M </p>
-<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
-<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
-<p><strong>以精简的方式显示文件状态</strong></p>
-<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
-<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
-<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
-<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
-<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
-<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
-<p>提交成功后会显示如下信息：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
-<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
-<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
-<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
-<p><strong>但还没有放到暂存区。</strong></p>
-<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
-<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
-<p>是个多功能的命令，主要有如下3个功效:</p>
-<ol>
-<li>可以用它开始跟踪新文件</li>
-<li>把已跟踪的、且已修改的文件放到暂存区</li>
-<li>把有冲突的文件标记为已解决状态</li>
-</ol>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
-<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
-<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
-<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
-<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
-<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
-<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
-<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
-<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
-<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
-<p>文件.gitignore的格式规范如下: .</p>
-<p>①以  <strong>#开头</strong>  的是注释</p>
-<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
-<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
-<p>④以  <strong>!开头</strong>  表示取反</p>
-<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
-<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
-<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
-<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
-<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
-<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
-<p>所有0到9的数字)</p>
-<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
-<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
-<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
-<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
-<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
-<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
-<ol>
-<li><p>BSD (Berkeley Software Distribution)</p>
-</li>
-<li><p>Apache Licence 2.0</p>
-</li>
-<li><p>GPL ( GNU General Public License)</p>
-</li>
-<li><ol>
-<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
-<li>使用 GPL的最著名的软件项目是: Linux</li>
-</ol>
-</li>
-<li><p>LGPL (GNU Lesser General Public License)</p>
-</li>
-<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
-</li>
-<li><ol>
-<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
-<li>使用 MIT的软件项目有: jquery. Node.js</li>
-</ol>
-</li>
-</ol>
-<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
-<ul>
-<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
-<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
-<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
-</ul>
-<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
-<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
-<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
-<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
-<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
-<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
-<ol>
-<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
-<li>在你要上传的库中打开 Git Bash控制台</li>
-<li>依次输入官方提示的命令</li>
-<li>在弹出框中输入你的密钥</li>
-</ol>
-<p><strong>注意：要先在官网绑定令牌</strong></p>
-<p>绑定令牌的方式：</p>
-<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
-<p>2.在github官网个人设置中找到绑定令牌</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
-<p>3.选择new SSH key 添加绑定令牌</p>
-<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
-<p>关于密钥的生成：</p>
-<ol>
-<li><p>个人设置中的Developer settings</p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
-</li>
-</ol>
-<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
-<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
-<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
-<p>原帖子：<a href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
-<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><strong>git remote rm origin</strong> 删除远程库</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
-<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
-<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
-<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
-<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
-<p>再次查看所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
-<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
-<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my_firstBlog</title>
-    <url>/found404.io/2022/06/25/my-firstBlog/</url>
-    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
-<p>第一篇blog</p>
-<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hello hexo!</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于This</title>
-    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
-    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
-<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
-<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
-<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
-<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>对象中的<strong>this</strong>指向它本身</li>
-<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
-</ul>
-<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
-<p><strong>new的整个过程：</strong></p>
-<ol>
-<li>new会在内存中创建一个新的空对像</li>
-<li>new会让this指向这个新对象</li>
-<li>执行构造函数中的代码</li>
-<li>return这个新对象</li>
-</ol>
-<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
-<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
-<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
-<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
-<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：实参</li>
-<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
-<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：数组或者伪数组（里面为实参）</li>
-<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
-<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数之后：实参</li>
-<li>返回值为一个新的函数</li>
-<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
-<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
-<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
-<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Node.js</title>
-    <url>/found404.io/2022/06/30/Node-js/</url>
-    <content><![CDATA[<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p><strong>Node.js</strong>是一个基于Chrome V8引擎的JavaScript运行环境</p>
-<h2 id="Node-js中的JavaScript运行环境"><a href="#Node-js中的JavaScript运行环境" class="headerlink" title="Node.js中的JavaScript运行环境"></a>Node.js中的JavaScript运行环境</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655822357450-119a84ee-f87e-471f-adeb-96b9c664695e.png" alt="img"></p>
-<p>注意：</p>
-<ol>
-<li>浏览器是JavaScript的前端运行环境</li>
-<li>Node.js是JavaScript的后端运行环境</li>
-<li>Node.js中无法调用DOM和BOM等浏览器内置API</li>
-</ol>
-<h2 id="Node-js框架"><a href="#Node-js框架" class="headerlink" title="Node.js框架"></a>Node.js框架</h2><p>Node.js作为-个JavaScript的运行环境,仅仅提供了基础的功能和API。然而，基于Node.js提供的这些基础能，很多强大</p>
-<p>的工具和框架如雨后春笋，层出不穷,所以学会了Node.jis ，可以让前端程序员胜任更多的工作和岗位:</p>
-<p>①基于Express框架(<a href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a>) ，可以快速构建Web应用</p>
-<p>②基于Electron框架(<a href="https://electronjs.org/">https://electronjs.org/</a>) , 可以构建跨平台的桌面应用</p>
-<p>③基于restify框架<a href="http://restify.com/">http://restify.com/</a>) ，可以快速构建API接口项目</p>
-<p>④读写和操作数据库、创建实用的命令行工具辅助前端开发、etc..</p>
-<h1 id="关于终端"><a href="#关于终端" class="headerlink" title="关于终端"></a>关于终端</h1><p>转为开发人员设计，用于实现人机交互的一种方式。</p>
-<ul>
-<li>win+r 打开运行输入cmd打开终端</li>
-<li>在文件路径中输入cmd打开终端</li>
-<li>按住shift+右键有一个powershell终端</li>
-</ul>
-<p><strong>常用的终端命令：</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">node -v</td>
-<td align="center">查看node.js版本</td>
-</tr>
-<tr>
-<td align="center">cd  &#x2F;</td>
-<td align="center">进入根目录</td>
-</tr>
-<tr>
-<td align="center">cd ..</td>
-<td align="center">去到上一层目录</td>
-</tr>
-<tr>
-<td align="center">f:</td>
-<td align="center">进入F盘</td>
-</tr>
-<tr>
-<td align="center">cls</td>
-<td align="center">清空终端</td>
-</tr>
-</tbody></table>
-<p><strong>终端快捷键：</strong></p>
-<ol>
-<li><strong>使用↑键可以快速定位到上一次执行的命令</strong></li>
-<li><strong>使用tab键能够快速补全路径</strong></li>
-<li><strong>使用esc键能够快速清空当前输入的命令</strong></li>
-</ol>
-<h1 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h1><p>fs模块是Node.js官方提供的，用来操作文件的模块，它提供了一系列的方法和属性。用来满足用户对文件的操作需求。</p>
-<p>例如：</p>
-<ul>
-<li>**fs.readFile( )**方法，用来读取指定文件中的内容</li>
-<li>**fs.writeFile( )**方法，用来向指定文件中写入内容</li>
-</ul>
-<p>如果在javaScript代码中，使用fs模块来操作文件，则需要使用如下方式导入他：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655904379652-fb60eeb1-f9a9-4703-864e-e83eea12097f.png" alt="img"></p>
-<h2 id="fs-readFile-的语法格式-读取文件内容"><a href="#fs-readFile-的语法格式-读取文件内容" class="headerlink" title="fs.readFile()的语法格式      读取文件内容"></a>fs.readFile()的语法格式      <em>读取文件内容</em></h2><p>使用fs.readFile()方法，可以读取指定文件中的内容，语法格式如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/a205835e3c0951ef.png" alt="png"></p>
-<p>参数解读：</p>
-<ul>
-<li>参数1：<strong>必选</strong>参数，字符串，表示文件的路径。</li>
-<li>参数2：可选参数，表示以什么<strong>编码格式</strong>来读取文件。</li>
-<li>参数3：<strong>必选</strong>参数，文件读取完成后，通过回调函数拿到读取的结果。</li>
-</ul>
-<p>示例代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs模块  来操作文件</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 调用fs.readFile()方法读取文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数1：读取文件的存放路径</span></span><br><span class="line"><span class="comment">// 参数2：读取文件时候采用的编码格式 一般默认指定utf8</span></span><br><span class="line"><span class="comment">// 参数3：回调函数，拿到读取失败和成功的结果 err dataStr</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./files/11.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1 打印失败的结果</span></span><br><span class="line">    <span class="comment">//如果读取成功，则err的值为null</span></span><br><span class="line">    <span class="comment">//如果读取失败，则err的值为错误对象 dataStr的值为undefined</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;----------&#x27;</span>);</span><br><span class="line">    <span class="comment">// 2.2 打印成功的结果</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>成功：</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e41f9d8c61cbe03b.png" alt="png"></p>
-<p><strong>失败：</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/58cc12468873bbe8.png" alt="png"></p>
-<p>优化写法：</p>
-<blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1a6b2b72ed2946a8.png" alt="png"></p>
-</blockquote>
-<h2 id="fs-writeFile-的语法格式-写入文件内容"><a href="#fs-writeFile-的语法格式-写入文件内容" class="headerlink" title="fs.writeFile( )的语法格式      写入文件内容"></a>fs.writeFile( )的语法格式      <em>写入文件内容</em></h2><p>使用fs.writeFile()方法，可以向指定文件中写入内容。语法格式如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/adf82be76daf111c.png" alt="png"></p>
-<p>参数解读：</p>
-<ul>
-<li>参数1：<strong>必选</strong>参数，指定一个文件路径的字符串，表示文件的存放路径。</li>
-<li>参数2：<strong>必选</strong>参数，表示要写入的内容。</li>
-<li>参数3：可选参数，表示以什么格式写入文件内容，默认utf8。</li>
-<li>参数4：<strong>必选</strong>参数，文件写入完成后的回调函数。</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs文件系统模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用fs.writeFile()方法，写入文件内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数1：表示文件的存放路径</span></span><br><span class="line"><span class="comment">//参数2：表示要写入的内容</span></span><br><span class="line"><span class="comment">//参数3：省略</span></span><br><span class="line"><span class="comment">//参数4：回调函数</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;f:/files/2.txt&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1如果文件写入成功，则err的值等于null</span></span><br><span class="line">    <span class="comment">// 2.2如果文件写入失败，则err的值等于一个错误对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>优化写法：</p>
-<blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/edd1798ffc5eec30.png" alt="png"></p>
-</blockquote>
-<h2 id="dirname解决路径拼接错误"><a href="#dirname解决路径拼接错误" class="headerlink" title="__dirname解决路径拼接错误"></a>__dirname解决路径拼接错误</h2><p>有时候出现路径拼接错误是因为提供了.&#x2F;或者..&#x2F;开头的相对路径导致</p>
-<blockquote>
-<p>解决方法:</p>
-<ul>
-<li>提供一个完整路径</li>
-<li>但是移植性差,不利用代码维护</li>
-<li>使用__dirname</li>
-<li>__dirname代表的是当前目录路径</li>
-</ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(__dirname + <span class="string">&#x27;/files/2.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取失败&#x27;</span> + err.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取成功&#x27;</span> + dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h1><blockquote>
-<p><strong>path模块</strong>是Node.js官方提供的,用来<strong>处理路径</strong>的模块.它提供了一系列的方法和属性,用来满足用户对路径的处理需求.</p>
-<p>例如:</p>
-<ul>
-<li>path.join()方法,用来<strong>将多个路径片段拼接成一个完整的路径字符串</strong></li>
-<li>path.basename()方法,用来从路径字符串中,将文件名解析出来</li>
-</ul>
-</blockquote>
-<p>如果要在JavaScript代码中使用path模块来处理路径,则需要使用如下方式导入他:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="path-join-的语法格式"><a href="#path-join-的语法格式" class="headerlink" title="path.join()的语法格式"></a>path.join()的语法格式</h2><p>使用path.join()方法,可以把多个路径片段拼接为完整的路径字符串,语法格式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">join</span>([...paths])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数解读:</p>
-<ul>
-<li>..paths&lt; string &gt;路径片段的序列</li>
-<li>返回值:&lt; string &gt;</li>
-</ul>
-</blockquote>
-<p>代码示例:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/2883715f9505b5a9.png" alt="png"></p>
-<h2 id="path-basename-的语法格式"><a href="#path-basename-的语法格式" class="headerlink" title="path.basename()的语法格式"></a>path.basename()的语法格式</h2><p>使用path.basename()方法,可以获取路径中的最后一部分,经常通过这个方法获取路径中的文件名,语法格式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(path[,ext])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数解读:</p>
-<ul>
-<li>path<code>&lt;string&gt;</code>必选参数,表示一个路径的字符串</li>
-<li>ext<code>&lt;string&gt;</code>可选参数,表示文件扩展名</li>
-<li>返回:<code>&lt;string&gt;</code>表示路径中的最后一部分</li>
-</ul>
-</blockquote>
-<p>示例代码：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e6b7240594ea3cf6.png" alt="png"></p>
-<h2 id="path-extname-代码示例"><a href="#path-extname-代码示例" class="headerlink" title="path.extname()代码示例"></a>path.extname()代码示例</h2><blockquote>
-<p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
-</blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/6f381844b033d682.png" alt="png"></p>
-<h1 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h1><blockquote>
-<p>什么是客户端？什么是服务器？</p>
-<ol>
-<li>在网络节点中，负责消耗资源的电脑，叫做<strong>客户端</strong></li>
-<li><u>负责对外提供网络资源的电脑</u>，叫做<strong>服务器</strong></li>
-</ol>
-</blockquote>
-<p>http模块是Node.js官方提供的，用来创建web服务器的模块，通过http模块提供的http.createServer()方法，就能方便把一台普通的电脑，变成一台web服务器，从而对外提供web资源服务。</p>
-<p>如果希望使用http模块创建Web服务器，则需要导入他：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="进一步理解http模块的作用"><a href="#进一步理解http模块的作用" class="headerlink" title="进一步理解http模块的作用"></a>进一步理解http模块的作用</h2><blockquote>
-<p>服务器和普通电脑的区别在于，服务器上安装了web服务器插件。例如：IIS，Apache等。通过安装这些服务器软件，就能把一台普通电脑变成一台web服务器。</p>
-</blockquote>
-<blockquote>
-<p>在node.js中我们不需要使用IIS、Apache等这些第三方web服务器软件，因为我们可以基于Node.js提供的http模块，通过几行代码就能轻松手写一个服务器软件，从而对外提供web服务。</p>
-</blockquote>
-<h2 id="服务器相关概念"><a href="#服务器相关概念" class="headerlink" title="服务器相关概念"></a>服务器相关概念</h2><h3 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1.IP地址"></a>1.IP地址</h3><p>IP地址就是互联网上每台计算机的唯-地址,因此IP地址具有唯一性。 如果把“个人电脑”比作”-台电话”，那么”IP地址”就相当于“电话号码”，只有在知道对方IP地址的前提下，才能与对应的电脑之间进行数据通信。</p>
-<p>IP地址的格式:通常用”点分十进制”表示成(a.b.c.d) 的形式，其中, a,b,c,d 都是0~255之间的十进制整数。例如:用点分十进表示的IP地址(192.168.1.1)</p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>互联网中每台Web服务器，都有自己的IP地址，例如:大家可以在Windows的终端中运行ping www baidu.com命令,即可查看到百度服务器的IP地址。</li>
-<li>在开发期间，自己的电脑既是一台服务器, 也是-个客户端，为了方便测试，可以在自己的浏览器中输入127.0.0.1 这个IP地址,就能把自己的电脑当做一台服务 器进行访问了.</li>
-</ol>
-<h3 id="2-域名和域名服务器"><a href="#2-域名和域名服务器" class="headerlink" title="2.域名和域名服务器"></a>2.域名和域名服务器</h3><p>尽管IP地址能够唯-地标记网络上的计算机，但IP地址是一长串数字,不直观，而且不便于记忆，于是人们又发明了另一套字符型的地址方案，即所谓的域名(Domain Name)地址</p>
-<p>IP地址和域名是一对应的关系， 这份对应关系存放在一种叫做域名服务器(DNS, Domain name server)的电脑中。使用者只需通过好记的域名访问对应的服务器即可，对应的转换工作由域名服务器实现。因此，域名服务器就是提供IP地址和域名之间的转换服务的服务器。</p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>单纯使用IP地址，互联网中的电脑也能够正常工作。但是有了域名的加持，能让互联网的世界变得更加方便。</li>
-<li>在开发测试期间，<strong>127.0.0.1</strong> 对应的域名是<strong>localhost</strong>,它们都代表我们自己的这台电脑，在使用效果上没有任何区别。</li>
-</ol>
-<h3 id="3-端口号"><a href="#3-端口号" class="headerlink" title="3.端口号"></a>3.端口号</h3><p>计算机中的端口号,就好像是现实生活中的门牌号一样。 通过门牌号,外卖小哥可以在整栋大楼众多的房间中，准确把外卖送到你的手中。<br>同样的道理，在一台电脑中,可以运行成百上千个web服务。每个web服务都对应-个唯的端口号. 客户端发送过来的网络请求,通过端口号,可以被准确地交给<strong>对应的web服务</strong>进行处理。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220628214815281.png" alt="image-20220628214815281"></p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>每个端口号不能同时被多个web服务器占用</li>
-<li>在实际运用中URL中的80端口可以被省略</li>
-</ol>
-<h2 id="创建最基本的web服务器"><a href="#创建最基本的web服务器" class="headerlink" title="创建最基本的web服务器"></a>创建最基本的web服务器</h2><p><strong>创建web服务器的基本步骤</strong></p>
-<blockquote>
-<ol>
-<li>导入http模块</li>
-<li>创建web服务器实例</li>
-<li>为服务器实例绑定<strong>require</strong>事件，<strong>监听客户端的请求</strong></li>
-<li>启动服务器</li>
-</ol>
-</blockquote>
-<h3 id="步骤1-导入http模块"><a href="#步骤1-导入http模块" class="headerlink" title="步骤1-导入http模块"></a>步骤1-导入http模块</h3><p>如果希望在自己电脑上创建一个web服务器，从而对外提供web服务，则需要导入http模块：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤2-创建web服务器实例"><a href="#步骤2-创建web服务器实例" class="headerlink" title="步骤2-创建web服务器实例"></a>步骤2-创建web服务器实例</h3><p>调用**http.sreateServer()**方法，即可快速创建一个web服务器实例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤3-为服务器实例绑定request事件"><a href="#步骤3-为服务器实例绑定request事件" class="headerlink" title="步骤3-为服务器实例绑定request事件"></a>步骤3-为服务器实例绑定request事件</h3><p>为服务器实例绑定request事件，即可监听客户端发送过来的网络请求：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用服务器实例的.on()方法，为服务器绑定一个request事件</span></span><br><span class="line">sever.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 只要有客户端来请求我们的服务器，就会触发request事件，从而调用这个事件处理函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Someone visit our web server&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收了客户端的请求，就会调用server.on()为服务器绑定的request事件处理函数。如果想在事件处理函数中，访问与客户端相关的<strong>数据</strong>或者<strong>属性</strong>，就可以使用如下方法：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// req 是请求对象，它包含了与客户端相关的数据和属性，例如：</span></span><br><span class="line">    <span class="comment">// req.url 是客户端请求的url地址</span></span><br><span class="line">    <span class="comment">// req.method 是客户端的method请求类型</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;req.url&#125;</span>,and request method is <span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request使事件处理函数中，如果想访问与服务器相关的<strong>数据</strong>或<strong>属性</strong>，可以使用如下方式：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//req是请求对象，包含了与客户端相关的数据和属性</span></span><br><span class="line">    <span class="comment">// req.url是客户端请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// req.method是客户端请求的method类型</span></span><br><span class="line">    <span class="keyword">const</span> method = req.<span class="property">method</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;url&#125;</span>,and request method is <span class="subst">$&#123;method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>当调用res.end()方法，向客户端发送中文内容时候，就会出现乱码问题，此时，需要手动设置内容的编码格式：</p>
-<p><code>res.setHeader(&#39;Content-Type&#39;, &#39;text/html;charset=utf-8&#39;);</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发送内容包含中文</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`你请求的url地址是<span class="subst">$&#123;req.url&#125;</span>,请求的method类型是<span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="comment">// 调用res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/html;charset=utf-8&#x27;)方法</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤4-启动服务器"><a href="#步骤4-启动服务器" class="headerlink" title="步骤4-启动服务器"></a>步骤4-启动服务器</h3><p>调用服务器实例的.listen()方法，即可启动当前的web服务器实例:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用server.listen(端口号，callback回调函数)方法，即可启动web服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">80</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http server running at http//127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="根据不同的url相应不同的html内容"><a href="#根据不同的url相应不同的html内容" class="headerlink" title="根据不同的url相应不同的html内容"></a>根据不同的url相应不同的html内容</h2><p><strong>核心实现步骤：</strong></p>
-<ol>
-<li>获取<strong>请求的url地址</strong></li>
-<li>设置<strong>默认的响应内容</strong>为<u>404 Not found</u></li>
-<li>判断用户请求的是否为**&#x2F;<strong>或</strong>&#x2F;index.html**首页</li>
-<li>判断用户请求的是否为**&#x2F;about.html**关于页面</li>
-<li>设置<strong>Content-Type响应头</strong>,防止中文乱码</li>
-<li>使用**res.end( )**把内容响应给客户端</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 获取请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// 2. 设置默认的响应内容为&lt;u&gt;404 Not found&lt;/u&gt;</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`&lt;h1&gt;404 Not Found&lt;/h1&gt;`</span>;</span><br><span class="line">    <span class="comment">// 3. 判断用户请求的是否为/或/index.html首页</span></span><br><span class="line">    <span class="comment">// 4. 判断用户请求的是否为/about.html关于页面</span></span><br><span class="line">    <span class="keyword">if</span> (url === <span class="string">&#x27;/&#x27;</span> || url === <span class="string">&#x27;/index.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;首页&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">&#x27;/about.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;关于页面&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 5. 设置Content-Type响应头,防止中文乱码</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 6. 使用res.end( )把内容响应给客户端</span></span><br><span class="line">    res.<span class="title function_">end</span>(content);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 4. 启动服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1:8080&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="什么是模块化？"><a href="#什么是模块化？" class="headerlink" title="什么是模块化？"></a>什么是模块化？</h2><p><strong>模块化</strong>是指解决一个复杂问题时，自顶向下逐层<strong>把系统划分为若干模块的过程</strong>。对整个系统来说，<strong>模块是可以组合，分解，更换的单元</strong>。</p>
-<p>编程领域中的模块化，就是遵守固定的规则，把一个大文件拆分成独立并相互依赖的多个小模块：</p>
-<blockquote>
-<p>把代码进行模块化拆分的好处：</p>
-<ol>
-<li>提高了代码的<strong>复用性</strong></li>
-<li>提高了代码的<strong>可维护性</strong></li>
-<li>可以实现<strong>按需加载</strong></li>
-</ol>
-</blockquote>
-<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><p><strong>模块化规范</strong>就是对代码进行模块化的拆分与组合时，需要遵循的那些规则。</p>
-<p>例如：</p>
-<ul>
-<li>使用什么样的语法格式来<em>引入模块</em></li>
-<li>在模块中使用什么样的语法格式<em>向外暴露成员</em></li>
-</ul>
-<p><strong>模块化的好处</strong>：大家都遵循同样的模块化规范写代码，降低了沟通的成本，极大方便了各个模块之间的相互调用，利人利己。</p>
-<h2 id="Node-js中模块的分类"><a href="#Node-js中模块的分类" class="headerlink" title="Node.js中模块的分类"></a>Node.js中模块的分类</h2><p>Node.js中根据模块来源的不同，将模块分为了3大类，分别是：</p>
-<ul>
-<li><strong>内置模块</strong>（内置模块是Node.js官方提供的，例如：fs，path，http等）</li>
-<li><strong>自定义模块</strong>（用户创建的每个js文件，都是自定义模块）</li>
-<li><strong>第三方模块</strong>（由第三方开发出来的模块，并非官方提供的内置模块，也不用用户创建的自定义模块。使用前要先下载）</li>
-</ul>
-<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><p>使用强大的require()方法，可以加在需要的内置模块，用户自定义模块，第三方模块进行使用。例如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630212456568.png" alt="image-20220630212456568"></p>
-<p><strong>注意：</strong>使用require()方法加载其他模块时候，会执行被加载模块中的代码。</p>
-<h2 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a>Node.js中的模块作用域</h2><h3 id="1-什么是模块作用域"><a href="#1-什么是模块作用域" class="headerlink" title="1.什么是模块作用域"></a>1.什么是模块作用域</h3><p>和函数作用域类似，在自定义模块中定义的变量，方法。等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做<strong>模块作用域</strong>；</p>
-<h3 id="2-模块作用域的好处"><a href="#2-模块作用域的好处" class="headerlink" title="2.模块作用域的好处"></a>2.模块作用域的好处</h3><p><strong>防止全局变量污染的问题</strong></p>
-<p>当两个js文件中有相同的变量，就会造成全局变量污染</p>
-<h3 id="3-向外共享模块作用域中的成员"><a href="#3-向外共享模块作用域中的成员" class="headerlink" title="3.向外共享模块作用域中的成员"></a>3.向外共享模块作用域中的成员</h3><h4 id="1-module对象"><a href="#1-module对象" class="headerlink" title="1.module对象"></a>1.module对象</h4><p>在每个.js自定义模块中都有一个module对象，它里面存储了和当前模块有关的信息，打印如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630221520536.png" alt="image-20220630221520536"></p>
-<h4 id="2-module-exports对象"><a href="#2-module-exports对象" class="headerlink" title="2.module.exports对象"></a>2.module.exports对象</h4><p>在自定义模块中。可以使用module.exports对象，将模块内的成员共享出去，供外界使用。</p>
-<p>外界用**require( )**方法导入自定义模块时候。得到的就是module.exports所指向对象。</p>
-<blockquote>
-<p>如果想要公开自定义模块中的一部分，可以直接为<code>module.exports</code>添加属性或者方法</p>
-</blockquote>
-<h4 id="3-共享成员时的注意点"><a href="#3-共享成员时的注意点" class="headerlink" title="3.共享成员时的注意点"></a>3.共享成员时的注意点</h4><p>使用require()方法导入模块时，导入的结果，<strong>永远以module.exports指向的对象为准。</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630223935943.png" alt="image-20220630223935943"></p>
-<h4 id="4-exports对象"><a href="#4-exports对象" class="headerlink" title="4.exports对象"></a>4.exports对象</h4><p>由于module.exports单词写起来比较复杂，为了简化向外共享成员的代码，Node 提供了<strong>exports</strong> 对象。默认情况下，<strong>exports 和module.exports指向同一个对象</strong>。最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630224730743.png" alt="image-20220630224730743"></p>
-<p>注意：</p>
-<p>最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
-<blockquote>
-<p>如果module.exports这个老六偷偷指向了另一个对象，则以它为准😅</p>
-</blockquote>
-<h4 id="5-exports和module-exports的使用误区"><a href="#5-exports和module-exports的使用误区" class="headerlink" title="5.exports和module.exports的使用误区"></a>5.exports和module.exports的使用误区</h4><p>时刻谨记，<strong>require()<strong>模块时,得到的永远是</strong>module exports</strong>指向的对象:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630225810795.png" alt="image-20220630225810795"></p>
-<h2 id="Node-js中的模块化规范"><a href="#Node-js中的模块化规范" class="headerlink" title="Node.js中的模块化规范"></a>Node.js中的模块化规范</h2>]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>Node.js</tag>
       </tags>
   </entry>
 </search>
