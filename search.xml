@@ -1,6 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS函数</title>
+    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
+<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
+<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
+<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
+<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
+<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BOMplus</title>
+    <url>/found404.io/2022/06/27/BOMplus/</url>
+    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
+<span id="more"></span>
+
+<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
+<table>
+<thead>
+<tr>
+<th align="center">location对象属性</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.href</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">返回路径</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">返回参数</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">返回片段 #后面内容，常用于链接锚点</td>
+</tr>
+<tr>
+<td align="center">location.protocol</td>
+<td align="center">返回协议</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">location对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign()</td>
+<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
+</tr>
+<tr>
+<td align="center">location.replace()</td>
+<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
+</tr>
+<tr>
+<td align="center">location.reload()</td>
+<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
+<table>
+<thead>
+<tr>
+<th align="center">history对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">back()</td>
+<td align="center">可以后退功能</td>
+</tr>
+<tr>
+<td align="center">forward()</td>
+<td align="center">前进功能</td>
+</tr>
+<tr>
+<td align="center">go(参数)</td>
+<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>BOM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AJAX</title>
     <url>/found404.io/2022/06/27/AJAX/</url>
     <content><![CDATA[<h1 id="基于jQuery的AJAX"><a href="#基于jQuery的AJAX" class="headerlink" title="基于jQuery的AJAX"></a>基于jQuery的AJAX</h1><h2 id="URL地址组成部分"><a href="#URL地址组成部分" class="headerlink" title="URL地址组成部分"></a>URL地址组成部分</h2><blockquote>
@@ -437,124 +558,15 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS函数</title>
-    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
-<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
-<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
-<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
-<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
-<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>my_firstBlog</title>
+    <url>/found404.io/2022/06/25/my-firstBlog/</url>
+    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
+<p>第一篇blog</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
+</blockquote>
 ]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
       <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BOMplus</title>
-    <url>/found404.io/2022/06/27/BOMplus/</url>
-    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
-<span id="more"></span>
-
-<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
-<table>
-<thead>
-<tr>
-<th align="center">location对象属性</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">返回路径</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">返回参数</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">返回片段 #后面内容，常用于链接锚点</td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">返回协议</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">location对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign()</td>
-<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
-</tr>
-<tr>
-<td align="center">location.replace()</td>
-<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
-</tr>
-<tr>
-<td align="center">location.reload()</td>
-<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
-<table>
-<thead>
-<tr>
-<th align="center">history对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">back()</td>
-<td align="center">可以后退功能</td>
-</tr>
-<tr>
-<td align="center">forward()</td>
-<td align="center">前进功能</td>
-</tr>
-<tr>
-<td align="center">go(参数)</td>
-<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>BOM</tag>
+        <tag>Hello hexo!</tag>
       </tags>
   </entry>
   <entry>
@@ -765,18 +777,6 @@
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my_firstBlog</title>
-    <url>/found404.io/2022/06/25/my-firstBlog/</url>
-    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
-<p>第一篇blog</p>
-<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hello hexo!</tag>
       </tags>
   </entry>
   <entry>
