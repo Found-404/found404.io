@@ -1,127 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>BOMplus</title>
-    <url>/found404.io/2022/06/27/BOMplus/</url>
-    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
-<span id="more"></span>
-
-<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
-<table>
-<thead>
-<tr>
-<th align="center">location对象属性</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">返回路径</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">返回参数</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">返回片段 #后面内容，常用于链接锚点</td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">返回协议</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">location对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign()</td>
-<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
-</tr>
-<tr>
-<td align="center">location.replace()</td>
-<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
-</tr>
-<tr>
-<td align="center">location.reload()</td>
-<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
-<table>
-<thead>
-<tr>
-<th align="center">history对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">back()</td>
-<td align="center">可以后退功能</td>
-</tr>
-<tr>
-<td align="center">forward()</td>
-<td align="center">前进功能</td>
-</tr>
-<tr>
-<td align="center">go(参数)</td>
-<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS函数</title>
-    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
-<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
-<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
-<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
-<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
-<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AJAX</title>
     <url>/found404.io/2022/06/27/AJAX/</url>
     <content><![CDATA[<h1 id="基于jQuery的AJAX"><a href="#基于jQuery的AJAX" class="headerlink" title="基于jQuery的AJAX"></a>基于jQuery的AJAX</h1><h2 id="URL地址组成部分"><a href="#URL地址组成部分" class="headerlink" title="URL地址组成部分"></a>URL地址组成部分</h2><blockquote>
@@ -558,6 +437,439 @@
       </tags>
   </entry>
   <entry>
+    <title>BOMplus</title>
+    <url>/found404.io/2022/06/27/BOMplus/</url>
+    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
+<span id="more"></span>
+
+<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
+<table>
+<thead>
+<tr>
+<th align="center">location对象属性</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.href</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">返回路径</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">返回参数</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">返回片段 #后面内容，常用于链接锚点</td>
+</tr>
+<tr>
+<td align="center">location.protocol</td>
+<td align="center">返回协议</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">location对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign()</td>
+<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
+</tr>
+<tr>
+<td align="center">location.replace()</td>
+<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
+</tr>
+<tr>
+<td align="center">location.reload()</td>
+<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
+<table>
+<thead>
+<tr>
+<th align="center">history对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">back()</td>
+<td align="center">可以后退功能</td>
+</tr>
+<tr>
+<td align="center">forward()</td>
+<td align="center">前进功能</td>
+</tr>
+<tr>
+<td align="center">go(参数)</td>
+<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>BOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS函数</title>
+    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
+<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
+<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
+<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
+<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
+<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES6新特性</title>
+    <url>/found404.io/2022/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
+<ol>
+<li>变量不能重复声明</li>
+<li>块级作用域</li>
+<li>不存在变量提升</li>
+<li>不影响作用域链</li>
+</ol>
+</blockquote>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><blockquote>
+<ol>
+<li>一定要赋初始值</li>
+<li>一般常量是用大写（潜规则）</li>
+<li>常量的值不能修改</li>
+<li>块级作用域</li>
+<li>对于数组和对象的元素修改，不算是对常量的修改，不会报错</li>
+</ol>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><blockquote>
+<p>ES6 允许按照一定模式从数组和对象中提取值,对变量进行赋值这被称为<strong>结构赋值</strong></p>
+</blockquote>
+<p><strong>数组的结构：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.数组的结构</span></span><br><span class="line"><span class="keyword">const</span> f4 = [<span class="string">&#x27;小沈阳&#x27;</span>, <span class="string">&#x27;刘能&#x27;</span>, <span class="string">&#x27;赵四&#x27;</span>, <span class="string">&#x27;宋小宝&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> [xiao, liu, zhao, song] = f4;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(xiao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(liu);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(zhao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象的结构：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">     name,</span><br><span class="line">     age,</span><br><span class="line">     xiaopin</span><br><span class="line">&#125; = zhao;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(xiaopin);</span><br><span class="line">   <span class="title function_">xiaopin</span>();</span><br></pre></td></tr></table></figure>
+
+<p>相当于 zhao.xiaopin(); 替换成了 xiaopin( );不用重复书写zhao.</p>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>不同于es5中的字符串用+拼接，es6的模板字符串可以使用&#96;&#96;符号和${变量名}进行拼接</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;沈腾&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;玛丽&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;魏翔&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;/ul&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.变量拼接</span></span><br><span class="line"><span class="keyword">let</span> lovest = <span class="string">&#x27;魏翔&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> out = <span class="string">`将<span class="subst">$&#123;lovest&#125;</span>替换成lovest`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(out);</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法"></a>对象的简化写法</h2><blockquote>
+<p>ES6 允许在大括号内直接写入变量和函数 作为对象的属性和方法，这样的书写更加简洁</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;尚硅谷&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我可以改变你&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> school = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="comment">//旧的写法:</span></span><br><span class="line">    <span class="comment">// import: function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;声明方法&#x27;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// es6写法:</span></span><br><span class="line">    <span class="keyword">import</span> () &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;声明方法&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(school);</span><br></pre></td></tr></table></figure>
+
+<h2 id="箭头函数以及声明特点🏹🏹"><a href="#箭头函数以及声明特点🏹🏹" class="headerlink" title="箭头函数以及声明特点🏹🏹"></a>箭头函数以及声明特点🏹🏹</h2><blockquote>
+<p>es6 允许使用[箭头] (&#x3D;&gt;) 定义函数.</p>
+</blockquote>
+<p><strong>声明一个函数：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">let</span> reslut = <span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(reslut); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>this是静态的,this始终是指向函数声明时所在作用域下的this的值（其父级作用域的this）</li>
+<li>不能做为构造实例化对象  就是无法构造函数</li>
+<li>不能使用arguments 变量</li>
+</ol>
+<h3 id="箭头函数的简写"><a href="#箭头函数的简写" class="headerlink" title="箭头函数的简写"></a>箭头函数的简写</h3><p><strong>(1)省略小括号,当形参有且只有一个时候</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">add</span> = n =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> n + n;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">1</span>)); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>(2)省略花括号,当代码只有一条语句时候,此时return必须省略</strong></p>
+<p>而且语句的执行结果就是函数的返回值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n * n;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">pow</span>(<span class="number">9</span>)); <span class="comment">//81</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="箭头函数的this指向问题"><a href="#箭头函数的this指向问题" class="headerlink" title="箭头函数的this指向问题"></a>箭头函数的this指向问题</h3><p>this是静态的,this始终是指向函数声明时所在作用域下的this的值<strong>（其父级作用域的this）</strong></p>
+<p>何为父级作用域的this，一个简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;id&#x27;</span>, <span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">    <span class="comment">// setTimeout(function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;id&#x27;, this.id);</span></span><br><span class="line">    <span class="comment">// &#125;, 500)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> id = <span class="number">10</span>;</span><br><span class="line">foo.<span class="title function_">call</span>(&#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">50</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><em>箭头函数</em>的结果是50</p>
+</li>
+<li><p><em>普通函数</em>的结果是10</p>
+</li>
+</ul>
+<p><strong>foo.call(  )<strong>方法改变了foo函数的this指向，定时器中的函数this指向的是window，所以普通函数的</strong>this.id</strong>为window下的10。而箭头函数因为foo函数的this改变使得其this也改变成了对象**{id:50}**</p>
+<h2 id="函数参数的默认值和rest参数"><a href="#函数参数的默认值和rest参数" class="headerlink" title="函数参数的默认值和rest参数"></a>函数参数的默认值和rest参数</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><blockquote>
+<p>ES6 允许给函数参数赋值初始值</p>
+</blockquote>
+<ol>
+<li>形参初始值  具有默认值的参数  一般位置要靠后(潜规则)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b, c = <span class="number">2</span></span>) &#123; <span class="comment">//此处给形参设置默认值</span></span><br><span class="line">    <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line"><span class="comment">//当没有第三个实参传入时,可以在形参中设置默认值,否则就是NaN</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>与结构赋值结合</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">connect</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">    host,</span></span><br><span class="line"><span class="params">    username,</span></span><br><span class="line"><span class="params">    password,</span></span><br><span class="line"><span class="params">    port</span></span><br><span class="line"><span class="params">&#125;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(host);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(username);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(password);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(port);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">connect</span>(&#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">username</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3306</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>es6 引入 <strong>rest</strong> 参数 用于获取函数的实参 用来替代<strong>arguments</strong></p>
+<p>es5获取函数实参的方法是 <strong>arguments</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// rest 参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">date</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args); <span class="comment">//filter some every map方法</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">date</span>(<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>); <span class="comment">//数组</span></span><br></pre></td></tr></table></figure>
+
+<p>rest参数 必须 放在<strong>参数末尾</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//rest参数 必须 放在参数最后</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">a, b, ...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p><strong>[…] <strong>扩展运算符能将[数组]转换为逗号分割的</strong>[参数序列]</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个数组 ... </span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// [&#x27;黑&#x27;, &#x27;白&#x27;, &#x27;灰&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...colors); <span class="comment">// 黑 白 灰</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展运算符的运用"><a href="#扩展运算符的运用" class="headerlink" title="扩展运算符的运用"></a>扩展运算符的运用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//1. 数组的合并 黑 白 灰</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> anSe = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> liangSe = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;黄&#x27;</span>, <span class="string">&#x27;绿&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//老方法 使用concat拼接数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// const heBing = anSe.concat(liangSe);</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> heBing = [...anSe, ...liangSe];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(heBing);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//2.数组的克隆</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q1 = [<span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;M&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q2 = [...q1];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(q2);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//3.将伪数组转换为真正的数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divs = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divs); <span class="comment">//此时还为伪数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divArr = [...divs]; <span class="comment">//转换</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divArr);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>es6 js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GIT</title>
+    <url>/found404.io/2022/06/27/GIT/</url>
+    <content><![CDATA[<h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
+<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
+<span id="more"></span>
+
+<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
+<ul>
+<li>直接记录快照，而非差异比较</li>
+<li>近乎所有操作都是本地执行</li>
+</ul>
+<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
+<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
+<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png" alt="img"></p>
+<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png" alt="img"></p>
+<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png" alt="img"></p>
+<ul>
+<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
+<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
+<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
+</ul>
+<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
+<p><strong>StagingArea</strong>	（暂存区）</p>
+<p>**.git directory(Repository)**（Git仓库）</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png" alt="img"></p>
+<p>基本的Git工作流程如下:</p>
+<p>①在工作区中修改文件</p>
+<p>②将你想要下次提交的更改进行暂存</p>
+<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png" alt="img"></p>
+<p>–golbal选项只需执行一次就可以永久生效</p>
+<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
+<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
+<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
+<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</verb></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
+<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
+<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
+<p>②从其它服务器克隆一个已存在的Git仓库</p>
+<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
+<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
+<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
+<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
+<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
+<p>文件，这些文件是Git仓库的必要组成部分。</p>
+<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
+<p>未跟踪	??</p>
+<p>已暂存  	A</p>
+<p>被修改	M</p>
+<p>被修改并且放入暂存	M </p>
+<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
+<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
+<p><strong>以精简的方式显示文件状态</strong></p>
+<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
+<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
+<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
+<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
+<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
+<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
+<p>提交成功后会显示如下信息：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
+<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
+<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
+<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
+<p><strong>但还没有放到暂存区。</strong></p>
+<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
+<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
+<p>是个多功能的命令，主要有如下3个功效:</p>
+<ol>
+<li>可以用它开始跟踪新文件</li>
+<li>把已跟踪的、且已修改的文件放到暂存区</li>
+<li>把有冲突的文件标记为已解决状态</li>
+</ol>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
+<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
+<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
+<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
+<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
+<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
+<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
+<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
+<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
+<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
+<p>文件.gitignore的格式规范如下: .</p>
+<p>①以  <strong>#开头</strong>  的是注释</p>
+<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
+<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
+<p>④以  <strong>!开头</strong>  表示取反</p>
+<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
+<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
+<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
+<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
+<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
+<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
+<p>所有0到9的数字)</p>
+<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
+<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
+<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
+<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
+<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
+<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
+<ol>
+<li><p>BSD (Berkeley Software Distribution)</p>
+</li>
+<li><p>Apache Licence 2.0</p>
+</li>
+<li><p>GPL ( GNU General Public License)</p>
+</li>
+<li><ol>
+<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
+<li>使用 GPL的最著名的软件项目是: Linux</li>
+</ol>
+</li>
+<li><p>LGPL (GNU Lesser General Public License)</p>
+</li>
+<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
+</li>
+<li><ol>
+<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
+<li>使用 MIT的软件项目有: jquery. Node.js</li>
+</ol>
+</li>
+</ol>
+<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
+<ul>
+<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
+<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
+<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
+</ul>
+<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
+<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
+<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
+<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
+<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
+<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
+<ol>
+<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
+<li>在你要上传的库中打开 Git Bash控制台</li>
+<li>依次输入官方提示的命令</li>
+<li>在弹出框中输入你的密钥</li>
+</ol>
+<p><strong>注意：要先在官网绑定令牌</strong></p>
+<p>绑定令牌的方式：</p>
+<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
+<p>2.在github官网个人设置中找到绑定令牌</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
+<p>3.选择new SSH key 添加绑定令牌</p>
+<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
+<p>关于密钥的生成：</p>
+<ol>
+<li><p>个人设置中的Developer settings</p>
+</li>
+<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
+</li>
+<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
+<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
+<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
+<p>原帖子：<a href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
+<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><strong>git remote rm origin</strong> 删除远程库</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
+<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
+<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
+<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
+<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
+<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
+<p>再次查看所关联的远程仓库：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
+<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
+<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DOM/BOM</title>
     <url>/found404.io/2022/06/28/DOM-BOM/</url>
     <content><![CDATA[<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654481169296-a0d9f0e5-2ada-4ab7-ad58-2d34e893cd58.png" alt="img"></p>
@@ -949,318 +1261,6 @@
       </categories>
       <tags>
         <tag>DOM BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ES6新特性</title>
-    <url>/found404.io/2022/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
-<ol>
-<li>变量不能重复声明</li>
-<li>块级作用域</li>
-<li>不存在变量提升</li>
-<li>不影响作用域链</li>
-</ol>
-</blockquote>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><blockquote>
-<ol>
-<li>一定要赋初始值</li>
-<li>一般常量是用大写（潜规则）</li>
-<li>常量的值不能修改</li>
-<li>块级作用域</li>
-<li>对于数组和对象的元素修改，不算是对常量的修改，不会报错</li>
-</ol>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><blockquote>
-<p>ES6 允许按照一定模式从数组和对象中提取值,对变量进行赋值这被称为<strong>结构赋值</strong></p>
-</blockquote>
-<p><strong>数组的结构：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.数组的结构</span></span><br><span class="line"><span class="keyword">const</span> f4 = [<span class="string">&#x27;小沈阳&#x27;</span>, <span class="string">&#x27;刘能&#x27;</span>, <span class="string">&#x27;赵四&#x27;</span>, <span class="string">&#x27;宋小宝&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> [xiao, liu, zhao, song] = f4;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(xiao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(liu);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(zhao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);</span><br></pre></td></tr></table></figure>
-
-<p><strong>对象的结构：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">     name,</span><br><span class="line">     age,</span><br><span class="line">     xiaopin</span><br><span class="line">&#125; = zhao;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(xiaopin);</span><br><span class="line">   <span class="title function_">xiaopin</span>();</span><br></pre></td></tr></table></figure>
-
-<p>相当于 zhao.xiaopin(); 替换成了 xiaopin( );不用重复书写zhao.</p>
-<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>不同于es5中的字符串用+拼接，es6的模板字符串可以使用&#96;&#96;符号和${变量名}进行拼接</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;沈腾&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;玛丽&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;魏翔&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;/ul&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.变量拼接</span></span><br><span class="line"><span class="keyword">let</span> lovest = <span class="string">&#x27;魏翔&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> out = <span class="string">`将<span class="subst">$&#123;lovest&#125;</span>替换成lovest`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(out);</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法"></a>对象的简化写法</h2><blockquote>
-<p>ES6 允许在大括号内直接写入变量和函数 作为对象的属性和方法，这样的书写更加简洁</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;尚硅谷&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我可以改变你&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> school = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="comment">//旧的写法:</span></span><br><span class="line">    <span class="comment">// import: function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;声明方法&#x27;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// es6写法:</span></span><br><span class="line">    <span class="keyword">import</span> () &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;声明方法&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(school);</span><br></pre></td></tr></table></figure>
-
-<h2 id="箭头函数以及声明特点🏹🏹"><a href="#箭头函数以及声明特点🏹🏹" class="headerlink" title="箭头函数以及声明特点🏹🏹"></a>箭头函数以及声明特点🏹🏹</h2><blockquote>
-<p>es6 允许使用[箭头] (&#x3D;&gt;) 定义函数.</p>
-</blockquote>
-<p><strong>声明一个函数：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">let</span> reslut = <span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(reslut); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>this是静态的,this始终是指向函数声明时所在作用域下的this的值（其父级作用域的this）</li>
-<li>不能做为构造实例化对象  就是无法构造函数</li>
-<li>不能使用arguments 变量</li>
-</ol>
-<h3 id="箭头函数的简写"><a href="#箭头函数的简写" class="headerlink" title="箭头函数的简写"></a>箭头函数的简写</h3><p><strong>(1)省略小括号,当形参有且只有一个时候</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">add</span> = n =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> n + n;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">1</span>)); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>(2)省略花括号,当代码只有一条语句时候,此时return必须省略</strong></p>
-<p>而且语句的执行结果就是函数的返回值</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n * n;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">pow</span>(<span class="number">9</span>)); <span class="comment">//81</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="箭头函数的this指向问题"><a href="#箭头函数的this指向问题" class="headerlink" title="箭头函数的this指向问题"></a>箭头函数的this指向问题</h3><p>this是静态的,this始终是指向函数声明时所在作用域下的this的值<strong>（其父级作用域的this）</strong></p>
-<p>何为父级作用域的this，一个简单的例子：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;id&#x27;</span>, <span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">    <span class="comment">// setTimeout(function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;id&#x27;, this.id);</span></span><br><span class="line">    <span class="comment">// &#125;, 500)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> id = <span class="number">10</span>;</span><br><span class="line">foo.<span class="title function_">call</span>(&#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">50</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><em>箭头函数</em>的结果是50</p>
-</li>
-<li><p><em>普通函数</em>的结果是10</p>
-</li>
-</ul>
-<p><strong>foo.call(  )<strong>方法改变了foo函数的this指向，定时器中的函数this指向的是window，所以普通函数的</strong>this.id</strong>为window下的10。而箭头函数因为foo函数的this改变使得其this也改变成了对象**{id:50}**</p>
-<h2 id="函数参数的默认值和rest参数"><a href="#函数参数的默认值和rest参数" class="headerlink" title="函数参数的默认值和rest参数"></a>函数参数的默认值和rest参数</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><blockquote>
-<p>ES6 允许给函数参数赋值初始值</p>
-</blockquote>
-<ol>
-<li>形参初始值  具有默认值的参数  一般位置要靠后(潜规则)</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b, c = <span class="number">2</span></span>) &#123; <span class="comment">//此处给形参设置默认值</span></span><br><span class="line">    <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line"><span class="comment">//当没有第三个实参传入时,可以在形参中设置默认值,否则就是NaN</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>与结构赋值结合</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">connect</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">    host,</span></span><br><span class="line"><span class="params">    username,</span></span><br><span class="line"><span class="params">    password,</span></span><br><span class="line"><span class="params">    port</span></span><br><span class="line"><span class="params">&#125;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(host);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(username);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(password);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(port);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">connect</span>(&#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">username</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3306</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>es6 引入 <strong>rest</strong> 参数 用于获取函数的实参 用来替代<strong>arguments</strong></p>
-<p>es5获取函数实参的方法是 <strong>arguments</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// rest 参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">date</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args); <span class="comment">//filter some every map方法</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">date</span>(<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>); <span class="comment">//数组</span></span><br></pre></td></tr></table></figure>
-
-<p>rest参数 必须 放在<strong>参数末尾</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//rest参数 必须 放在参数最后</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">a, b, ...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p><strong>[…] <strong>扩展运算符能将[数组]转换为逗号分割的</strong>[参数序列]</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个数组 ... </span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// [&#x27;黑&#x27;, &#x27;白&#x27;, &#x27;灰&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...colors); <span class="comment">// 黑 白 灰</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="扩展运算符的运用"><a href="#扩展运算符的运用" class="headerlink" title="扩展运算符的运用"></a>扩展运算符的运用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//1. 数组的合并 黑 白 灰</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> anSe = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> liangSe = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;黄&#x27;</span>, <span class="string">&#x27;绿&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//老方法 使用concat拼接数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// const heBing = anSe.concat(liangSe);</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> heBing = [...anSe, ...liangSe];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(heBing);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//2.数组的克隆</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q1 = [<span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;M&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q2 = [...q1];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(q2);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//3.将伪数组转换为真正的数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divs = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divs); <span class="comment">//此时还为伪数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divArr = [...divs]; <span class="comment">//转换</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divArr);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>es6 js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIT</title>
-    <url>/found404.io/2022/06/27/GIT/</url>
-    <content><![CDATA[<h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
-<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
-<span id="more"></span>
-
-<h2 id="Git的特性"><a href="#Git的特性" class="headerlink" title="Git的特性"></a>Git的特性</h2><p>Git之所以快速和高效，主要依赖于它的如下两个特性:</p>
-<ul>
-<li>直接记录快照，而非差异比较</li>
-<li>近乎所有操作都是本地执行</li>
-</ul>
-<h2 id="Git记录快照"><a href="#Git记录快照" class="headerlink" title="Git记录快照"></a>Git记录快照</h2><p>Git快照是在原有文件版本的基础.上重新生成一份新的文件，类似于备份。为了效率,如果文件没有修改，Git不再重新存储该文件,而是只保留一个链接指向之前存储的文件。</p>
-<p><strong>缺点：占用空间资源大</strong>	<em><strong>空间换时间</strong></em></p>
-<h2 id="所有操作都是本地执行"><a href="#所有操作都是本地执行" class="headerlink" title="所有操作都是本地执行"></a>所有操作都是本地执行</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534484451-4c0517e2-4d65-4b59-a4be-19d51a9ce9b0.png" alt="img"></p>
-<h1 id="Git中的三个区域"><a href="#Git中的三个区域" class="headerlink" title="Git中的三个区域"></a>Git中的三个区域</h1><p>使用Git管理的项目，拥有三个区域，分别是<strong>工作区</strong>、<strong>暂存区</strong>、<strong>Git 仓库</strong>。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534910353-c3fc5bf1-796d-4a11-8c14-0e75314464ba.png" alt="img"></p>
-<h1 id="Git中的三个状态"><a href="#Git中的三个状态" class="headerlink" title="Git中的三个状态"></a>Git中的三个状态</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655534960656-79a481e4-61a1-4fb7-8fd3-3c1357894a25.png" alt="img"></p>
-<ul>
-<li>工作区的文件被修改了,但还没有放到暂存区,就是<strong>已修改</strong>状态。</li>
-<li>如果文件已修改并放入暂存区，就属于<strong>已暂存</strong>状态。</li>
-<li>如果Git仓库中<strong>保存着特定版本</strong>的文件,就属于<strong>已提交</strong>状态。</li>
-</ul>
-<h1 id="基本的Git工作流程"><a href="#基本的Git工作流程" class="headerlink" title="基本的Git工作流程"></a>基本的Git工作流程</h1><p><strong>WorkingDirectory</strong>	（工作区,相当于开发人员电脑）</p>
-<p><strong>StagingArea</strong>	（暂存区）</p>
-<p>**.git directory(Repository)**（Git仓库）</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535118711-22e89a62-12eb-4c50-90f3-d1d0b4c1df5d.png" alt="img"></p>
-<p>基本的Git工作流程如下:</p>
-<p>①在工作区中修改文件</p>
-<p>②将你想要下次提交的更改进行暂存</p>
-<p>③提交更新,找到暂存区的文件,将快照永久性存储到Git仓库</p>
-<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置Git用户信息"><a href="#配置Git用户信息" class="headerlink" title="配置Git用户信息"></a>配置Git用户信息</h2><p>安装完Git之后，要做的第一件事就是设置自己的用户名和邮件地址。因为通过Git对项目进行版本管理的时候，Git需要使用这些基本信息，来记录是谁对项目进行了操作:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535398516-456da10e-f08d-4d89-8ae0-8771737d2c9f.png" alt="img"></p>
-<p>–golbal选项只需执行一次就可以永久生效</p>
-<h2 id="Git的全局配置文件"><a href="#Git的全局配置文件" class="headerlink" title="Git的全局配置文件"></a>Git的全局配置文件</h2><p>通过<strong>git config –global user.name</strong>和<strong>git config –global user.email</strong>配置的用户名和邮箱地址,会被写入到C:&#x2F;Users&#x2F;用户名文件夹&#x2F;.gitconfig文件中。这个文件是Git 的<strong>全局配置文件，配置- -次即可永久生效。</strong></p>
-<p>可以使用记事本打开此文件，从而查看自己曾经对Git做了哪些全局性的配置。</p>
-<h2 id="检查配置信息"><a href="#检查配置信息" class="headerlink" title="检查配置信息"></a>检查配置信息</h2><p>除了使用记事本查看全局的配置信息之外,还可以运行如下的终端命令,快速的查看Git的全局配置信息:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535635403-14eac1d4-2f97-41cc-bc07-f457d2df43a3.png" alt="img"></p>
-<h1 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h1><p>可以使用**git help <verb>**命令,无需联网即可在浏览器中打开帮助手册，例如:</verb></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535684182-9e2812e8-61e4-4484-8550-e5f1d78b8dd3.png" alt="img"></p>
-<p>如果不想查看完整的手册，那么可以用-h选项获得更简明的”help” 输出:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655535742912-3076a012-e2d7-4b6e-bbc0-f816bfa87f20.png" alt="img"></p>
-<h1 id="获取Git仓库两种方式"><a href="#获取Git仓库两种方式" class="headerlink" title="获取Git仓库两种方式"></a>获取Git仓库两种方式</h1><p>①将尚未进行版本控制的本地目录转换为Git仓库</p>
-<p>②从其它服务器克隆一个已存在的Git仓库</p>
-<p>以上两种方式都能够在自己的电脑上得到一一个可用的Git仓库</p>
-<h2 id="1-在现有目录中初始化仓库"><a href="#1-在现有目录中初始化仓库" class="headerlink" title="1.在现有目录中初始化仓库"></a>1.在现有目录中初始化仓库</h2><p>如果自己有一个尚未进行版本控制的项目目录，想要用Git来控制它，需要执行如下两个步骤:</p>
-<p><strong>①在项目目录中，通过鼠标右键打开”<strong><strong>Git Bash</strong></strong>“</strong></p>
-<p><strong>②执行</strong>  <strong>git init</strong>  <strong>命令将当前的目录转化为Git仓库</strong></p>
-<p>git init命令会创建一个名为 .git 的隐藏目录,这个.git目录就是当前项目的Git仓库，里面包含了初始的必要</p>
-<p>文件，这些文件是Git仓库的必要组成部分。</p>
-<h1 id="工作区中文件的4种状态"><a href="#工作区中文件的4种状态" class="headerlink" title="工作区中文件的4种状态"></a>工作区中文件的4种状态</h1><p>工作区中的每一个文件可能有4种状态,这四种状态共分为两大类,如图所示:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536027484-d2c17c61-7fce-4532-a47d-a2cf89550de5.png" alt="img"></p>
-<p>未跟踪	??</p>
-<p>已暂存  	A</p>
-<p>被修改	M</p>
-<p>被修改并且放入暂存	M </p>
-<h1 id="Git中对文件的操作-必须先初始化仓库"><a href="#Git中对文件的操作-必须先初始化仓库" class="headerlink" title="Git中对文件的操作  必须先初始化仓库"></a>Git中对文件的操作  <em>必须先初始化仓库</em></h1><h2 id="检查文件状态-git-status"><a href="#检查文件状态-git-status" class="headerlink" title="检查文件状态  git status"></a>检查文件状态  <strong>git status</strong></h2><p>可以使用<strong>git status</strong> 命令查看文件处于什么状态，例如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536242631-7e6024cf-3551-46e6-a1af-c197aa7d0427.png" alt="img"></p>
-<p>在状态报告中可以看到新建的<strong>index.html</strong>文件出现在<strong>Untracked files</strong> (未跟踪的文件)下面。</p>
-<p><strong>以精简的方式显示文件状态</strong></p>
-<p>使用git status输出的状态报告很详细，但有些繁琐。如果希望以精简的方式显示文件的状态，可以使用如下两条完全等价的命令，其中-s是–short的简写形式:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536349500-52f5969f-2a0a-432d-983c-b128289b4b69.png" alt="img"></p>
-<h2 id="跟踪新文件-（向暂存区添加文件）-git-add-文件"><a href="#跟踪新文件-（向暂存区添加文件）-git-add-文件" class="headerlink" title="跟踪新文件  （向暂存区添加文件） git add 文件"></a>跟踪新文件  <em>（向暂存区添加文件）</em> <strong>git add 文件</strong></h2><p>使用命令 <strong>git add</strong> 开始跟踪一个文件 所以要跟踪<strong>index.html</strong>文件，运行如下的命令即可</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536474765-050a37a1-b18d-4eeb-ad43-182702bf06f0.png" alt="img"></p>
-<p>此时再运行<strong>git status</strong>命令,会看到index.html文件在Changes to be committed这行的下面，说明已被跟踪，并处于暂存状态:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536517820-ce82dd36-123e-4949-8082-6c9c42cc0873.png" alt="img"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26760678/1655536538806-8c2c13f3-9b86-4353-b730-9a535f08e209.png" alt="img"></p>
-<h2 id="向暂存区中一次性添加多个文件-git-add"><a href="#向暂存区中一次性添加多个文件-git-add" class="headerlink" title="向暂存区中一次性添加多个文件    git add ."></a>向暂存区中一次性添加多个文件    <strong>git add</strong> .</h2><p>如果需要被暂存的文件比较多，可以使用   <strong>git add</strong> .  命令一次性向暂存区提交多个文件</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537763425-fa5cefe1-3afe-4669-a1de-0c8de68e25dc.png" alt="img"></p>
-<p>项目开发常用命令，将新增和修改后的文件放入暂存区</p>
-<h2 id="提交更新-git-commit-m-“提示text”"><a href="#提交更新-git-commit-m-“提示text”" class="headerlink" title="提交更新  git commit -m “提示text”"></a>提交更新  <strong>git commit -m “提示text”</strong></h2><p>现在暂存区中有一个<strong>index.html</strong>文件等待被提交到Git仓库中进行保存。可以执行<strong>git commit</strong>命令进行提交，其中 <strong>-m</strong> 选项后面是本次的提交消息，用来对提交的内容做进一步的描述:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536628213-900af14e-f287-401f-bd5b-487edcd8cb5c.png" alt="img"></p>
-<p>提交成功后会显示如下信息：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536671600-652b2a80-4b04-4d9c-938f-0134cae6c4ec.png" alt="img"></p>
-<h2 id="对已提交的文件进行修改后-M标记"><a href="#对已提交的文件进行修改后-M标记" class="headerlink" title="对已提交的文件进行修改后 M标记"></a>对已提交的文件进行修改后 M标记</h2><p>目前，<strong>index.html</strong> 文件已经被Git跟踪,并且工作区和Git仓库中的<strong>index.html</strong>文件内容保持一致。 当我们</p>
-<p>修改了工作区中<strong>index.html</strong>的内容之后,再次运行<strong>git status</strong>和<strong>git status -s</strong>命令,会看到如下的内容:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655536867487-488a48d8-014e-4539-8579-5f821b019fa1.png" alt="img"></p>
-<p>文件index.html出现在<strong>Changes not staged for commit</strong>这行下面，说明<strong>已跟踪文件的内容发生了变化,</strong></p>
-<p><strong>但还没有放到暂存区。</strong></p>
-<p><strong>注意：修改过的，没有放入暂存区的文件前面有****红色的M标记</strong></p>
-<h2 id="暂存已修改的文件-git-add"><a href="#暂存已修改的文件-git-add" class="headerlink" title="暂存已修改的文件  git add"></a>暂存已修改的文件  <strong>git add</strong></h2><p>目前，工作区中的<strong>index.html</strong>文件已被修改,如果要暂存这次修改,需要再次运行  <strong>git  add</strong>  命令,这个命令</p>
-<p>是个多功能的命令，主要有如下3个功效:</p>
-<ol>
-<li>可以用它开始跟踪新文件</li>
-<li>把已跟踪的、且已修改的文件放到暂存区</li>
-<li>把有冲突的文件标记为已解决状态</li>
-</ol>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537072502-c6038e2f-1e37-4e23-bc76-8393f9199a64.png" alt="img"></p>
-<h2 id="提交已暂存的文件-git-commit-m-“提交消息”"><a href="#提交已暂存的文件-git-commit-m-“提交消息”" class="headerlink" title="提交已暂存的文件 git commit -m “提交消息”"></a>提交已暂存的文件 <strong>git commit -m “提交消息”</strong></h2><p>再次运行 <strong>git commit -m “提交消息”</strong> 命令,即可将暂存区中记录的index.html的快照，提交到Git仓库中进行保存:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537193259-ae4c4898-310f-42b9-8b05-6b728edbad64.png" alt="img"></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537207921-7b41145a-0590-4cfc-9d86-6d372bb94316.png" alt="img"></p>
-<h2 id="撤销对文件的修改-git-checkout-–-index-html"><a href="#撤销对文件的修改-git-checkout-–-index-html" class="headerlink" title="撤销对文件的修改  git checkout – index.html"></a>撤销对文件的修改  git checkout – index.html</h2><p>撤销对文件的修改指的是:把对工作区中对应文件的修改，还<strong>原成</strong>Git仓库中所保存的版本。</p>
-<p>操作的结果:所有的修改会丢失，且无法恢复!   <strong>危险性比较高,请慎重操作!</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655537502602-d29f7b89-de20-4d61-a077-394510ed3d47.png" alt="img"></p>
-<h2 id="取消暂存的文件gti-reset-HEAD-要移除的文件名称"><a href="#取消暂存的文件gti-reset-HEAD-要移除的文件名称" class="headerlink" title="取消暂存的文件	gti reset HEAD 要移除的文件名称"></a>取消暂存的文件	gti reset HEAD 要移除的文件名称</h2><p>如果需要从暂存区中移除对应的文件，可以使用如下命令：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538293353-e0645ac8-e007-4c52-8bd5-b9f2e6f24d1d.png" alt="img"></p>
-<h2 id="跳过使用暂存区域"><a href="#跳过使用暂存区域" class="headerlink" title="跳过使用暂存区域"></a>跳过使用暂存区域</h2><p>Git标准的工作流程是工作区→暂存区→Git仓库，但有时候这么做略显繁琐,此时可以跳过暂存区，直接将工作区中的修改提交到Git仓库,这时候Git工作的流程简化为了工作区→Git仓库。</p>
-<p>Git提供了一个跳过使用暂存区域的方式，只要在提交的时候， 给git commit加上-a选项，Git 就会自动把</p>
-<p>所有已经跟踪过的文件暂存起来一并提交， 从而跳过git add步骤:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538525145-487fc07b-f18d-4e8e-a042-a268a447b3e6.png" alt="img"></p>
-<h1 id="Git仓库移除文件"><a href="#Git仓库移除文件" class="headerlink" title="Git仓库移除文件"></a>Git仓库移除文件</h1><h2 id="1-从Git仓库和工作区中同时移除对应的文件"><a href="#1-从Git仓库和工作区中同时移除对应的文件" class="headerlink" title="1.从Git仓库和工作区中同时移除对应的文件"></a>1.从Git仓库和工作区中同时移除对应的文件</h2><h2 id="2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件"><a href="#2-只从Git仓库中移除指定的文件，但保留工作区中对应的文件" class="headerlink" title="2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件"></a>2.只从Git仓库中移除指定的文件，但保留工作区中对应的文件</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655538736242-5b2f6c78-ed58-49dc-b5df-c33ef3d89d32.png" alt="img"></p>
-<h1 id="Git忽略文件"><a href="#Git忽略文件" class="headerlink" title="Git忽略文件"></a>Git忽略文件</h1><p>一般我们总会有些文件无需纳入Git的管理，也不希望它们总出现在未跟踪文件列表。在这种情况下，我们可以创建一一个名为 <strong>.gitignore</strong> 的配置文件,列出要忽略的文件的匹配模式。</p>
-<p>文件.gitignore的格式规范如下: .</p>
-<p>①以  <strong>#开头</strong>  的是注释</p>
-<p>②以  <strong>&#x2F;结尾</strong>  的是目录</p>
-<p>③以  <strong>&#x2F;开头</strong>  防止递归</p>
-<p>④以  <strong>!开头</strong>  表示取反</p>
-<p>⑤可以使用  <strong>glob模式</strong>  进行文件和文件夹的匹配	(glob指简化了的正则表达式)</p>
-<p><strong>glob模式</strong>是指简化了的正则表达式：</p>
-<p>①<strong>星号*<strong>匹配</strong>零个或多个任意字符</strong></p>
-<p>②**[abc]** 匹配<strong>任何- -个列在方括号中的字符</strong>(此案例匹配-个a或匹配-一个b或匹配一个c)</p>
-<p>③<strong>问号?<strong>只</strong>匹配-一个任意字符</strong></p>
-<p>④在方括号中使用<strong>短划线</strong>分隔两个字符，表示所有在这两个字符范围内的都可以匹配( 比如[0-9]表示匹配</p>
-<p>所有0到9的数字)</p>
-<p>⑤<em>*两个星号*<em><strong>表示</strong>匹配任意中间目录</em>*(比如a&#x2F;</em>*&#x2F;z可以匹配a&#x2F;z、a&#x2F;b&#x2F;z 或a&#x2F;b&#x2F;C&#x2F;z等)</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655539134717-62f9b9a8-0d07-4695-9d43-e5c6367b220a.png" alt="img"></p>
-<h1 id="查看提交历史-git-log"><a href="#查看提交历史-git-log" class="headerlink" title="查看提交历史  git log"></a>查看提交历史  git log</h1><p>如果希望回顾项目的提交历史，可以使用 <strong>git log</strong> 这个简单且有效的命令。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540439882-5c0019d9-017d-4580-9488-e89d21a4777d.png" alt="img"></p>
-<h1 id="回退指定版本"><a href="#回退指定版本" class="headerlink" title="回退指定版本"></a>回退指定版本</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655540509352-742697e3-97db-45dd-986b-ecf6f5f9c910.png" alt="img"></p>
-<p><strong>注意：回退到旧版本后不能再使用</strong> <strong>git log –pretty&#x3D;oneline</strong> <strong>查看历史版本</strong></p>
-<h1 id="Gitbub"><a href="#Gitbub" class="headerlink" title="Gitbub"></a>Gitbub</h1><h2 id="1-什么是开源"><a href="#1-什么是开源" class="headerlink" title="1.什么是开源"></a>1.什么是开源</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655541135151-d8670571-d0b9-473a-9cf7-e053671c2ef6.png" alt="img"></p>
-<h2 id="2-什么是开源许可协议"><a href="#2-什么是开源许可协议" class="headerlink" title="2.什么是开源许可协议"></a>2.什么是开源许可协议</h2><p><strong>常见的五种开源许可协议</strong></p>
-<ol>
-<li><p>BSD (Berkeley Software Distribution)</p>
-</li>
-<li><p>Apache Licence 2.0</p>
-</li>
-<li><p>GPL ( GNU General Public License)</p>
-</li>
-<li><ol>
-<li>具有传染性的一种开源协议，不允许修改后和衍生的代码做为闭源的商业软件发布和销售</li>
-<li>使用 GPL的最著名的软件项目是: Linux</li>
-</ol>
-</li>
-<li><p>LGPL (GNU Lesser General Public License)</p>
-</li>
-<li><p>MIT (Massachusetts Institute of Technology, MIT)</p>
-</li>
-<li><ol>
-<li>是目前限制最少的协议，唯- -的条件:在修改后的代码或者发行包中，必须包含原作者的许可信息</li>
-<li>使用 MIT的软件项目有: jquery. Node.js</li>
-</ol>
-</li>
-</ol>
-<h2 id="3-开源项目托管平台"><a href="#3-开源项目托管平台" class="headerlink" title="3.开源项目托管平台"></a>3.开源项目托管平台</h2><p>专门用于免费存放开源项目源代码的网站，叫做开源项目托管平台。目前世界上比较出名的开源项目托管平台主要有以下3个:</p>
-<ul>
-<li>Github (全球最牛的开源项目托管平台，没有之一 )</li>
-<li>Gitlab (对代码私有性支持较好，因此企业用户较多)</li>
-<li>Gitee (又叫做码云,是国产的开源项目托管平台。访问速度快、纯中文界面、使用友好)</li>
-</ul>
-<p>注意:以上3个开源项目托管平台,只能托管以Git管理的项目源代码,因此，它们的名字都以Git开头。</p>
-<h2 id="4-远程仓库的两种访问方式"><a href="#4-远程仓库的两种访问方式" class="headerlink" title="4.远程仓库的两种访问方式"></a>4.远程仓库的两种访问方式</h2><p>Github.上的远程仓库，有两种访问方式，分别是HTTPS和SSH。它们的区别是:</p>
-<p>①HTTPS:零配置;但是每次访问仓库时，需要重复输入Github的账号和密码才能访问成功</p>
-<p>②SSH: 需要进行额外的配置;但是配置成功后，每次访问仓库时,不需重复输入Github的账号和密码</p>
-<p>注意:在实际开发中，推荐使用SSH的方式访问远程仓库。</p>
-<h2 id="5-关于Git上传库"><a href="#5-关于Git上传库" class="headerlink" title="5.关于Git上传库"></a>5.关于Git上传库</h2><h3 id="HTTPS上传："><a href="#HTTPS上传：" class="headerlink" title="HTTPS上传："></a>HTTPS上传：</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549171898-6d827579-7eac-4f0b-90a9-30e09cd76d97.png" alt="img"></p>
-<ol>
-<li>在Github官网创建新的库之后首选HTTPS上传方式</li>
-<li>在你要上传的库中打开 Git Bash控制台</li>
-<li>依次输入官方提示的命令</li>
-<li>在弹出框中输入你的密钥</li>
-</ol>
-<p><strong>注意：要先在官网绑定令牌</strong></p>
-<p>绑定令牌的方式：</p>
-<p>1.找到”C:\Users\无敌暴龙战士.ssh”路径下两个文件  id_rsa.pub  后缀的为私人令牌</p>
-<p>2.在github官网个人设置中找到绑定令牌</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655549534866-d9084c9c-e9fc-4261-a379-96b7c6bdec34.png" alt="img"></p>
-<p>3.选择new SSH key 添加绑定令牌</p>
-<h2 id="6-上传修改后的仓库"><a href="#6-上传修改后的仓库" class="headerlink" title="6.上传修改后的仓库"></a>6.上传修改后的仓库</h2><p>如果想要上传本地被修改后的仓库需要将修改后的文件全部提交并且使用 <strong>git push</strong> 命令上传，同时也要注意，在弹出框输入<strong>密钥</strong><em>(并非令牌)</em></p>
-<p>关于密钥的生成：</p>
-<ol>
-<li><p>个人设置中的Developer settings</p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554230182-4c6d1140-8cfb-40e4-af72-5456c597a6c9.png" alt="img"></p>
-</li>
-<li><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655554297252-5680c8ab-4f67-42e7-9e03-3d2b7480e07c.png" alt="img"></p>
-</li>
-</ol>
-<h2 id="7-克隆已上传的库"><a href="#7-克隆已上传的库" class="headerlink" title="7.克隆已上传的库"></a>7.克隆已上传的库</h2><p>使用 <strong>git clone 远程库地址</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655737899273-d316d6df-6e0d-4a56-b5c6-abaadface510.png" alt="img"></p>
-<h1 id="Git-FLS"><a href="#Git-FLS" class="headerlink" title="Git FLS"></a>Git FLS</h1><p><a href="https://blog.csdn.net/wq_0708/article/details/121611239"><strong>##Git flsBlog##</strong></a></p>
-<h1 id="多库共存"><a href="#多库共存" class="headerlink" title="多库共存"></a>多库共存</h1><p>要想实现单个库连接多个平台可以使用多库连接的方式，比如当更新一个项目后想要同时上传GitHub和Gitee就可以避免繁琐的操作，同时绑定不同的SSH地址。在push或者pull的时候就可以同时上传&#x2F;获取</p>
-<p>原帖子：<a href="https://blog.csdn.net/s_156/article/details/120975674"><strong>##git实现多库共存##</strong></a></p>
-<h2 id="方法-1：每次push-x2F-pull时需分开操作"><a href="#方法-1：每次push-x2F-pull时需分开操作" class="headerlink" title="方法 1：每次push&#x2F;pull时需分开操作"></a>方法 1：每次push&#x2F;pull时需分开操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><strong>git remote rm origin</strong> 删除远程库</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，用 <strong>git remote add (name)</strong> 添加一个远程仓库，其中name可以任意指定（对应上面的origin部分），比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707455484-be8d2b92-9dcf-45e7-a522-ca12eb07b040.png" alt="img"></p>
-<p>再次查看本地仓库所关联的远程仓库，可以发现成功关联了两个远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707507827-f921d99b-70b8-4b83-bf0f-18f51750a347.png" alt="img"></p>
-<p>此后，若需进行<strong>push</strong>操作，则需要指定目标仓库，<strong>git push</strong> ，对这两个远程仓库分别操作：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707541452-46421b8e-085d-4d73-a083-66ffbf3994c7.png" alt="img"></p>
-<p>同理，<strong>pull</strong>操作也需要指定从哪个远程仓库拉取，<strong>git pull</strong> ，从这两个仓库中选择其一：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707568939-7274d046-eabb-44a9-8c70-65b6b32c679d.png" alt="img"></p>
-<h2 id="方法-2：每次push-x2F-pull时可以同时操作"><a href="#方法-2：每次push-x2F-pull时可以同时操作" class="headerlink" title="方法 2：每次push&#x2F;pull时可以同时操作"></a>方法 2：每次push&#x2F;pull时可以同时操作</h2><p>首先，指令 <strong>git remote -v</strong> 查看本地仓库所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655706799778-d145bcc5-bc99-40e0-ae97-e84614d42f88.png" alt="img"></p>
-<p>然后，不额外添加远程仓库，而是给现有的远程仓库添加额外的 URL。使用 <strong>git remote set-url -add</strong> ，已有的名为<strong>name</strong>的远程仓库添加一个远程地址，比如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707655729-c692b8da-a686-4e3b-ae63-f552f6457e45.png" alt="img"></p>
-<p>再次查看所关联的远程仓库：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655707688970-e1d0cd08-1915-4359-8d8d-dafa3e338850.png" alt="img"></p>
-<p>可以看到，我们并没有如方法 1 一般增加远程仓库的数目，而是给一个远程仓库赋予了多个地址（或者准确地说，多个用于push的地址）。</p>
-<p>因此，这样设置后的push 和pull操作与最初的操作完全一致，不需要进行调整。</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1806,6 +1806,26 @@
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220704223103512.png" alt="image-20220704223103512"></p>
 <h2 id="中间件的作用"><a href="#中间件的作用" class="headerlink" title="中间件的作用"></a>中间件的作用</h2><p>多个中间件之间，共享同- -份req和res.基于这样的特性，我们可以在上游的中间件中，统-为req或res对象添加自定义的属性或方法，供下游的中间件或路由进行使用。</p>
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220704215943188.png" alt="image-20220704215943188"></p>
+<h2 id="中间件注意事项"><a href="#中间件注意事项" class="headerlink" title="中间件注意事项"></a>中间件注意事项</h2><ol>
+<li>一定要在路由之前注册中间件</li>
+<li>客户端发送过来的请求，可以连续调用多个中间件进行处理</li>
+<li>执行完中间件的业务代码之后，不要忘记调用next(函数</li>
+<li>为了防止代码逻辑混乱，调用next(函数后不要再写额外的代码</li>
+<li>连续调用多个中间件时，多个中间件之间，共享req和res对象</li>
+</ol>
+<h2 id="中间件分类"><a href="#中间件分类" class="headerlink" title="中间件分类"></a>中间件分类</h2><p>为了方便大家理解和记忆中间件的使用，Express 官方把常见的中间件用法，分成了5大类，分别是:</p>
+<ol>
+<li>应用级别的中间件</li>
+<li>路由级别的中间件</li>
+<li>错误级别的中间件</li>
+<li>Express 内置的中间件</li>
+<li>第三方的中间件</li>
+</ol>
+<h3 id="应用级别中间件"><a href="#应用级别中间件" class="headerlink" title="应用级别中间件"></a>应用级别中间件</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220704225836330.png" alt="image-20220704225836330"></p>
+<h3 id="路由级别中间件"><a href="#路由级别中间件" class="headerlink" title="路由级别中间件"></a>路由级别中间件</h3><p>绑定到express.Router0实例上的中间件，叫做路由级别的中间件。它的用法和应用级别中间件没有任何区别。只不过，应用级别中间件是绑定到app实例上，路由级别中间件绑定到router实例上,代码示例如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220704230207988.png" alt="image-20220704230207988"></p>
+<h3 id="错误级别中间件"><a href="#错误级别中间件" class="headerlink" title="错误级别中间件"></a>错误级别中间件</h3><p>错误级别中间件的作用:专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃的问题。<br>格式:错误级别中间件的function 处理函数中,必须有4个形参,形参顺序从前到后，分别是(err, req, res, next)。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220704230903532.png" alt="image-20220704230903532"></p>
 ]]></content>
       <categories>
         <category>JS</category>
