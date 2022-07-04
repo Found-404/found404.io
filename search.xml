@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS函数</title>
+    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
+<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
+<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
+<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
+<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
+<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BOMplus</title>
     <url>/found404.io/2022/06/27/BOMplus/</url>
     <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
@@ -96,29 +119,6 @@
       </categories>
       <tags>
         <tag>BOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS函数</title>
-    <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="string">&quot;前&quot;</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 鼠标移入H1后伪元素content发生改变 */</span></span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">h1</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="comment">/* 从行内属性获取值 */</span></span></span><br><span class="line"><span class="language-css">            <span class="attribute">content</span>: <span class="built_in">attr</span>(data-text);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">data-text</span>=<span class="string">&quot;后&quot;</span>&gt;</span>鼠标移入<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="calc"><a href="#calc" class="headerlink" title="calc()"></a>calc()</h1><p><strong>css内置计算器</strong></p>
-<h1 id="var"><a href="#var" class="headerlink" title="var()"></a>var()</h1><p>首先：CSS 变量可以有全局或局部作用域。</p>
-<p>全局变量可以在整个文档中进行访问&#x2F;使用，而局部变量只能在声明它的选择器内部使用。</p>
-<p>如需创建具有全局作用域的变量，请在 :root 选择器中声明它。 :root 选择器匹配文档的根元素。</p>
-<p>如需创建具有局部作用域的变量，请在将要使用它的选择器中声明它。</p>
-<p><a href="https://blog.csdn.net/Serena_tz/article/details/114838650"><strong>🔗🔗原文档🔗🔗</strong></a></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">         <span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--blue</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attr">--red</span>: red;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--blue);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        </span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">var</span>(--red);</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -870,373 +870,6 @@
       </tags>
   </entry>
   <entry>
-    <title>my_firstBlog</title>
-    <url>/found404.io/2022/06/25/my-firstBlog/</url>
-    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
-<p>第一篇blog</p>
-<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hello hexo!</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于This</title>
-    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
-    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
-<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
-<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
-<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
-<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>对象中的<strong>this</strong>指向它本身</li>
-<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
-</ul>
-<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
-<p><strong>new的整个过程：</strong></p>
-<ol>
-<li>new会在内存中创建一个新的空对像</li>
-<li>new会让this指向这个新对象</li>
-<li>执行构造函数中的代码</li>
-<li>return这个新对象</li>
-</ol>
-<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
-<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
-<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
-<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
-<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：实参</li>
-<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
-<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数：数组或者伪数组（里面为实参）</li>
-<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
-<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
-<ul>
-<li>第一个参数：改变this指向</li>
-<li>第二个参数之后：实参</li>
-<li>返回值为一个新的函数</li>
-<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
-<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
-</ul>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
-<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
-<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Node.js</title>
-    <url>/found404.io/2022/06/30/Node-js/</url>
-    <content><![CDATA[<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p><strong>Node.js</strong>是一个基于Chrome V8引擎的JavaScript运行环境</p>
-<h2 id="Node-js中的JavaScript运行环境"><a href="#Node-js中的JavaScript运行环境" class="headerlink" title="Node.js中的JavaScript运行环境"></a>Node.js中的JavaScript运行环境</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655822357450-119a84ee-f87e-471f-adeb-96b9c664695e.png" alt="img"></p>
-<p>注意：</p>
-<ol>
-<li>浏览器是JavaScript的前端运行环境</li>
-<li>Node.js是JavaScript的后端运行环境</li>
-<li>Node.js中无法调用DOM和BOM等浏览器内置API</li>
-</ol>
-<span id="more"></span>
-
-<h2 id="Node-js框架"><a href="#Node-js框架" class="headerlink" title="Node.js框架"></a>Node.js框架</h2><p>Node.js作为-个JavaScript的运行环境,仅仅提供了基础的功能和API。然而，基于Node.js提供的这些基础能，很多强大</p>
-<p>的工具和框架如雨后春笋，层出不穷,所以学会了Node.jis ，可以让前端程序员胜任更多的工作和岗位:</p>
-<p>①基于Express框架(<a href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a>) ，可以快速构建Web应用</p>
-<p>②基于Electron框架(<a href="https://electronjs.org/">https://electronjs.org/</a>) , 可以构建跨平台的桌面应用</p>
-<p>③基于restify框架<a href="http://restify.com/">http://restify.com/</a>) ，可以快速构建API接口项目</p>
-<p>④读写和操作数据库、创建实用的命令行工具辅助前端开发、etc..</p>
-<h1 id="关于终端"><a href="#关于终端" class="headerlink" title="关于终端"></a>关于终端</h1><p>转为开发人员设计，用于实现人机交互的一种方式。</p>
-<ul>
-<li>win+r 打开运行输入cmd打开终端</li>
-<li>在文件路径中输入cmd打开终端</li>
-<li>按住shift+右键有一个powershell终端</li>
-</ul>
-<p><strong>常用的终端命令：</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th align="center">作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">node -v</td>
-<td align="center">查看node.js版本</td>
-</tr>
-<tr>
-<td align="center">cd  &#x2F;</td>
-<td align="center">进入根目录</td>
-</tr>
-<tr>
-<td align="center">cd ..</td>
-<td align="center">去到上一层目录</td>
-</tr>
-<tr>
-<td align="center">f:</td>
-<td align="center">进入F盘</td>
-</tr>
-<tr>
-<td align="center">cls</td>
-<td align="center">清空终端</td>
-</tr>
-</tbody></table>
-<p><strong>终端快捷键：</strong></p>
-<ol>
-<li><strong>使用↑键可以快速定位到上一次执行的命令</strong></li>
-<li><strong>使用tab键能够快速补全路径</strong></li>
-<li><strong>使用esc键能够快速清空当前输入的命令</strong></li>
-</ol>
-<h1 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h1><p>fs模块是Node.js官方提供的，用来操作文件的模块，它提供了一系列的方法和属性。用来满足用户对文件的操作需求。</p>
-<p>例如：</p>
-<ul>
-<li>**fs.readFile( )**方法，用来读取指定文件中的内容</li>
-<li>**fs.writeFile( )**方法，用来向指定文件中写入内容</li>
-</ul>
-<p>如果在javaScript代码中，使用fs模块来操作文件，则需要使用如下方式导入他：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655904379652-fb60eeb1-f9a9-4703-864e-e83eea12097f.png" alt="img"></p>
-<h2 id="fs-readFile-的语法格式-读取文件内容"><a href="#fs-readFile-的语法格式-读取文件内容" class="headerlink" title="fs.readFile()的语法格式      读取文件内容"></a>fs.readFile()的语法格式      <em>读取文件内容</em></h2><p>使用fs.readFile()方法，可以读取指定文件中的内容，语法格式如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/a205835e3c0951ef.png" alt="png"></p>
-<p>参数解读：</p>
-<ul>
-<li>参数1：<strong>必选</strong>参数，字符串，表示文件的路径。</li>
-<li>参数2：可选参数，表示以什么<strong>编码格式</strong>来读取文件。</li>
-<li>参数3：<strong>必选</strong>参数，文件读取完成后，通过回调函数拿到读取的结果。</li>
-</ul>
-<p>示例代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs模块  来操作文件</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 调用fs.readFile()方法读取文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数1：读取文件的存放路径</span></span><br><span class="line"><span class="comment">// 参数2：读取文件时候采用的编码格式 一般默认指定utf8</span></span><br><span class="line"><span class="comment">// 参数3：回调函数，拿到读取失败和成功的结果 err dataStr</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./files/11.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1 打印失败的结果</span></span><br><span class="line">    <span class="comment">//如果读取成功，则err的值为null</span></span><br><span class="line">    <span class="comment">//如果读取失败，则err的值为错误对象 dataStr的值为undefined</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;----------&#x27;</span>);</span><br><span class="line">    <span class="comment">// 2.2 打印成功的结果</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>成功：</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e41f9d8c61cbe03b.png" alt="png"></p>
-<p><strong>失败：</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/58cc12468873bbe8.png" alt="png"></p>
-<p>优化写法：</p>
-<blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1a6b2b72ed2946a8.png" alt="png"></p>
-</blockquote>
-<h2 id="fs-writeFile-的语法格式-写入文件内容"><a href="#fs-writeFile-的语法格式-写入文件内容" class="headerlink" title="fs.writeFile( )的语法格式      写入文件内容"></a>fs.writeFile( )的语法格式      <em>写入文件内容</em></h2><p>使用fs.writeFile()方法，可以向指定文件中写入内容。语法格式如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/adf82be76daf111c.png" alt="png"></p>
-<p>参数解读：</p>
-<ul>
-<li>参数1：<strong>必选</strong>参数，指定一个文件路径的字符串，表示文件的存放路径。</li>
-<li>参数2：<strong>必选</strong>参数，表示要写入的内容。</li>
-<li>参数3：可选参数，表示以什么格式写入文件内容，默认utf8。</li>
-<li>参数4：<strong>必选</strong>参数，文件写入完成后的回调函数。</li>
-</ul>
-<p>代码示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs文件系统模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用fs.writeFile()方法，写入文件内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数1：表示文件的存放路径</span></span><br><span class="line"><span class="comment">//参数2：表示要写入的内容</span></span><br><span class="line"><span class="comment">//参数3：省略</span></span><br><span class="line"><span class="comment">//参数4：回调函数</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;f:/files/2.txt&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1如果文件写入成功，则err的值等于null</span></span><br><span class="line">    <span class="comment">// 2.2如果文件写入失败，则err的值等于一个错误对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>优化写法：</p>
-<blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/edd1798ffc5eec30.png" alt="png"></p>
-</blockquote>
-<h2 id="dirname解决路径拼接错误"><a href="#dirname解决路径拼接错误" class="headerlink" title="__dirname解决路径拼接错误"></a>__dirname解决路径拼接错误</h2><p>有时候出现路径拼接错误是因为提供了.&#x2F;或者..&#x2F;开头的相对路径导致</p>
-<blockquote>
-<p>解决方法:</p>
-<ul>
-<li>提供一个完整路径</li>
-<li>但是移植性差,不利用代码维护</li>
-<li>使用__dirname</li>
-<li>__dirname代表的是当前目录路径</li>
-</ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(__dirname + <span class="string">&#x27;/files/2.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取失败&#x27;</span> + err.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取成功&#x27;</span> + dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h1><blockquote>
-<p><strong>path模块</strong>是Node.js官方提供的,用来<strong>处理路径</strong>的模块.它提供了一系列的方法和属性,用来满足用户对路径的处理需求.</p>
-<p>例如:</p>
-<ul>
-<li>path.join()方法,用来<strong>将多个路径片段拼接成一个完整的路径字符串</strong></li>
-<li>path.basename()方法,用来从路径字符串中,将文件名解析出来</li>
-</ul>
-</blockquote>
-<p>如果要在JavaScript代码中使用path模块来处理路径,则需要使用如下方式导入他:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="path-join-的语法格式"><a href="#path-join-的语法格式" class="headerlink" title="path.join()的语法格式"></a>path.join()的语法格式</h2><p>使用path.join()方法,可以把多个路径片段拼接为完整的路径字符串,语法格式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">join</span>([...paths])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数解读:</p>
-<ul>
-<li>..paths&lt; string &gt;路径片段的序列</li>
-<li>返回值:&lt; string &gt;</li>
-</ul>
-</blockquote>
-<p>代码示例:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/2883715f9505b5a9.png" alt="png"></p>
-<h2 id="path-basename-的语法格式"><a href="#path-basename-的语法格式" class="headerlink" title="path.basename()的语法格式"></a>path.basename()的语法格式</h2><p>使用path.basename()方法,可以获取路径中的最后一部分,经常通过这个方法获取路径中的文件名,语法格式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(path[,ext])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数解读:</p>
-<ul>
-<li>path<code>&lt;string&gt;</code>必选参数,表示一个路径的字符串</li>
-<li>ext<code>&lt;string&gt;</code>可选参数,表示文件扩展名</li>
-<li>返回:<code>&lt;string&gt;</code>表示路径中的最后一部分</li>
-</ul>
-</blockquote>
-<p>示例代码：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e6b7240594ea3cf6.png" alt="png"></p>
-<h2 id="path-extname-代码示例"><a href="#path-extname-代码示例" class="headerlink" title="path.extname()代码示例"></a>path.extname()代码示例</h2><blockquote>
-<p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
-</blockquote>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/6f381844b033d682.png" alt="png"></p>
-<h1 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h1><blockquote>
-<p>什么是客户端？什么是服务器？</p>
-<ol>
-<li>在网络节点中，负责消耗资源的电脑，叫做<strong>客户端</strong></li>
-<li><u>负责对外提供网络资源的电脑</u>，叫做<strong>服务器</strong></li>
-</ol>
-</blockquote>
-<p>http模块是Node.js官方提供的，用来创建web服务器的模块，通过http模块提供的http.createServer()方法，就能方便把一台普通的电脑，变成一台web服务器，从而对外提供web资源服务。</p>
-<p>如果希望使用http模块创建Web服务器，则需要导入他：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="进一步理解http模块的作用"><a href="#进一步理解http模块的作用" class="headerlink" title="进一步理解http模块的作用"></a>进一步理解http模块的作用</h2><blockquote>
-<p>服务器和普通电脑的区别在于，服务器上安装了web服务器插件。例如：IIS，Apache等。通过安装这些服务器软件，就能把一台普通电脑变成一台web服务器。</p>
-</blockquote>
-<blockquote>
-<p>在node.js中我们不需要使用IIS、Apache等这些第三方web服务器软件，因为我们可以基于Node.js提供的http模块，通过几行代码就能轻松手写一个服务器软件，从而对外提供web服务。</p>
-</blockquote>
-<h2 id="服务器相关概念"><a href="#服务器相关概念" class="headerlink" title="服务器相关概念"></a>服务器相关概念</h2><h3 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1.IP地址"></a>1.IP地址</h3><p>IP地址就是互联网上每台计算机的唯-地址,因此IP地址具有唯一性。 如果把“个人电脑”比作”-台电话”，那么”IP地址”就相当于“电话号码”，只有在知道对方IP地址的前提下，才能与对应的电脑之间进行数据通信。</p>
-<p>IP地址的格式:通常用”点分十进制”表示成(a.b.c.d) 的形式，其中, a,b,c,d 都是0~255之间的十进制整数。例如:用点分十进表示的IP地址(192.168.1.1)</p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>互联网中每台Web服务器，都有自己的IP地址，例如:大家可以在Windows的终端中运行ping www baidu.com命令,即可查看到百度服务器的IP地址。</li>
-<li>在开发期间，自己的电脑既是一台服务器, 也是-个客户端，为了方便测试，可以在自己的浏览器中输入127.0.0.1 这个IP地址,就能把自己的电脑当做一台服务 器进行访问了.</li>
-</ol>
-<h3 id="2-域名和域名服务器"><a href="#2-域名和域名服务器" class="headerlink" title="2.域名和域名服务器"></a>2.域名和域名服务器</h3><p>尽管IP地址能够唯-地标记网络上的计算机，但IP地址是一长串数字,不直观，而且不便于记忆，于是人们又发明了另一套字符型的地址方案，即所谓的域名(Domain Name)地址</p>
-<p>IP地址和域名是一对应的关系， 这份对应关系存放在一种叫做域名服务器(DNS, Domain name server)的电脑中。使用者只需通过好记的域名访问对应的服务器即可，对应的转换工作由域名服务器实现。因此，域名服务器就是提供IP地址和域名之间的转换服务的服务器。</p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>单纯使用IP地址，互联网中的电脑也能够正常工作。但是有了域名的加持，能让互联网的世界变得更加方便。</li>
-<li>在开发测试期间，<strong>127.0.0.1</strong> 对应的域名是<strong>localhost</strong>,它们都代表我们自己的这台电脑，在使用效果上没有任何区别。</li>
-</ol>
-<h3 id="3-端口号"><a href="#3-端口号" class="headerlink" title="3.端口号"></a>3.端口号</h3><p>计算机中的端口号,就好像是现实生活中的门牌号一样。 通过门牌号,外卖小哥可以在整栋大楼众多的房间中，准确把外卖送到你的手中。<br>同样的道理，在一台电脑中,可以运行成百上千个web服务。每个web服务都对应-个唯的端口号. 客户端发送过来的网络请求,通过端口号,可以被准确地交给<strong>对应的web服务</strong>进行处理。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220628214815281.png" alt="image-20220628214815281"></p>
-<p><strong>注意：</strong></p>
-<ol>
-<li>每个端口号不能同时被多个web服务器占用</li>
-<li>在实际运用中URL中的80端口可以被省略</li>
-</ol>
-<h2 id="创建最基本的web服务器"><a href="#创建最基本的web服务器" class="headerlink" title="创建最基本的web服务器"></a>创建最基本的web服务器</h2><p><strong>创建web服务器的基本步骤</strong></p>
-<blockquote>
-<ol>
-<li>导入http模块</li>
-<li>创建web服务器实例</li>
-<li>为服务器实例绑定<strong>require</strong>事件，<strong>监听客户端的请求</strong></li>
-<li>启动服务器</li>
-</ol>
-</blockquote>
-<h3 id="步骤1-导入http模块"><a href="#步骤1-导入http模块" class="headerlink" title="步骤1-导入http模块"></a>步骤1-导入http模块</h3><p>如果希望在自己电脑上创建一个web服务器，从而对外提供web服务，则需要导入http模块：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤2-创建web服务器实例"><a href="#步骤2-创建web服务器实例" class="headerlink" title="步骤2-创建web服务器实例"></a>步骤2-创建web服务器实例</h3><p>调用**http.sreateServer()**方法，即可快速创建一个web服务器实例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤3-为服务器实例绑定request事件"><a href="#步骤3-为服务器实例绑定request事件" class="headerlink" title="步骤3-为服务器实例绑定request事件"></a>步骤3-为服务器实例绑定request事件</h3><p>为服务器实例绑定request事件，即可监听客户端发送过来的网络请求：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用服务器实例的.on()方法，为服务器绑定一个request事件</span></span><br><span class="line">sever.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 只要有客户端来请求我们的服务器，就会触发request事件，从而调用这个事件处理函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Someone visit our web server&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收了客户端的请求，就会调用server.on()为服务器绑定的request事件处理函数。如果想在事件处理函数中，访问与客户端相关的<strong>数据</strong>或者<strong>属性</strong>，就可以使用如下方法：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// req 是请求对象，它包含了与客户端相关的数据和属性，例如：</span></span><br><span class="line">    <span class="comment">// req.url 是客户端请求的url地址</span></span><br><span class="line">    <span class="comment">// req.method 是客户端的method请求类型</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;req.url&#125;</span>,and request method is <span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request使事件处理函数中，如果想访问与服务器相关的<strong>数据</strong>或<strong>属性</strong>，可以使用如下方式：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//req是请求对象，包含了与客户端相关的数据和属性</span></span><br><span class="line">    <span class="comment">// req.url是客户端请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// req.method是客户端请求的method类型</span></span><br><span class="line">    <span class="keyword">const</span> method = req.<span class="property">method</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;url&#125;</span>,and request method is <span class="subst">$&#123;method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>当调用res.end()方法，向客户端发送中文内容时候，就会出现乱码问题，此时，需要手动设置内容的编码格式：</p>
-<p><code>res.setHeader(&#39;Content-Type&#39;, &#39;text/html;charset=utf-8&#39;);</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发送内容包含中文</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`你请求的url地址是<span class="subst">$&#123;req.url&#125;</span>,请求的method类型是<span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="comment">// 调用res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/html;charset=utf-8&#x27;)方法</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤4-启动服务器"><a href="#步骤4-启动服务器" class="headerlink" title="步骤4-启动服务器"></a>步骤4-启动服务器</h3><p>调用服务器实例的.listen()方法，即可启动当前的web服务器实例:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用server.listen(端口号，callback回调函数)方法，即可启动web服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">80</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http server running at http//127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="根据不同的url相应不同的html内容"><a href="#根据不同的url相应不同的html内容" class="headerlink" title="根据不同的url相应不同的html内容"></a>根据不同的url相应不同的html内容</h2><p><strong>核心实现步骤：</strong></p>
-<ol>
-<li>获取<strong>请求的url地址</strong></li>
-<li>设置<strong>默认的响应内容</strong>为<u>404 Not found</u></li>
-<li>判断用户请求的是否为**&#x2F;<strong>或</strong>&#x2F;index.html**首页</li>
-<li>判断用户请求的是否为**&#x2F;about.html**关于页面</li>
-<li>设置<strong>Content-Type响应头</strong>,防止中文乱码</li>
-<li>使用**res.end( )**把内容响应给客户端</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 获取请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// 2. 设置默认的响应内容为&lt;u&gt;404 Not found&lt;/u&gt;</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`&lt;h1&gt;404 Not Found&lt;/h1&gt;`</span>;</span><br><span class="line">    <span class="comment">// 3. 判断用户请求的是否为/或/index.html首页</span></span><br><span class="line">    <span class="comment">// 4. 判断用户请求的是否为/about.html关于页面</span></span><br><span class="line">    <span class="keyword">if</span> (url === <span class="string">&#x27;/&#x27;</span> || url === <span class="string">&#x27;/index.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;首页&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">&#x27;/about.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;关于页面&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 5. 设置Content-Type响应头,防止中文乱码</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 6. 使用res.end( )把内容响应给客户端</span></span><br><span class="line">    res.<span class="title function_">end</span>(content);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 4. 启动服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1:8080&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="什么是模块化？"><a href="#什么是模块化？" class="headerlink" title="什么是模块化？"></a>什么是模块化？</h2><p><strong>模块化</strong>是指解决一个复杂问题时，自顶向下逐层<strong>把系统划分为若干模块的过程</strong>。对整个系统来说，<strong>模块是可以组合，分解，更换的单元</strong>。</p>
-<p>编程领域中的模块化，就是遵守固定的规则，把一个大文件拆分成独立并相互依赖的多个小模块：</p>
-<blockquote>
-<p>把代码进行模块化拆分的好处：</p>
-<ol>
-<li>提高了代码的<strong>复用性</strong></li>
-<li>提高了代码的<strong>可维护性</strong></li>
-<li>可以实现<strong>按需加载</strong></li>
-</ol>
-</blockquote>
-<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><p><strong>模块化规范</strong>就是对代码进行模块化的拆分与组合时，需要遵循的那些规则。</p>
-<p>例如：</p>
-<ul>
-<li>使用什么样的语法格式来<em>引入模块</em></li>
-<li>在模块中使用什么样的语法格式<em>向外暴露成员</em></li>
-</ul>
-<p><strong>模块化的好处</strong>：大家都遵循同样的模块化规范写代码，降低了沟通的成本，极大方便了各个模块之间的相互调用，利人利己。</p>
-<h2 id="Node-js中模块的分类"><a href="#Node-js中模块的分类" class="headerlink" title="Node.js中模块的分类"></a>Node.js中模块的分类</h2><p>Node.js中根据模块来源的不同，将模块分为了3大类，分别是：</p>
-<ul>
-<li><strong>内置模块</strong>（内置模块是Node.js官方提供的，例如：fs，path，http等）</li>
-<li><strong>自定义模块</strong>（用户创建的每个js文件，都是自定义模块）</li>
-<li><strong>第三方模块</strong>（由第三方开发出来的模块，并非官方提供的内置模块，也不用用户创建的自定义模块。使用前要先下载）</li>
-</ul>
-<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><p>使用强大的require()方法，可以加在需要的内置模块，用户自定义模块，第三方模块进行使用。例如：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630212456568.png" alt="image-20220630212456568"></p>
-<p><strong>注意：</strong>使用require()方法加载其他模块时候，会执行被加载模块中的代码。</p>
-<h2 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a>Node.js中的模块作用域</h2><h3 id="1-什么是模块作用域"><a href="#1-什么是模块作用域" class="headerlink" title="1.什么是模块作用域"></a>1.什么是模块作用域</h3><p>和函数作用域类似，在自定义模块中定义的变量，方法。等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做<strong>模块作用域</strong>；</p>
-<h3 id="2-模块作用域的好处"><a href="#2-模块作用域的好处" class="headerlink" title="2.模块作用域的好处"></a>2.模块作用域的好处</h3><p><strong>防止全局变量污染的问题</strong></p>
-<p>当两个js文件中有相同的变量，就会造成全局变量污染</p>
-<h3 id="3-向外共享模块作用域中的成员"><a href="#3-向外共享模块作用域中的成员" class="headerlink" title="3.向外共享模块作用域中的成员"></a>3.向外共享模块作用域中的成员</h3><h4 id="1-module对象"><a href="#1-module对象" class="headerlink" title="1.module对象"></a>1.module对象</h4><p>在每个.js自定义模块中都有一个module对象，它里面存储了和当前模块有关的信息，打印如下：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630221520536.png" alt="image-20220630221520536"></p>
-<h4 id="2-module-exports对象"><a href="#2-module-exports对象" class="headerlink" title="2.module.exports对象"></a>2.module.exports对象</h4><p>在自定义模块中。可以使用module.exports对象，将模块内的成员共享出去，供外界使用。</p>
-<p>外界用**require( )**方法导入自定义模块时候。得到的就是module.exports所指向对象。</p>
-<blockquote>
-<p>如果想要公开自定义模块中的一部分，可以直接为<code>module.exports</code>添加属性或者方法</p>
-</blockquote>
-<h4 id="3-共享成员时的注意点"><a href="#3-共享成员时的注意点" class="headerlink" title="3.共享成员时的注意点"></a>3.共享成员时的注意点</h4><p>使用require()方法导入模块时，导入的结果，<strong>永远以module.exports指向的对象为准。</strong></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630223935943.png" alt="image-20220630223935943"></p>
-<h4 id="4-exports对象"><a href="#4-exports对象" class="headerlink" title="4.exports对象"></a>4.exports对象</h4><p>由于module.exports单词写起来比较复杂，为了简化向外共享成员的代码，Node 提供了<strong>exports</strong> 对象。默认情况下，<strong>exports 和module.exports指向同一个对象</strong>。最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630224730743.png" alt="image-20220630224730743"></p>
-<p>注意：</p>
-<p>最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
-<blockquote>
-<p>如果module.exports这个老六偷偷指向了另一个对象，则以它为准😅</p>
-</blockquote>
-<h4 id="5-exports和module-exports的使用误区"><a href="#5-exports和module-exports的使用误区" class="headerlink" title="5.exports和module.exports的使用误区"></a>5.exports和module.exports的使用误区</h4><p>时刻谨记，<strong>require()<strong>模块时,得到的永远是</strong>module exports</strong>指向的对象:</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630225810795.png" alt="image-20220630225810795"></p>
-<h2 id="Node-js中的模块化规范"><a href="#Node-js中的模块化规范" class="headerlink" title="Node.js中的模块化规范"></a>Node.js中的模块化规范</h2>]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DOM/BOM</title>
     <url>/found404.io/2022/06/28/DOM-BOM/</url>
     <content><![CDATA[<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654481169296-a0d9f0e5-2ada-4ab7-ad58-2d34e893cd58.png" alt="img"></p>
@@ -1628,6 +1261,586 @@
       </categories>
       <tags>
         <tag>DOM BOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node.js</title>
+    <url>/found404.io/2022/06/30/Node-js/</url>
+    <content><![CDATA[<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p><strong>Node.js</strong>是一个基于Chrome V8引擎的JavaScript运行环境</p>
+<h2 id="Node-js中的JavaScript运行环境"><a href="#Node-js中的JavaScript运行环境" class="headerlink" title="Node.js中的JavaScript运行环境"></a>Node.js中的JavaScript运行环境</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655822357450-119a84ee-f87e-471f-adeb-96b9c664695e.png" alt="img"></p>
+<p>注意：</p>
+<ol>
+<li>浏览器是JavaScript的前端运行环境</li>
+<li>Node.js是JavaScript的后端运行环境</li>
+<li>Node.js中无法调用DOM和BOM等浏览器内置API</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="Node-js框架"><a href="#Node-js框架" class="headerlink" title="Node.js框架"></a>Node.js框架</h2><p>Node.js作为-个JavaScript的运行环境,仅仅提供了基础的功能和API。然而，基于Node.js提供的这些基础能，很多强大</p>
+<p>的工具和框架如雨后春笋，层出不穷,所以学会了Node.jis ，可以让前端程序员胜任更多的工作和岗位:</p>
+<p>①基于Express框架(<a href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a>) ，可以快速构建Web应用</p>
+<p>②基于Electron框架(<a href="https://electronjs.org/">https://electronjs.org/</a>) , 可以构建跨平台的桌面应用</p>
+<p>③基于restify框架<a href="http://restify.com/">http://restify.com/</a>) ，可以快速构建API接口项目</p>
+<p>④读写和操作数据库、创建实用的命令行工具辅助前端开发、etc..</p>
+<h1 id="关于终端"><a href="#关于终端" class="headerlink" title="关于终端"></a>关于终端</h1><p>转为开发人员设计，用于实现人机交互的一种方式。</p>
+<ul>
+<li>win+r 打开运行输入cmd打开终端</li>
+<li>在文件路径中输入cmd打开终端</li>
+<li>按住shift+右键有一个powershell终端</li>
+</ul>
+<p><strong>常用的终端命令：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">node -v</td>
+<td align="center">查看node.js版本</td>
+</tr>
+<tr>
+<td align="center">cd  &#x2F;</td>
+<td align="center">进入根目录</td>
+</tr>
+<tr>
+<td align="center">cd ..</td>
+<td align="center">去到上一层目录</td>
+</tr>
+<tr>
+<td align="center">f:</td>
+<td align="center">进入F盘</td>
+</tr>
+<tr>
+<td align="center">cls</td>
+<td align="center">清空终端</td>
+</tr>
+</tbody></table>
+<p><strong>终端快捷键：</strong></p>
+<ol>
+<li><strong>使用↑键可以快速定位到上一次执行的命令</strong></li>
+<li><strong>使用tab键能够快速补全路径</strong></li>
+<li><strong>使用esc键能够快速清空当前输入的命令</strong></li>
+</ol>
+<h1 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h1><p>fs模块是Node.js官方提供的，用来操作文件的模块，它提供了一系列的方法和属性。用来满足用户对文件的操作需求。</p>
+<p>例如：</p>
+<ul>
+<li>**fs.readFile( )**方法，用来读取指定文件中的内容</li>
+<li>**fs.writeFile( )**方法，用来向指定文件中写入内容</li>
+</ul>
+<p>如果在javaScript代码中，使用fs模块来操作文件，则需要使用如下方式导入他：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655904379652-fb60eeb1-f9a9-4703-864e-e83eea12097f.png" alt="img"></p>
+<h2 id="fs-readFile-的语法格式-读取文件内容"><a href="#fs-readFile-的语法格式-读取文件内容" class="headerlink" title="fs.readFile()的语法格式      读取文件内容"></a>fs.readFile()的语法格式      <em>读取文件内容</em></h2><p>使用fs.readFile()方法，可以读取指定文件中的内容，语法格式如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/a205835e3c0951ef.png" alt="png"></p>
+<p>参数解读：</p>
+<ul>
+<li>参数1：<strong>必选</strong>参数，字符串，表示文件的路径。</li>
+<li>参数2：可选参数，表示以什么<strong>编码格式</strong>来读取文件。</li>
+<li>参数3：<strong>必选</strong>参数，文件读取完成后，通过回调函数拿到读取的结果。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs模块  来操作文件</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="comment">// 调用fs.readFile()方法读取文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数1：读取文件的存放路径</span></span><br><span class="line"><span class="comment">// 参数2：读取文件时候采用的编码格式 一般默认指定utf8</span></span><br><span class="line"><span class="comment">// 参数3：回调函数，拿到读取失败和成功的结果 err dataStr</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./files/11.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1 打印失败的结果</span></span><br><span class="line">    <span class="comment">//如果读取成功，则err的值为null</span></span><br><span class="line">    <span class="comment">//如果读取失败，则err的值为错误对象 dataStr的值为undefined</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;----------&#x27;</span>);</span><br><span class="line">    <span class="comment">// 2.2 打印成功的结果</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>成功：</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e41f9d8c61cbe03b.png" alt="png"></p>
+<p><strong>失败：</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/58cc12468873bbe8.png" alt="png"></p>
+<p>优化写法：</p>
+<blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1a6b2b72ed2946a8.png" alt="png"></p>
+</blockquote>
+<h2 id="fs-writeFile-的语法格式-写入文件内容"><a href="#fs-writeFile-的语法格式-写入文件内容" class="headerlink" title="fs.writeFile( )的语法格式      写入文件内容"></a>fs.writeFile( )的语法格式      <em>写入文件内容</em></h2><p>使用fs.writeFile()方法，可以向指定文件中写入内容。语法格式如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/adf82be76daf111c.png" alt="png"></p>
+<p>参数解读：</p>
+<ul>
+<li>参数1：<strong>必选</strong>参数，指定一个文件路径的字符串，表示文件的存放路径。</li>
+<li>参数2：<strong>必选</strong>参数，表示要写入的内容。</li>
+<li>参数3：可选参数，表示以什么格式写入文件内容，默认utf8。</li>
+<li>参数4：<strong>必选</strong>参数，文件写入完成后的回调函数。</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入fs文件系统模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用fs.writeFile()方法，写入文件内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数1：表示文件的存放路径</span></span><br><span class="line"><span class="comment">//参数2：表示要写入的内容</span></span><br><span class="line"><span class="comment">//参数3：省略</span></span><br><span class="line"><span class="comment">//参数4：回调函数</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;f:/files/2.txt&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="comment">// 2.1如果文件写入成功，则err的值等于null</span></span><br><span class="line">    <span class="comment">// 2.2如果文件写入失败，则err的值等于一个错误对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>优化写法：</p>
+<blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/edd1798ffc5eec30.png" alt="png"></p>
+</blockquote>
+<h2 id="dirname解决路径拼接错误"><a href="#dirname解决路径拼接错误" class="headerlink" title="__dirname解决路径拼接错误"></a>__dirname解决路径拼接错误</h2><p>有时候出现路径拼接错误是因为提供了.&#x2F;或者..&#x2F;开头的相对路径导致</p>
+<blockquote>
+<p>解决方法:</p>
+<ul>
+<li>提供一个完整路径</li>
+<li>但是移植性差,不利用代码维护</li>
+<li>使用__dirname</li>
+<li>__dirname代表的是当前目录路径</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(__dirname + <span class="string">&#x27;/files/2.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取失败&#x27;</span> + err.<span class="property">message</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;读取成功&#x27;</span> + dataStr);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h1><blockquote>
+<p><strong>path模块</strong>是Node.js官方提供的,用来<strong>处理路径</strong>的模块.它提供了一系列的方法和属性,用来满足用户对路径的处理需求.</p>
+<p>例如:</p>
+<ul>
+<li>path.join()方法,用来<strong>将多个路径片段拼接成一个完整的路径字符串</strong></li>
+<li>path.basename()方法,用来从路径字符串中,将文件名解析出来</li>
+</ul>
+</blockquote>
+<p>如果要在JavaScript代码中使用path模块来处理路径,则需要使用如下方式导入他:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="path-join-的语法格式"><a href="#path-join-的语法格式" class="headerlink" title="path.join()的语法格式"></a>path.join()的语法格式</h2><p>使用path.join()方法,可以把多个路径片段拼接为完整的路径字符串,语法格式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">join</span>([...paths])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解读:</p>
+<ul>
+<li>..paths&lt; string &gt;路径片段的序列</li>
+<li>返回值:&lt; string &gt;</li>
+</ul>
+</blockquote>
+<p>代码示例:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/2883715f9505b5a9.png" alt="png"></p>
+<h2 id="path-basename-的语法格式"><a href="#path-basename-的语法格式" class="headerlink" title="path.basename()的语法格式"></a>path.basename()的语法格式</h2><p>使用path.basename()方法,可以获取路径中的最后一部分,经常通过这个方法获取路径中的文件名,语法格式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(path[,ext])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解读:</p>
+<ul>
+<li>path<code>&lt;string&gt;</code>必选参数,表示一个路径的字符串</li>
+<li>ext<code>&lt;string&gt;</code>可选参数,表示文件扩展名</li>
+<li>返回:<code>&lt;string&gt;</code>表示路径中的最后一部分</li>
+</ul>
+</blockquote>
+<p>示例代码：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/e6b7240594ea3cf6.png" alt="png"></p>
+<h2 id="path-extname-代码示例"><a href="#path-extname-代码示例" class="headerlink" title="path.extname()代码示例"></a>path.extname()代码示例</h2><blockquote>
+<p>使用path.extname()方法，可以获取路径中的扩展名部分</p>
+</blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/6f381844b033d682.png" alt="png"></p>
+<h1 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h1><blockquote>
+<p>什么是客户端？什么是服务器？</p>
+<ol>
+<li>在网络节点中，负责消耗资源的电脑，叫做<strong>客户端</strong></li>
+<li><u>负责对外提供网络资源的电脑</u>，叫做<strong>服务器</strong></li>
+</ol>
+</blockquote>
+<p>http模块是Node.js官方提供的，用来创建web服务器的模块，通过http模块提供的http.createServer()方法，就能方便把一台普通的电脑，变成一台web服务器，从而对外提供web资源服务。</p>
+<p>如果希望使用http模块创建Web服务器，则需要导入他：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="进一步理解http模块的作用"><a href="#进一步理解http模块的作用" class="headerlink" title="进一步理解http模块的作用"></a>进一步理解http模块的作用</h2><blockquote>
+<p>服务器和普通电脑的区别在于，服务器上安装了web服务器插件。例如：IIS，Apache等。通过安装这些服务器软件，就能把一台普通电脑变成一台web服务器。</p>
+</blockquote>
+<blockquote>
+<p>在node.js中我们不需要使用IIS、Apache等这些第三方web服务器软件，因为我们可以基于Node.js提供的http模块，通过几行代码就能轻松手写一个服务器软件，从而对外提供web服务。</p>
+</blockquote>
+<h2 id="服务器相关概念"><a href="#服务器相关概念" class="headerlink" title="服务器相关概念"></a>服务器相关概念</h2><h3 id="1-IP地址"><a href="#1-IP地址" class="headerlink" title="1.IP地址"></a>1.IP地址</h3><p>IP地址就是互联网上每台计算机的唯-地址,因此IP地址具有唯一性。 如果把“个人电脑”比作”-台电话”，那么”IP地址”就相当于“电话号码”，只有在知道对方IP地址的前提下，才能与对应的电脑之间进行数据通信。</p>
+<p>IP地址的格式:通常用”点分十进制”表示成(a.b.c.d) 的形式，其中, a,b,c,d 都是0~255之间的十进制整数。例如:用点分十进表示的IP地址(192.168.1.1)</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>互联网中每台Web服务器，都有自己的IP地址，例如:大家可以在Windows的终端中运行ping www baidu.com命令,即可查看到百度服务器的IP地址。</li>
+<li>在开发期间，自己的电脑既是一台服务器, 也是-个客户端，为了方便测试，可以在自己的浏览器中输入127.0.0.1 这个IP地址,就能把自己的电脑当做一台服务 器进行访问了.</li>
+</ol>
+<h3 id="2-域名和域名服务器"><a href="#2-域名和域名服务器" class="headerlink" title="2.域名和域名服务器"></a>2.域名和域名服务器</h3><p>尽管IP地址能够唯-地标记网络上的计算机，但IP地址是一长串数字,不直观，而且不便于记忆，于是人们又发明了另一套字符型的地址方案，即所谓的域名(Domain Name)地址</p>
+<p>IP地址和域名是一对应的关系， 这份对应关系存放在一种叫做域名服务器(DNS, Domain name server)的电脑中。使用者只需通过好记的域名访问对应的服务器即可，对应的转换工作由域名服务器实现。因此，域名服务器就是提供IP地址和域名之间的转换服务的服务器。</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>单纯使用IP地址，互联网中的电脑也能够正常工作。但是有了域名的加持，能让互联网的世界变得更加方便。</li>
+<li>在开发测试期间，<strong>127.0.0.1</strong> 对应的域名是<strong>localhost</strong>,它们都代表我们自己的这台电脑，在使用效果上没有任何区别。</li>
+</ol>
+<h3 id="3-端口号"><a href="#3-端口号" class="headerlink" title="3.端口号"></a>3.端口号</h3><p>计算机中的端口号,就好像是现实生活中的门牌号一样。 通过门牌号,外卖小哥可以在整栋大楼众多的房间中，准确把外卖送到你的手中。<br>同样的道理，在一台电脑中,可以运行成百上千个web服务。每个web服务都对应-个唯的端口号. 客户端发送过来的网络请求,通过端口号,可以被准确地交给<strong>对应的web服务</strong>进行处理。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220628214815281.png" alt="image-20220628214815281"></p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>每个端口号不能同时被多个web服务器占用</li>
+<li>在实际运用中URL中的80端口可以被省略</li>
+</ol>
+<h2 id="创建最基本的web服务器"><a href="#创建最基本的web服务器" class="headerlink" title="创建最基本的web服务器"></a>创建最基本的web服务器</h2><p><strong>创建web服务器的基本步骤</strong></p>
+<blockquote>
+<ol>
+<li>导入http模块</li>
+<li>创建web服务器实例</li>
+<li>为服务器实例绑定<strong>require</strong>事件，<strong>监听客户端的请求</strong></li>
+<li>启动服务器</li>
+</ol>
+</blockquote>
+<h3 id="步骤1-导入http模块"><a href="#步骤1-导入http模块" class="headerlink" title="步骤1-导入http模块"></a>步骤1-导入http模块</h3><p>如果希望在自己电脑上创建一个web服务器，从而对外提供web服务，则需要导入http模块：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤2-创建web服务器实例"><a href="#步骤2-创建web服务器实例" class="headerlink" title="步骤2-创建web服务器实例"></a>步骤2-创建web服务器实例</h3><p>调用**http.sreateServer()**方法，即可快速创建一个web服务器实例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤3-为服务器实例绑定request事件"><a href="#步骤3-为服务器实例绑定request事件" class="headerlink" title="步骤3-为服务器实例绑定request事件"></a>步骤3-为服务器实例绑定request事件</h3><p>为服务器实例绑定request事件，即可监听客户端发送过来的网络请求：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用服务器实例的.on()方法，为服务器绑定一个request事件</span></span><br><span class="line">sever.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 只要有客户端来请求我们的服务器，就会触发request事件，从而调用这个事件处理函数</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Someone visit our web server&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="req请求对象"><a href="#req请求对象" class="headerlink" title="req请求对象"></a>req请求对象</h4><p>只要服务器接收了客户端的请求，就会调用server.on()为服务器绑定的request事件处理函数。如果想在事件处理函数中，访问与客户端相关的<strong>数据</strong>或者<strong>属性</strong>，就可以使用如下方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>,<span class="function">(<span class="params">req</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// req 是请求对象，它包含了与客户端相关的数据和属性，例如：</span></span><br><span class="line">    <span class="comment">// req.url 是客户端请求的url地址</span></span><br><span class="line">    <span class="comment">// req.method 是客户端的method请求类型</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;req.url&#125;</span>,and request method is <span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="res响应对象"><a href="#res响应对象" class="headerlink" title="res响应对象"></a>res响应对象</h4><p>在服务器的request使事件处理函数中，如果想访问与服务器相关的<strong>数据</strong>或<strong>属性</strong>，可以使用如下方式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//req是请求对象，包含了与客户端相关的数据和属性</span></span><br><span class="line">    <span class="comment">// req.url是客户端请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// req.method是客户端请求的method类型</span></span><br><span class="line">    <span class="keyword">const</span> method = req.<span class="property">method</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;url&#125;</span>,and request method is <span class="subst">$&#123;method&#125;</span>`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>当调用res.end()方法，向客户端发送中文内容时候，就会出现乱码问题，此时，需要手动设置内容的编码格式：</p>
+<p><code>res.setHeader(&#39;Content-Type&#39;, &#39;text/html;charset=utf-8&#39;);</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 发送内容包含中文</span></span><br><span class="line">    <span class="keyword">const</span> str = <span class="string">`你请求的url地址是<span class="subst">$&#123;req.url&#125;</span>,请求的method类型是<span class="subst">$&#123;req.method&#125;</span>`</span>;</span><br><span class="line">    <span class="comment">// 调用res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/html;charset=utf-8&#x27;)方法</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 调用res.end()方法向客户端响应一些内容</span></span><br><span class="line">    res.<span class="title function_">end</span>(str);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤4-启动服务器"><a href="#步骤4-启动服务器" class="headerlink" title="步骤4-启动服务器"></a>步骤4-启动服务器</h3><p>调用服务器实例的.listen()方法，即可启动当前的web服务器实例:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 调用server.listen(端口号，callback回调函数)方法，即可启动web服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">80</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http server running at http//127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="根据不同的url相应不同的html内容"><a href="#根据不同的url相应不同的html内容" class="headerlink" title="根据不同的url相应不同的html内容"></a>根据不同的url相应不同的html内容</h2><p><strong>核心实现步骤：</strong></p>
+<ol>
+<li>获取<strong>请求的url地址</strong></li>
+<li>设置<strong>默认的响应内容</strong>为<u>404 Not found</u></li>
+<li>判断用户请求的是否为**&#x2F;<strong>或</strong>&#x2F;index.html**首页</li>
+<li>判断用户请求的是否为**&#x2F;about.html**关于页面</li>
+<li>设置<strong>Content-Type响应头</strong>,防止中文乱码</li>
+<li>使用**res.end( )**把内容响应给客户端</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>();</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 获取请求的url地址</span></span><br><span class="line">    <span class="keyword">const</span> url = req.<span class="property">url</span>;</span><br><span class="line">    <span class="comment">// 2. 设置默认的响应内容为&lt;u&gt;404 Not found&lt;/u&gt;</span></span><br><span class="line">    <span class="keyword">let</span> content = <span class="string">`&lt;h1&gt;404 Not Found&lt;/h1&gt;`</span>;</span><br><span class="line">    <span class="comment">// 3. 判断用户请求的是否为/或/index.html首页</span></span><br><span class="line">    <span class="comment">// 4. 判断用户请求的是否为/about.html关于页面</span></span><br><span class="line">    <span class="keyword">if</span> (url === <span class="string">&#x27;/&#x27;</span> || url === <span class="string">&#x27;/index.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;首页&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">&#x27;/about.html&#x27;</span>) &#123;</span><br><span class="line">        content = <span class="string">`&lt;h1&gt;关于页面&lt;/h1&gt;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 5. 设置Content-Type响应头,防止中文乱码</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">// 6. 使用res.end( )把内容响应给客户端</span></span><br><span class="line">    res.<span class="title function_">end</span>(content);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 4. 启动服务器</span></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1:8080&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="什么是模块化？"><a href="#什么是模块化？" class="headerlink" title="什么是模块化？"></a>什么是模块化？</h2><p><strong>模块化</strong>是指解决一个复杂问题时，自顶向下逐层<strong>把系统划分为若干模块的过程</strong>。对整个系统来说，<strong>模块是可以组合，分解，更换的单元</strong>。</p>
+<p>编程领域中的模块化，就是遵守固定的规则，把一个大文件拆分成独立并相互依赖的多个小模块：</p>
+<blockquote>
+<p>把代码进行模块化拆分的好处：</p>
+<ol>
+<li>提高了代码的<strong>复用性</strong></li>
+<li>提高了代码的<strong>可维护性</strong></li>
+<li>可以实现<strong>按需加载</strong></li>
+</ol>
+</blockquote>
+<h2 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h2><p><strong>模块化规范</strong>就是对代码进行模块化的拆分与组合时，需要遵循的那些规则。</p>
+<p>例如：</p>
+<ul>
+<li>使用什么样的语法格式来<em>引入模块</em></li>
+<li>在模块中使用什么样的语法格式<em>向外暴露成员</em></li>
+</ul>
+<p><strong>模块化的好处</strong>：大家都遵循同样的模块化规范写代码，降低了沟通的成本，极大方便了各个模块之间的相互调用，利人利己。</p>
+<h2 id="Node-js中模块的分类"><a href="#Node-js中模块的分类" class="headerlink" title="Node.js中模块的分类"></a>Node.js中模块的分类</h2><p>Node.js中根据模块来源的不同，将模块分为了3大类，分别是：</p>
+<ul>
+<li><strong>内置模块</strong>（内置模块是Node.js官方提供的，例如：fs，path，http等）</li>
+<li><strong>自定义模块</strong>（用户创建的每个js文件，都是自定义模块）</li>
+<li><strong>第三方模块</strong>（由第三方开发出来的模块，并非官方提供的内置模块，也不用用户创建的自定义模块。使用前要先下载）</li>
+</ul>
+<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><p>使用强大的require()方法，可以加在需要的内置模块，用户自定义模块，第三方模块进行使用。例如：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630212456568.png" alt="image-20220630212456568"></p>
+<p><strong>注意：</strong>使用require()方法加载其他模块时候，会执行被加载模块中的代码。</p>
+<h2 id="Node-js中的模块作用域"><a href="#Node-js中的模块作用域" class="headerlink" title="Node.js中的模块作用域"></a>Node.js中的模块作用域</h2><h3 id="1-什么是模块作用域"><a href="#1-什么是模块作用域" class="headerlink" title="1.什么是模块作用域"></a>1.什么是模块作用域</h3><p>和函数作用域类似，在自定义模块中定义的变量，方法。等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做<strong>模块作用域</strong>；</p>
+<h3 id="2-模块作用域的好处"><a href="#2-模块作用域的好处" class="headerlink" title="2.模块作用域的好处"></a>2.模块作用域的好处</h3><p><strong>防止全局变量污染的问题</strong></p>
+<p>当两个js文件中有相同的变量，就会造成全局变量污染</p>
+<h3 id="3-向外共享模块作用域中的成员"><a href="#3-向外共享模块作用域中的成员" class="headerlink" title="3.向外共享模块作用域中的成员"></a>3.向外共享模块作用域中的成员</h3><h4 id="1-module对象"><a href="#1-module对象" class="headerlink" title="1.module对象"></a>1.module对象</h4><p>在每个.js自定义模块中都有一个module对象，它里面存储了和当前模块有关的信息，打印如下：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630221520536.png" alt="image-20220630221520536"></p>
+<h4 id="2-module-exports对象"><a href="#2-module-exports对象" class="headerlink" title="2.module.exports对象"></a>2.module.exports对象</h4><p>在自定义模块中。可以使用module.exports对象，将模块内的成员共享出去，供外界使用。</p>
+<p>外界用**require( )**方法导入自定义模块时候。得到的就是module.exports所指向对象。</p>
+<blockquote>
+<p>如果想要公开自定义模块中的一部分，可以直接为<code>module.exports</code>添加属性或者方法</p>
+</blockquote>
+<h4 id="3-共享成员时的注意点"><a href="#3-共享成员时的注意点" class="headerlink" title="3.共享成员时的注意点"></a>3.共享成员时的注意点</h4><p>使用require()方法导入模块时，导入的结果，<strong>永远以module.exports指向的对象为准。</strong></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630223935943.png" alt="image-20220630223935943"></p>
+<h4 id="4-exports对象"><a href="#4-exports对象" class="headerlink" title="4.exports对象"></a>4.exports对象</h4><p>由于module.exports单词写起来比较复杂，为了简化向外共享成员的代码，Node 提供了<strong>exports</strong> 对象。默认情况下，<strong>exports 和module.exports指向同一个对象</strong>。最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630224730743.png" alt="image-20220630224730743"></p>
+<p>注意：</p>
+<p>最终共享的结果，还是以<strong>module.exports</strong>指向的对象为准。</p>
+<blockquote>
+<p>如果module.exports这个老六偷偷指向了另一个对象，则以它为准😅</p>
+</blockquote>
+<h4 id="5-exports和module-exports的使用误区"><a href="#5-exports和module-exports的使用误区" class="headerlink" title="5.exports和module.exports的使用误区"></a>5.exports和module.exports的使用误区</h4><p>时刻谨记，<strong>require()<strong>模块时,得到的永远是</strong>module exports</strong>指向的对象:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220630225810795.png" alt="image-20220630225810795"></p>
+<h3 id="Node-js中的模块化规范"><a href="#Node-js中的模块化规范" class="headerlink" title="Node.js中的模块化规范"></a>Node.js中的模块化规范</h3><p>Node.js遵循了CommonJs模块化规范。CommonJS规定了<strong>模块的特性和各模块之间相互依赖。</strong></p>
+<p>CommonJS规定：</p>
+<ol>
+<li>每个模块内部，<strong>module</strong>变量代表当前模块</li>
+<li>module变量是一个对象，它的exports属性，（即<strong>module.exports）是对外的接口</strong></li>
+<li>加载某个模块，其实就是加载该模块的module.exports属性，<strong>require()方法用于加载模块</strong>。</li>
+</ol>
+<h1 id="npm与包"><a href="#npm与包" class="headerlink" title="npm与包"></a>npm与包</h1><h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><h3 id="什么是包"><a href="#什么是包" class="headerlink" title="什么是包"></a>什么是包</h3><blockquote>
+<p>Node.js中的<strong>第三方模块</strong>又叫做<strong>包。</strong></p>
+<p>就像电脑和计算机指的是相同的东西。第三方模块和包指的是同一个概念。只不过叫法不同</p>
+</blockquote>
+<h3 id="包的来源"><a href="#包的来源" class="headerlink" title="包的来源"></a>包的来源</h3><p>不同于Node.js中的内置模块与自定义模块，包是由第三方个人或团队开发出来的，免费供所有人使用。</p>
+<blockquote>
+<p>注意：Node.js中的包都是免费开源的，不需要付费即可免费下载使用。</p>
+</blockquote>
+<h3 id="为什么需要包"><a href="#为什么需要包" class="headerlink" title="为什么需要包"></a>为什么需要包</h3><p>由于Node.js的内置模块仅提供了一些底层的API，导致在基于内置模块进行项目开发的时候，效率低。包是基于内置模块封装出来的，提供了更高级，更方便的API，极大的提高了开发效率。</p>
+<p>包和内置模块之间的关系，类似于<strong>jQuery</strong>和<strong>浏览器API</strong>之间的关系。</p>
+<h3 id="从哪里下载包"><a href="#从哪里下载包" class="headerlink" title="从哪里下载包"></a>从哪里下载包</h3><p>国外有家IT公司,叫做npm, Inc.这家公司旗下有一个非常著名的网站: <a href="https://www.npmjs.com/">https://www.npmjs.com/</a> .它是全球最大的包共享平台，你可以从这个网站上搜索到任何你需要的包，只要你有足够的耐心!<br>到目前位置，全球约1100多万的开发人员，通过这个包共享平台，开发并共享了超过120多万个包供我们使用。<br>npm, Inc. 公司提供了一个地址为<a href="https://registy.npmjs.org/%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E6%9D%A5%E5%AF%B9%E5%A4%96%E5%85%B1%E4%BA%AB%E6%89%80%E6%9C%89%E7%9A%84%E5%8C%85%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E4%BB%8E%E8%BF%99%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%B8%8B%E8%BD%BD%E8%87%AA%E5%B7%B1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%8C%85%E3%80%82">https://registy.npmjs.org/的服务器，来对外共享所有的包，我们可以从这个服务器上下载自己所需要的包。</a></p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>从 <a href="https://www.npmjs.com/%E7%BD%91%E7%AB%99%E4%B8%8A%E6%90%9C%E7%B4%A2%E8%87%AA%E5%B7%B1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%8C%85">https://www.npmjs.com/网站上搜索自己所需要的包</a></li>
+<li>从<a href="https://registy.npmjs.org服务器上下载自己需要的包/">https://registy.npmjs.org服务器上下载自己需要的包</a></li>
+</ul>
+<h3 id="如何下载包"><a href="#如何下载包" class="headerlink" title="如何下载包"></a>如何下载包</h3><p>npm, Inc.公司提供了-一个包管理工具,我们可以使用这个包管理工具，从<a href="https://registry.npmis/">https://registry.npmis</a> org&#x2F;服务器把需要的包下载到本地使用。<br>这个包管理”工具的名字叫做Node Package Manager (简称npm包管理工具)，这个包管理工具随着Node.js的安装包-起被安装到了用户的电脑上。<br>大家可以在终端中执行<strong>npm-v</strong>命令,来查看自己电脑上所安装的npm包管理工具的版本号:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702100627668.png" alt="image-20220702100627668"></p>
+<h2 id="npm初体验"><a href="#npm初体验" class="headerlink" title="npm初体验"></a>npm初体验</h2><h3 id="格式化时间高级做法"><a href="#格式化时间高级做法" class="headerlink" title="格式化时间高级做法"></a>格式化时间高级做法</h3><ol>
+<li>使用npm包管理工具，在项目中安装格式化时间的包moment ，使用<code>npm install moment</code>或者<code>npm i moment</code>命令</li>
+<li>使用require( )导入格式化时间的包</li>
+<li>参考moment的官方API文档对时间进行格式化</li>
+</ol>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702105458124.png" alt="image-20220702105458124"></p>
+<h3 id="初次安装后多出的文件"><a href="#初次安装后多出的文件" class="headerlink" title="初次安装后多出的文件"></a>初次安装后多出的文件</h3><p>初次装包完成后，在项目文件夹下多-个叫做 <strong>node_ modules</strong>的文件夹和<strong>package-lock.json</strong>的配置文件。</p>
+<p><strong>其中：</strong></p>
+<ul>
+<li><strong>node_modules</strong>文件夹用来存放所有已安装到项目中的包。require()导入第三方包时,就是从这个目录中查找并加载包。</li>
+<li><strong>package-lock.json</strong>配置文件用来记录node. _modules目录下的每一个包的下载信息， 例如包的名字、版本号、下载地址等。</li>
+</ul>
+<p>注意:程序员不要手动修改node_ modules 或package-lock.json文件中的任何代码，npm包管理工具会自动维护它们。</p>
+<h3 id="安装指定版本的包"><a href="#安装指定版本的包" class="headerlink" title="安装指定版本的包"></a>安装指定版本的包</h3><p>默认情况下，使用npm install命令安装包的时候，会自动安装最新版本的包。如果需要安装指定版本的包,可以在包名之后,通过@符号指定具体的版本，例如:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702105945239.png" alt="image-20220702105945239"></p>
+<h4 id="包的语义化版本规范"><a href="#包的语义化版本规范" class="headerlink" title="包的语义化版本规范"></a>包的语义化版本规范</h4><p>包的版本号是以”点分十进制”形式进行定义的,总共有三位数字,例如 <em>2.24.0</em><br>其中每一位数字所代表的的含义如下:</p>
+<ul>
+<li><p>第1位数字:大版本</p>
+</li>
+<li><p>第2位数字:功能版本</p>
+</li>
+<li><p>第3位数字: Bug修复版本</p>
+</li>
+</ul>
+<p>版本号提升的规则:只要前面的版本号增长了，则后面的版本号归零。</p>
+<h4 id="包管理配置文件"><a href="#包管理配置文件" class="headerlink" title="包管理配置文件"></a>包管理配置文件</h4><p>npm规定，在项目根目录中，必须提供-个叫做 package.json的包管理配置文件。用来记录与项目有关的一一些配置信息。例如:</p>
+<ul>
+<li>项目的名称、版本号、描述等</li>
+<li>项目中都用到了哪些包</li>
+<li>哪些包只在开发期间会用到</li>
+<li>那些包在开发和部署时都需要用到</li>
+</ul>
+<h5 id="dependencies节点"><a href="#dependencies节点" class="headerlink" title="dependencies节点"></a>dependencies节点</h5><p>package.json文件中，有一个<strong>dependencies</strong>节点，专门用来记录您使用<strong>npm install</strong>命令安装了哪些包。</p>
+<h4 id="快速生成package-json"><a href="#快速生成package-json" class="headerlink" title="快速生成package.json"></a>快速生成package.json</h4><p>npm包管理工具提供了一个快捷命令，可以在执行命令时所处的目录中，快捷创建package.json这个包管理配置文件：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702115625776.png" alt="image-20220702115625776"></p>
+<p>注意：</p>
+<p>①上述命令只能在英文的目录下成功运行!所以，项目文件夹的名称-定要使用英文命名,不要使用中文,不能出现空格。<br>②运行npm install命令安装包的时候，npm包管理工具会自动把包的名称和版本号,记录到package.json中。</p>
+<h4 id="git合作开发遇到的问题"><a href="#git合作开发遇到的问题" class="headerlink" title="git合作开发遇到的问题"></a>git合作开发遇到的问题</h4><p>在实际上开发中，上传至git的前提下会自动屏蔽掉node_modules文件中的所有第三方包。通过<code>.gitignore</code>配置文件忽略掉该文件。避免项目文件过大。</p>
+<p>而在拿到项目的时候，可以通过<code>npm install</code>或者<code>npm i</code>指令安装所有你需要的第三方包。</p>
+<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><p>可以运行<code>npm uninstall</code>命令，来卸载指定的包：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702143705150.png" alt="image-20220702143705150"></p>
+<p>注意：npm uninstall 命令执行后，会把卸载的包，自动从package.json的dependencies中移除掉</p>
+<h3 id="devDependencies节点"><a href="#devDependencies节点" class="headerlink" title="devDependencies节点"></a>devDependencies节点</h3><p>如果某些包之在项目开发中会用到，在项目上线后不会用到，则建议把这些包记录到devDependencies节点中。与之对应的，如果某些包在开发和项目上线之后都需要用到，则建议把这些包记录到dependencies节点中。</p>
+<p>使用如下命令：<code>npm i 包名 -D</code></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702144612559.png" alt="image-20220702144612559"></p>
+<h2 id="淘宝NPM镜像服务器"><a href="#淘宝NPM镜像服务器" class="headerlink" title="淘宝NPM镜像服务器"></a>淘宝NPM镜像服务器</h2><p>淘宝在国内搭建了-一个服务器，专门把国外官方服务器上的包同步到国内的服务器，然后在国内提供下包的服务。从而极大的提高了下包的速度。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702145215179.png" alt="image-20220702145215179"></p>
+<p><strong>扩展：</strong></p>
+<p>镜像是一种文件存储形式。一个磁盘上的数据在另一个磁盘上存在完全相同的副本即为镜像</p>
+<h3 id="切换npm的下包镜像源"><a href="#切换npm的下包镜像源" class="headerlink" title="切换npm的下包镜像源"></a>切换npm的下包镜像源</h3><p>下包的镜像源，指的是下包的服务器地址</p>
+<ul>
+<li><code>npm config get registry</code> 查看当前下包镜像源</li>
+<li><code>npm config set registry=https://registry.npm.taobao.org/</code>将下包的镜像源切换为淘宝镜像源</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702145804759.png" alt="image-20220702145804759"></p>
+<h3 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h3><p>为了更方便的切换下包的镜像源，我们可以安装nrm这个小工具，利用nrm提供的终端命令,可以快速查看和切换下包的镜像源。</p>
+<ul>
+<li><code>npm i nrm -g</code>通过npm包管理器，将nrm安装为全局可用的工具</li>
+<li><code>nrm ls</code>查看所有可用镜像源</li>
+<li><code>nrm use taobao</code>将下包的镜像源切换为淘宝镜像</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702150232535.png" alt="image-20220702150232535"></p>
+<h2 id="包的分类"><a href="#包的分类" class="headerlink" title="包的分类"></a>包的分类</h2><h3 id="项目包"><a href="#项目包" class="headerlink" title="项目包"></a>项目包</h3><p>那些被安装到项目的<strong>node _modules</strong>目录中的包，都是项目包。</p>
+<p>项目包又分为两类，分别是；</p>
+<ul>
+<li><strong>开发依赖包</strong>(被记录到<em>devDependencies</em>节点中的包，只在开发期间会用到)</li>
+<li><strong>核心依赖包</strong>(被记录到<em>dependencies</em>节点中的包，在开发期间和项目.上线之后都会用到)</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702152312713.png" alt="image-20220702152312713"></p>
+<h3 id="全局包"><a href="#全局包" class="headerlink" title="全局包"></a>全局包</h3><p>在执行<code>npm install </code>命令时，如果提供了-g 参数，则会把包安装为全局包。<br>全局包会被安装到<strong>C:\Users\用户目录\AppData\Roaming\npm\node_ modules</strong> 目录下。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702152638662.png" alt="image-20220702152638662"></p>
+<p>注意：</p>
+<ol>
+<li>只有<strong>工具性质的包</strong>，才有全局安装的必要性，因为它们提供了好用的终端命令。</li>
+<li>判断某个包是否需要全局安装后再能使用，可以参考官方提供的使用说明即可。</li>
+</ol>
+<h3 id="i5ting-toc"><a href="#i5ting-toc" class="headerlink" title="i5ting_toc"></a>i5ting_toc</h3><p>iting_toc是一个可以把md文档转为html页面的小工具,使用步骤如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702152934464.png" alt="image-20220702152934464"></p>
+<h2 id="规范包结构"><a href="#规范包结构" class="headerlink" title="规范包结构"></a>规范包结构</h2><p>在清楚了包的概念以及如何下载和使用包之后，接下来,我们深入了解一下包的内部结构。</p>
+<p>一个规范的包，它的组成结构,必须符合以下3点要求:</p>
+<ol>
+<li>包必须以单独的目录而存在</li>
+<li>包的顶级目录下要必须包含package.json 这个包管理配置文件</li>
+<li>package.json 中必须包含name, version, main这三个属性,分别代表包的名字版本号、包的入口。</li>
+</ol>
+<p> 注意:以上3点要求是一个规范的包结构必须遵守的格式，关于更多的约束，可以参考网站</p>
+<h2 id="发布包"><a href="#发布包" class="headerlink" title="发布包"></a>发布包</h2><p>在符合规范包结构的前提下就可以自己制作一个包并发布到npm网站。</p>
+<h3 id="关于包的规范"><a href="#关于包的规范" class="headerlink" title="关于包的规范"></a>关于包的规范</h3><h4 id="关于package-json文件"><a href="#关于package-json文件" class="headerlink" title="关于package.json文件"></a>关于package.json文件</h4><ul>
+<li>name 发布包时的包名字，不可以与他人重复</li>
+<li>version 包版本</li>
+<li>mian 入口文件</li>
+<li>description 被检索时所展示的描述</li>
+<li>keywords 被检索的关键字</li>
+<li>license 开源协议</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702165535367.png" alt="image-20220702165535367"></p>
+<h4 id="遵循模块化规范"><a href="#遵循模块化规范" class="headerlink" title="遵循模块化规范"></a>遵循模块化规范</h4><p>入口文件写入到<code>index.js</code>文件下，方法文件放入src文件中</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702165828338.png" alt="image-20220702165828338"></p>
+<h4 id="关于入口文件index-js"><a href="#关于入口文件index-js" class="headerlink" title="关于入口文件index.js"></a>关于入口文件index.js</h4><ol>
+<li>dateNew&#x2F;escape是对象</li>
+<li>需要挂载到module.exports</li>
+<li>使用<code>...</code>运算符展开这两个对象</li>
+<li>让他们的所有属性交给新的对象module.exports</li>
+</ol>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702165855497.png" alt="image-20220702165855497"></p>
+<h3 id="发布包-1"><a href="#发布包-1" class="headerlink" title="发布包"></a>发布包</h3><p>在npm官网注册好账号后在终端登录账户</p>
+<p>使用指令<code>npm login </code></p>
+<p>依次输入用户名 - 密码 - 邮箱</p>
+<p><strong>注意：</strong><u>镜像服务器必须是npm官方地址</u></p>
+<h3 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h3><p>运行<code>npm unpublish 包名 --force</code>命令，即可从npm删除已发布的包。</p>
+<p>注意：</p>
+<ol>
+<li><code>npm unpublish</code>命令只能删除72小时以内发布的包</li>
+<li><code>npm unpublish</code>删除的包，在24小时内不允许重复发布</li>
+<li>发布包的时候要慎重，尽量不要往npm上发布没有意义的包!</li>
+</ol>
+<h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><h2 id="Express简介"><a href="#Express简介" class="headerlink" title="Express简介"></a>Express简介</h2><h3 id="什么是Express"><a href="#什么是Express" class="headerlink" title="什么是Express"></a>什么是Express</h3><p>官方给出的概念: Express 是基于Node.js平台,快速、开放、极简的Web开发框架。<br>通俗的理解: Express 的作用和Node.js内置的http模块类似，是专门用来创建Web服务器的。<br>Express的本质:就是一个npm上的第三方包，提供了快速创建Web服务器的便捷方法。</p>
+<blockquote>
+<p>Express的中文官网:. <a href="http://www.expressjs.com.cn/">http://www.expressjs.com.cn/</a></p>
+</blockquote>
+<h2 id="EXpress基本使用"><a href="#EXpress基本使用" class="headerlink" title="EXpress基本使用"></a>EXpress基本使用</h2><h3 id="Express安装"><a href="#Express安装" class="headerlink" title="Express安装"></a>Express安装</h3><p>在项目所处目录中，使用<code>npm install express@4.17.1</code>安装指定版本或者<code>npm install express --save</code>安装最新版本</p>
+<h3 id="创建基本的web服务器"><a href="#创建基本的web服务器" class="headerlink" title="创建基本的web服务器"></a>创建基本的web服务器</h3><ol>
+<li>导入express模块</li>
+<li>创建web服务器</li>
+<li>启动web服务器</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.导入express</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.创建web服务器</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">// 3.启动web服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">80</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;express server running at http://127.0.0.1&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="监听GET请求"><a href="#监听GET请求" class="headerlink" title="监听GET请求"></a>监听GET请求</h3><p>通过<code>app.get()</code>方法，可以监听客户端的GET请求，具体的语法格式如下：</p>
+<ul>
+<li>参数1：客户端请求的URL地址</li>
+<li>参数2：请求对应的处理函数<ul>
+<li>​		req：请求对象（包含了与请求相关的属性和方法）</li>
+<li>​        res：响应对象（包含了与响应相关的属性与方法）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;请求URL&#x27;</span>,<span class="keyword">function</span>(<span class="params">req,res</span>)&#123;<span class="comment">/*处理函数*/</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="监听POST请求"><a href="#监听POST请求" class="headerlink" title="监听POST请求"></a>监听POST请求</h3><p>通过<code>app.post()</code>方法，可以监听客户端的POST请求，具体语法如下：</p>
+<ul>
+<li>参数1：客户端请求的URL地址</li>
+<li>参数2：请求对应的处理函数<ul>
+<li>​		req：请求对象（包含了与请求相关的属性和方法）</li>
+<li>​        res：响应对象（包含了与响应相关的属性与方法）<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;请求URL&#x27;</span>,<span class="keyword">function</span>(<span class="params">req,res</span>)&#123;<span class="comment">/*处理函数*/</span>&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="把内容响应给客户端"><a href="#把内容响应给客户端" class="headerlink" title="把内容响应给客户端"></a>把内容响应给客户端</h3><p>通过<code>res.send()</code>方法，可以把处理好的内容，发送给客户端：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/user&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 向客户端发送JSON请求</span></span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;zs&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>:<span class="number">20</span>,</span><br><span class="line">        <span class="attr">gender</span>:<span class="string">&#x27;男&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/user&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 向客户端发送文本请求</span></span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;请求成功&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取URL中携带的查询参数"><a href="#获取URL中携带的查询参数" class="headerlink" title="获取URL中携带的查询参数"></a>获取URL中携带的查询参数</h3><p>通过<code>req.query</code>对象，可以访问到客户端通过<strong>查询字符串</strong>的形式，发送到服务器的参数:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702200820315.png" alt="image-20220702200820315"></p>
+<h3 id="获取URL中的动态参数"><a href="#获取URL中的动态参数" class="headerlink" title="获取URL中的动态参数"></a>获取URL中的动态参数</h3><p>通过req.params对象，可以访问到URL中，通过：匹配到的动态参数：</p>
+<blockquote>
+<p>:id并非固定写法，”:”才是，id是可变的</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// url地址中，可以通过:参数名的形式，匹配动态参数值</span></span><br><span class="line"><span class="comment">// 注意：这里的:id是一个动态的参数</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/user/:id&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// req.params 是动态匹配到的URL参数，默认也是一个空对象</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">params</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 里面存放着通过:动态匹配到的参数值</span></span><br><span class="line">    res.<span class="title function_">send</span>(req.<span class="property">params</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="托管静态资源"><a href="#托管静态资源" class="headerlink" title="托管静态资源"></a>托管静态资源</h2><h3 id="1-express-static"><a href="#1-express-static" class="headerlink" title="1.express.static()"></a>1.express.static()</h3><p>express提供了-个非常好用的函数，叫做express.static0,通过它,我们可以非常方便地创建一个静态资源服务器。<br>例如，通过如下代码就可以将public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问了:</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>my_firstBlog</title>
+    <url>/found404.io/2022/06/25/my-firstBlog/</url>
+    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
+<p>第一篇blog</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hello hexo!</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于This</title>
+    <url>/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/</url>
+    <content><![CDATA[<h1 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h1><p>this指向问题一般情况下this的最终指向的是那个调用它的对象</p>
+<h2 id="1-全局作用域或者普通函数中this"><a href="#1-全局作用域或者普通函数中this" class="headerlink" title="1.全局作用域或者普通函数中this"></a>1.全局作用域或者普通函数中this</h2><p>指向全局对象<strong>window</strong>(注意定时器里面的this指向<strong>window</strong>)</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// this指向问题一般情况下this的最终指向的是那个调用它的对象</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 1.全局作用域或者普通函数中this指向全局对象window(注意定时器甲面的this指向window)</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//window</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="2-函数中的this"><a href="#2-函数中的this" class="headerlink" title="2.函数中的this"></a>2.函数中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744499437-6ea6b88a-d412-4772-9064-e590f576ae41.png" alt="img"></p>
+<p><strong>注：</strong>匿名函数中的this也同样指向windows</p>
+<h2 id="3-定时器中的this"><a href="#3-定时器中的this" class="headerlink" title="3.定时器中的this"></a>3.定时器中的this</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744551802-255f5ba4-a4a8-42b1-9baf-8d488175c3d1.png" alt="img"></p>
+<h2 id="4-对象或者构造函数中的this"><a href="#4-对象或者构造函数中的this" class="headerlink" title="4.对象或者构造函数中的this"></a>4.对象或者构造函数中的this</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 2.调用中谁调用this指向谁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> o = &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">sayHi</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">// this指向的是o这个对象</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    o.<span class="title function_">sayHi</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 3.构造函数中this指向构造函数的实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">fun</span>(<span class="params">name, age</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>); <span class="comment">//指向fun实例对象</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> fun = <span class="keyword">new</span> <span class="title function_">fun</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象中的<strong>this</strong>指向它本身</li>
+<li>构造函数中的<strong>this</strong>指向它这个构造函数</li>
+</ul>
+<p><em>构造函数中的this因为new的过程使得this指向发生了转移</em></p>
+<p><strong>new的整个过程：</strong></p>
+<ol>
+<li>new会在内存中创建一个新的空对像</li>
+<li>new会让this指向这个新对象</li>
+<li>执行构造函数中的代码</li>
+<li>return这个新对象</li>
+</ol>
+<h2 id="5-绑定事件中的this"><a href="#5-绑定事件中的this" class="headerlink" title="5.绑定事件中的this"></a>5.绑定事件中的this</h2><p>谁绑定事件<strong>this</strong>就指向谁</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654744731772-a804b07f-d121-4b03-aa9c-57980de6fc8d.png" alt="img"></p>
+<h2 id="6-箭头函数this指向特殊性"><a href="#6-箭头函数this指向特殊性" class="headerlink" title="6.箭头函数this指向	特殊性"></a>6.箭头函数this指向	<em>特殊性</em></h2><p>箭头函数的this指向它的父作用域，箭头函数声明在全局作用域下其this指向window，若不在全局作用域下，this指向其父作用域</p>
+<p><strong>箭头函数的this永远指向其父作用域，箭头函数没有自己的this</strong></p>
+<h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746204921-fab4c532-3bae-4292-9e9d-b5f9d6d75eac.png" alt="img"></p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654746238269-01e68480-a644-4ce2-9c57-d94c32499fe0.png" alt="img"></p>
+<h1 id="改变this指向方法"><a href="#改变this指向方法" class="headerlink" title="改变this指向方法"></a>改变this指向方法</h1><h2 id="1-call-方法-常用于继承"><a href="#1-call-方法-常用于继承" class="headerlink" title="1.call()方法    常用于继承"></a>1.call()方法    <em>常用于继承</em></h2><p>call(无数个参数);</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：实参</li>
+<li>使用之后会自动执行该函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655455484583-0d0dd80b-d5c2-4752-9623-fdd9cf6b7e47.png" alt="img"> </p>
+<h2 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2.apply()方法"></a>2.apply()方法</h2><p>apply（两个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数：数组或者伪数组（里面为实参）</li>
+<li>特点：使用时候会自动执行函数，不适合用在定时器处理函数或者事件处理函数</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457205108-985cd7e9-ae97-4743-942d-6a12deb83123.png" alt="img"></p>
+<h2 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3.bind()方法"></a>3.bind()方法</h2><p>bind（无数个参数）</p>
+<ul>
+<li>第一个参数：改变this指向</li>
+<li>第二个参数之后：实参</li>
+<li>返回值为一个新的函数</li>
+<li>使用的时候需要手动调用下返回的新函数（不会自动执行）</li>
+<li>作用：改变事件处理函数或者定时器处理函数的this指向</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655457422671-0e2884fe-92a5-449b-9deb-e42a3cccafab.png" alt="img"></p>
+<h2 id="三者区别"><a href="#三者区别" class="headerlink" title="三者区别"></a>三者区别</h2><p><strong>call、apply</strong>与<strong>bind</strong>区别：前两个可以自动执行，<strong>bind</strong>不会自动执行，需要手动调用</p>
+<p><strong>call、bind</strong>与<strong>apply</strong>区别：前两个都有无数个参数，<strong>apply</strong>只有两个参数，而且第二个参数为**[数组]**</p>
+<h1 id="经典例题🥳"><a href="#经典例题🥳" class="headerlink" title="经典例题🥳"></a>经典例题🥳</h1><h2 id="原型和this"><a href="#原型和this" class="headerlink" title="原型和this"></a>原型和this</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">100</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">y</span> = <span class="number">200</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">getX</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getX</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">x</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getY</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">y</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line"><span class="keyword">var</span> f2 = <span class="keyword">new</span> <span class="title class_">Fn</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">getX</span> === f2.<span class="property">getX</span>); <span class="comment">//false  两个对象不能全等</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">getY</span> === f2.<span class="property">getY</span>); <span class="comment">//true	 使用的一个构造函数，原型上的方法相同</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">__proto__</span>.<span class="property">getY</span> === <span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getY</span>); <span class="comment">//true	对象的原型方法和构造函数的原型方法相同(指向同一个构造函数)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">__proto__</span>.<span class="property">getX</span> === f2.<span class="property">getX</span>); <span class="comment">//false	对象原型的方法和对象的方法不相等</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">__proto__</span>.<span class="property">getX</span> === <span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getX</span>); <span class="comment">//true	对象的原型方法和构造函数的原型方法相同(指向同一个构造函数)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f1.<span class="property">constructor</span>); <span class="comment">//f  Fn()  构造函数对象的构造方法是FN()</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">__proto__</span>.<span class="property">constructor</span>); <span class="comment">//空函数	构造函数的原型的构造方法是空函数</span></span><br><span class="line">f1.<span class="title function_">getX</span>(); <span class="comment">//	100	</span></span><br><span class="line">f1.<span class="property">__proto__</span>.<span class="title function_">getX</span>(); <span class="comment">//undefined	  原型上的方法没有给x赋值</span></span><br><span class="line">f2.<span class="title function_">getY</span>(); <span class="comment">//	200  </span></span><br><span class="line"><span class="title class_">Fn</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="title function_">getY</span>(); <span class="comment">//	undefined	  原型上的方法没有给x赋值</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>解析：</strong></p>
+<ol>
+<li><p>第一个false，首先要想到的是 简单数据类型的比较是<strong>对值的比较</strong>，他们都是存在在栈空间，所以两个值可以相等。而复杂数据类型的比较大不相同，他们在栈空间存放的是地址，当比较两者时，比较的是地址，所以当两个就算是属性相同方法相同的对象比较时，他们的<strong>存放地址</strong>不同，所以不同。</p>
+</li>
+<li><p>true的原因调用的是同一个原型上的方法，所以相同。</p>
+</li>
+<li><p>true，<code>f1.__proto__·</code>指向的是Fn原型，再调用getY方法，这其实就等同于<code>Fn.prototype.getY</code>直接调用方法</p>
+</li>
+<li><p>false，跟第一个同理，<code>f1.__proto__.getX</code>是原型上的方法，其存放地址与实例化对象f2.getX所指向的对象存放地址不相同。并非值的比较。</p>
+</li>
+<li><p>true，<code>f1.__proto__.getX === Fn.prototype.getX</code>可以看作<code>Fn.prototype.getX === Fn.prototype.getX</code>两者相同，都是原型上的方法，地址也相同。</p>
+</li>
+<li><p>实例化对象的constructor指向的是Person，死记。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数Person</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我叫&quot;</span>, <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 验证:实例对象p的constructor属性指向构造函数Person</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p.<span class="property">constructor</span> === <span class="title class_">Person</span>); <span class="comment">//true,验证结果正确</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ƒ Object() &#123; [native code] &#125;</code> Fn.prototype指向的是Fn的原型。Fn原型对象的<code>__proto__</code>指向的是Object对象原型。而Object对象原型的constructor指向的是Object对象，可以参考下图：<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220702174347263New.png" alt="image-20220702174347263New"></p>
+</li>
+<li><p>100，f1是一个对象，它调用它自身的getX方法，此时的this只想他自己，所以输出100</p>
+</li>
+<li><p>undefined，<code>f1.__proto__</code>指向的是fn原型，首先原型上本身就没有x，y属性值。其次调用的方法中的this指向调用它的对象</p>
+</li>
+<li><p>f2调用原型上的方法，谁调用，this就只想谁。所以输出200</p>
+</li>
+<li><p>跟第9个一样，原型调用自身的方法，this指向自己，没有y值，所以是underfined</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
       </tags>
   </entry>
 </search>
