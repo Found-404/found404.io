@@ -1840,6 +1840,8 @@
     <content><![CDATA[<h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h1 id="DOM对象和jQuery对象"><a href="#DOM对象和jQuery对象" class="headerlink" title="DOM对象和jQuery对象"></a>DOM对象和jQuery对象</h1><h2 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h2><h3 id="1-DOM对象-用原生js获取过来的对象就是DOM对象"><a href="#1-DOM对象-用原生js获取过来的对象就是DOM对象" class="headerlink" title="1. DOM对象:用原生js获取过来的对象就是DOM对象"></a>1. DOM对象:用原生js获取过来的对象就是DOM对象</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655434695673-716396bb-2625-4a7c-8bf5-f657e6f7fdc9.png" alt="img"></p>
 <h3 id="2-jQuery对象-用jQuery方式获取"><a href="#2-jQuery对象-用jQuery方式获取" class="headerlink" title="2.jQuery对象:用jQuery方式获取"></a>2.jQuery对象:用jQuery方式获取</h3><p>获取过来的对象是<strong>jQuery</strong>对象。本质: 通过**$**把DOM元素进行了包装</p>
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655434767179-023a8725-75b5-4295-9825-a27ebe331c60.png" alt="img"></p>
+<span id="more"></span>
+
 <h3 id="3-jQuery对象只能使用jQuery-方法"><a href="#3-jQuery对象只能使用jQuery-方法" class="headerlink" title="3. jQuery对象只能使用jQuery 方法"></a>3. jQuery对象只能使用jQuery 方法</h3><p><em>DOM对象则使用原生的JavaScirpt属性和方法</em></p>
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655434820534-0d742421-b37b-48ef-b785-a6279fb24c1f.png" alt="img"></p>
 <h2 id="相互转换"><a href="#相互转换" class="headerlink" title="相互转换"></a>相互转换</h2><h3 id="1-DOM-对象转换为-jQuery-对象"><a href="#1-DOM-对象转换为-jQuery-对象" class="headerlink" title="1. DOM 对象转换为 jQuery 对象"></a>1. DOM 对象转换为 jQuery 对象</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655434936962-fb382719-79c5-42ba-be85-34d2608d74a9.png" alt="img"></p>
