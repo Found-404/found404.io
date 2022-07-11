@@ -1114,7 +1114,7 @@ pre .javascript .function {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 99;
 }
 @media (max-width: 991px) {
   .github-corner {
@@ -1240,7 +1240,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4e06ff;
+  background: #1bd6ee;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1566,14 +1566,14 @@ pre .javascript .function {
   padding: 0 6px;
   position: fixed;
   transition-property: bottom;
-  z-index: 1300;
+  z-index: 99;
   width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
 }
 .back-to-top.back-to-top-on {
-  bottom: 30px;
+  bottom: 50px;
 }
 @media (max-width: 991px) {
   .back-to-top {
