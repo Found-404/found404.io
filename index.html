@@ -188,6 +188,245 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/14/Web%E5%BC%80%E5%8F%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/found404.io/2022/07/14/Web%E5%BC%80%E5%8F%91/" class="post-title-link" itemprop="url">Web开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-14 23:14:45 / 修改时间：23:17:00" itemprop="dateCreated datePublished" datetime="2022-07-14T23:14:45+08:00">2022-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/Node-js/" itemprop="url" rel="index"><span itemprop="name">Node.js</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Web开发模式"><a href="#Web开发模式" class="headerlink" title="Web开发模式"></a>Web开发模式</h1><blockquote>
+<p>目前主流的Web开发模式有两种，分别是：</p>
+<ol>
+<li>基于服务端渲染的传统web开发模式</li>
+<li>基于前后端分离的新型web开发模式</li>
+</ol>
+</blockquote>
+<h2 id="1-服务端渲染的web开发模式"><a href="#1-服务端渲染的web开发模式" class="headerlink" title="1.服务端渲染的web开发模式"></a>1.服务端渲染的web开发模式</h2><p>服务端渲染的概念:服务器发送给客户端的HTML页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不需要使用Ajax这样的技术额外请求页面的数据。代码示例如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220713230024974.png" alt="image-20220713230024974"></p>
+<h4 id="服务端渲染的优缺点"><a href="#服务端渲染的优缺点" class="headerlink" title="服务端渲染的优缺点"></a>服务端渲染的优缺点</h4><p><strong>优点:</strong></p>
+<ol>
+<li>前端耗时少。 因为服务器端负责动态生成HTML内容,浏览器只需要直接渲染页面即可。尤其是移动端，更省电。</li>
+<li>有利于SEO. 因为服务器端响应的是完整的HTML页面内容,所以爬虫更容易爬取获得信息，更有利于SEO</li>
+</ol>
+<p><strong>缺点:</strong></p>
+<ol>
+<li>占用服务器端资源。 即服务器端完成HTML页面内容的拼接，如果请求较多,会对服务器造成一定的访问压力。</li>
+<li>不利于前后端分离, 开发效率低。使用服务器端渲染，则无法进行分工合作,尤其对于前端复杂度高的项目,不利于项目高效开发。</li>
+</ol>
+<h2 id="2-前后端分离的优缺点"><a href="#2-前后端分离的优缺点" class="headerlink" title="2.前后端分离的优缺点"></a>2.前后端分离的优缺点</h2><h4 id="服务端渲染的优缺点-1"><a href="#服务端渲染的优缺点-1" class="headerlink" title="服务端渲染的优缺点"></a>服务端渲染的优缺点</h4><p><strong>优点:</strong></p>
+<ol>
+<li>开发体验好。 前端专注于UI页面的开发,后端专注于api的开发,且前端有更多的选择性。</li>
+<li>用户体验好。 Ajax 技术的广泛应用,极大的提高了用户的体验，可以轻松实现页面的局部刷新</li>
+<li>减轻了服务器端的渲染压力。因为页面最终是在每个用户的浏览器中生成的。</li>
+</ol>
+<p><strong>缺点:</strong></p>
+<ol>
+<li>不利于SEO(爬虫).因为完整的HTML页面需要在客户端动态拼接完成，所以爬虫对无法爬取页面的有效信息。(解决方案:利用Vue. React 等前端框架的SSR (server side render)技术能够很好的解决SEO问题! )</li>
+</ol>
+<h2 id="如何选择Web开发模式"><a href="#如何选择Web开发模式" class="headerlink" title="如何选择Web开发模式"></a>如何选择Web开发模式</h2><p>不谈业务场景而盲目选择使用何种开发模式都是耍流氓。</p>
+<blockquote>
+<ol>
+<li>比如企业级网站,主要功能是展示而没有复杂的交互,并且需要良好的SEO,则这时我们就需要使用服务器端渲染;</li>
+<li>而类似后台管理项目，交互性比较强，不需要考虑SEO,那么就可以使用前后端分离的开发模式。</li>
+</ol>
+</blockquote>
+<p>另外，具体使用何种开发模式并不是绝对的，为为同时兼顾了首页的渲染速度和前后端分离的开发效率，一些网站采用了首屏服务器端渲染+其他页面前后端分离的开发模式。</p>
+<h1 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h1><h2 id="什么是身份认证"><a href="#什么是身份认证" class="headerlink" title="什么是身份认证"></a>什么是身份认证</h2><p>身份认证(Authentication) 又称”身份验证”、”鉴权” ，是指通过-定的手段，完成对用户身份的确认。</p>
+<ul>
+<li>日常生活中的身份认证随处可见，例如:高铁的验票乘车，手机的密码或指纹解锁，支付宝或微信的支付密码等。</li>
+<li>在Web开发中，也涉及到用户身份的认证，例如:各大网站的手机验证码登录、邮箱密码登录、二维码登录等。</li>
+</ul>
+<h2 id="不同开发模式下的身份认证"><a href="#不同开发模式下的身份认证" class="headerlink" title="不同开发模式下的身份认证"></a>不同开发模式下的身份认证</h2><p>对于服务端渲染和前后端分离这两种开发模式来说，分别有着不同的身份认证方案:</p>
+<ol>
+<li>服各端渲染推荐使用<strong>Session</strong>认证机制</li>
+<li>前后端分离推荐使用<strong>JWT</strong>认证机制</li>
+</ol>
+<h2 id="Session认证机制"><a href="#Session认证机制" class="headerlink" title="Session认证机制"></a>Session认证机制</h2><h3 id="HTTP协议的无状态性"><a href="#HTTP协议的无状态性" class="headerlink" title="HTTP协议的无状态性"></a>HTTP协议的无状态性</h3><p>了解HTTP协议的无状态性是进一步学习Session认证机制的必要前提。<br>HTTP协议的无状态性,指的是客户端的每次HTTP请求都是独立的，连续多个请求之间没有直接的关系，服务器不会主动保留每次HTTP请求的状态。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714192603710.png" alt="image-20220714192603710"></p>
+<h3 id="如何突破HTTP无状态的限制"><a href="#如何突破HTTP无状态的限制" class="headerlink" title="如何突破HTTP无状态的限制"></a>如何突破HTTP无状态的限制</h3><p>对于超市来说，为了方便收银员在进行结算时给VIP用户打折,超市可以为每个VIP用户发放会员卡。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714192702651.png" alt="image-20220714192702651"></p>
+<blockquote>
+<p>注意:现实生活中的会员卡身份认证方式，在Web开发中的专业术语叫做<strong>Cookie</strong>。</p>
+</blockquote>
+<h3 id="什么是Cookie"><a href="#什么是Cookie" class="headerlink" title="什么是Cookie"></a>什么是Cookie</h3><blockquote>
+<p>Cookie是存储在用户浏览器中的一段不超过4 KB的字符串。它由一一个名称(Name)、-个值(Value) 和其它几个用于控制Cookie有效期、安全性、使用范围的可选属性组成。</p>
+</blockquote>
+<p>不同域名下的Cookie各自独立，每当客户端发起请求时，会自动把当前域名下所有未过期的Cookie一同发送到服务器。</p>
+<p>Cookie的几大特性:</p>
+<ol>
+<li>自动发送</li>
+<li>域名独立</li>
+<li>过期时限</li>
+<li>4KB 限制</li>
+</ol>
+<h4 id="Cookie在身份认证中的作用"><a href="#Cookie在身份认证中的作用" class="headerlink" title="Cookie在身份认证中的作用"></a>Cookie在身份认证中的作用</h4><ul>
+<li>客户端第一-次请求服务器的时候，服务器通过响应头的形式，向客户端发送一个身份认证的Cookie,客户端会自动将Cookie保存在浏览器中。</li>
+<li>随后，当客户端浏览器每次请求服务器的时候，浏览器会自动将身份认证相关的Cookie,通过请求头的形式发送给服务器，服务器即可验明客户端的身份。</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714193346444.png" alt="image-20220714193346444"></p>
+<h4 id="Cookie不具有安全性"><a href="#Cookie不具有安全性" class="headerlink" title="Cookie不具有安全性"></a>Cookie不具有安全性</h4><p>由于Cookie是存储在浏览器中的，而且浏览器也提供了读写Cookie的API，因此Cookie很容易被伪造，不具有安全性。因此不建议服务器将重要的隐私数据，通过Cookie的形式发送给浏览器。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714193659593.png" alt="image-20220714193659593"></p>
+<blockquote>
+<p>注意：千万不要使用Cookie存储用户的信息</p>
+</blockquote>
+<h4 id="提高身份认证的安全性"><a href="#提高身份认证的安全性" class="headerlink" title="提高身份认证的安全性"></a>提高身份认证的安全性</h4><p>为了防止客户伪造会员卡,收银员在拿到客户出示的会员卡之后，可以在收银机上进行刷卡认证。只有收银机确认存在的会员卡，才能被正常使用。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714193843904.png" alt="image-20220714193843904"></p>
+<blockquote>
+<p>这种”会员卡+刷卡认证”的设计理念,就是Session认证机制的精髓。</p>
+</blockquote>
+<h2 id="Session的工作原理"><a href="#Session的工作原理" class="headerlink" title="Session的工作原理"></a>Session的工作原理</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714194043942.png" alt="image-20220714194043942"></p>
+<h3 id="在Express-session中间件"><a href="#在Express-session中间件" class="headerlink" title="在Express-session中间件"></a>在Express-session中间件</h3><h4 id="1-安装express-session中间件"><a href="#1-安装express-session中间件" class="headerlink" title="1.安装express-session中间件"></a>1.安装express-session中间件</h4><p>在Express项目中，只需要安装express-session中间件，即可在项目中使用Session认证：</p>
+<p><code>npm install express-session</code></p>
+<h4 id="2-配置sxpress-session中间件"><a href="#2-配置sxpress-session中间件" class="headerlink" title="2.配置sxpress-session中间件"></a>2.配置sxpress-session中间件</h4><p>express-session中间件安装成功后，需要通过app.use(来注册session中间件，示例代码如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714195052990.png" alt="image-20220714195052990"></p>
+<h4 id="3-向session中存数据"><a href="#3-向session中存数据" class="headerlink" title="3.向session中存数据"></a>3.向session中存数据</h4><p>当express- session中间件配置成功后，即可通过req.session来访问和使用session对象，从而存储用户的关键信息:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714202516094.png" alt="image-20220714202516094"></p>
+<h4 id="4-从session中取数据"><a href="#4-从session中取数据" class="headerlink" title="4.从session中取数据"></a>4.从session中取数据</h4><p>可以直接从req.session对象上获取之前存储的数据。实例：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714203759869.png" alt="image-20220714203759869"></p>
+<h4 id="5-清空session"><a href="#5-清空session" class="headerlink" title="5.清空session"></a>5.清空session</h4><p>调用req.session.destroy0函数，即可清空服务器保存的session信息。</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714204107954.png" alt="image-20220714204107954"></p>
+<blockquote>
+<p>调用<em>req</em>.session.destroy();只会清空当前用户的数据</p>
+</blockquote>
+<h2 id="JWT认证机制"><a href="#JWT认证机制" class="headerlink" title="JWT认证机制"></a>JWT认证机制</h2><h3 id="Session认证局限性"><a href="#Session认证局限性" class="headerlink" title="Session认证局限性"></a>Session认证局限性</h3><p>Session认证机制需要配合Cookie才能实现。由于Cookie默认不支持跨域访问，所以，当涉及到前端跨域请求后端接口的时候，需要做很多额外的配置，才能实现跨域Session认证。</p>
+<p>注意:</p>
+<ul>
+<li><p>当前端请求后端接口不存在跨域问题的时候，推荐使用Session身份认证机制。</p>
+</li>
+<li><p>当前端需要跨域请求后端接口的时候，不推荐使用Session身份认证机制，推荐使用JWT认证机制。</p>
+</li>
+</ul>
+<h3 id="什么是JWT"><a href="#什么是JWT" class="headerlink" title="什么是JWT"></a>什么是JWT</h3><p>JWT (英文全称: JSON Web Token)是目前最流行的跨域认证解决方案。</p>
+<h4 id="JWT工作原理"><a href="#JWT工作原理" class="headerlink" title="JWT工作原理"></a>JWT工作原理</h4><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205132872.png" alt="image-20220714205132872"></p>
+<blockquote>
+<p>总结:用户的信息通过Token字符串的形式，保存在客户端浏览器中。服务器通过还原Token字符串的形式来认证用户的身份.</p>
+</blockquote>
+<h4 id="JWT组成部分"><a href="#JWT组成部分" class="headerlink" title="JWT组成部分"></a>JWT组成部分</h4><p>JWT通常由三部分组成，分别是Header (头部)、Payload (有效荷载)、Signature (签名) .<br>三者之间使用英文的”.” 分隔，格式如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714205348970"></p>
+<p>下面是JWT字符串的实例：</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205437367.png" alt="image-20220714205437367">
+
+<h4 id="JWT的三个部分各自代表的含义"><a href="#JWT的三个部分各自代表的含义" class="headerlink" title="JWT的三个部分各自代表的含义"></a>JWT的三个部分各自代表的含义</h4><p>JWT的三个组成部分，从前到后分别是Header、Payload、 Signature.<br>其中:</p>
+<ul>
+<li>Payload 部分才是真正的用户信息，它是用户信息经过加密之后生成的字符串。</li>
+<li>Header 和Signature是安全性相关的部分,只是为了保证Token的安全性。</li>
+</ul>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205702810.png" alt="image-20220714205702810"></p>
+<h3 id="JWT的使用方式"><a href="#JWT的使用方式" class="headerlink" title="JWT的使用方式"></a>JWT的使用方式</h3><p>客户端收到服务器返回的JWT之后,通常会将它储存在<strong>localStorage</strong>或<strong>sessionStorage</strong>中。<br>此后，客户端每次与服务器通信，都要带上这个JWT的字符串,从而进行身份认证。推荐的做法是把JWT放在HTTP请求头的<code>Authorization</code>字段中，格式如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205908830.png" alt="image-20220714205908830"></p>
+<h3 id="在Express中使用JWT"><a href="#在Express中使用JWT" class="headerlink" title="在Express中使用JWT"></a>在Express中使用JWT</h3><h4 id="安装相应的包"><a href="#安装相应的包" class="headerlink" title="安装相应的包"></a>安装相应的包</h4><p>执行以下命令，安装两个JWT相关的包：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205957242.png" alt="image-20220714205957242"></p>
+<p>其中:</p>
+<ul>
+<li><strong>jsonwebtoken</strong>用于生成JWT字符串</li>
+<li><strong>express-jwt</strong> 用于将JWT字符串解析还原成JSON对象</li>
+</ul>
+<h4 id="导入JWT相关的包"><a href="#导入JWT相关的包" class="headerlink" title="导入JWT相关的包"></a>导入JWT相关的包</h4><p>使用require()函数，分别导入JWT相关的两个包：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714210155726.png" alt="image-20220714210155726"></p>
+<p>注意：</p>
+<p>新版express-jwt导入方式被切换为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TODO_01：安装并导入 JWT 相关的两个包，分别是 jsonwebtoken 和 express-jwt</span></span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧的：const expressJWT = require(&#x27;express-jwt&#x27;);</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="attr">expressjwt</span>: expressJWT &#125; = <span class="built_in">require</span>(<span class="string">&#x27;express-jwt&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714214407342"></p>
+<h4 id="定义secret密钥"><a href="#定义secret密钥" class="headerlink" title="定义secret密钥"></a>定义secret密钥</h4><p>为了<strong>保证JWT字符串的安全性</strong>,防止JWT字符串在网络传输过程中被别人破解,我们需要专]定义一个用于加密和解密的secret密钥:</p>
+<ol>
+<li>当生成JWT字符串的时候，需要使用secret密钥对用户的信息<strong>进行加密</strong>，最终得到加密好的JWT字符串</li>
+<li>当把JWT字符串解析还原成JSON对象的时候,需要使用secret密钥<strong>进行解密</strong></li>
+</ol>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714210641817"></p>
+<h4 id="在登录成功后生成JWT字符串"><a href="#在登录成功后生成JWT字符串" class="headerlink" title="在登录成功后生成JWT字符串"></a>在登录成功后生成JWT字符串</h4><p>调用<strong>jsonwebtoken</strong>包提供的<strong>sign()</strong> 方法,将用户的信息加密成JWT字符串，响应给客户端:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714210913295"></p>
+<ul>
+<li>参数1：用户的信息对象</li>
+<li>参数2：加密的密钥</li>
+<li>参数2：配置对象，可以配置当前token的有效期</li>
+</ul>
+<h4 id="将JWT字符串还原为JSON对象"><a href="#将JWT字符串还原为JSON对象" class="headerlink" title="将JWT字符串还原为JSON对象"></a>将JWT字符串还原为JSON对象</h4><p>客户端每次在访问那些有权限接口的时候，都需要主动通过请求头中的Authorization字段，将Token字符串发送到服务器进行身份认证。<br>此时，服务器可以通过express-jwt这个中间件,自动将客户端发送过来的Token解析还原成JSON对象:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714211600604"></p>
+<p>新版写法被改为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">use</span>(<span class="title function_">expressJWT</span>(&#123; <span class="attr">secret</span>: secretKey, <span class="attr">algorithms</span>: [<span class="string">&#x27;HS256&#x27;</span>] &#125;).<span class="title function_">unless</span>(&#123; <span class="attr">path</span>:[<span class="regexp">/^\/api\//</span>] &#125;));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714214446368"></p>
+<h4 id="使用req-auth获取用户信息"><a href="#使用req-auth获取用户信息" class="headerlink" title="使用req.auth获取用户信息"></a>使用req.auth获取用户信息</h4><p>当express-jwt这个中间件配置成功之后，即可在那些有权限的接口中，使用req.auth对象,来访问从JWT字符串<br>中解析出来的用户信息了，示例代码如下:</p>
+<blockquote>
+<p>新版本必须使用<strong>req.auth</strong>接收数据</p>
+</blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714205348970.png" alt="image-20220714215923923"></p>
+<h5 id="postman请求示例："><a href="#postman请求示例：" class="headerlink" title="postman请求示例："></a>postman请求示例：</h5><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714220045105.png" alt="image-20220714220045105"></p>
+<blockquote>
+<p>返还回来的数据是一个只能存在30s的令牌(自定义)</p>
+</blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714220145337.png" alt="image-20220714220145337"></p>
+<blockquote>
+<p>发起get请求获取参数时候必须携带<strong>Authorization</strong>，value的值是post返还的加密字符串，前面必须空格加上<strong>Bearer</strong></p>
+<p>示例：</p>
+<p>Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjU3ODA3MDU4LCJleHAiOjE2NTc4MDcxMDh9.yelhnZthBSHXRH2P9Ch7gEp7LwfK7P1JlL76HdUATJ0</p>
+</blockquote>
+<h4 id="捕获解析JWT失败后产生的错误"><a href="#捕获解析JWT失败后产生的错误" class="headerlink" title="捕获解析JWT失败后产生的错误"></a>捕获解析JWT失败后产生的错误</h4><p>当使用express-jwt解析Token字符串时,如果客户端发送过来的Token字符串过期或不合法，会产生-个解析失败的错误，影响项目的正常运行。我们可以通过Express的错误中间件,捕获这个错误并进行相关的处理,示例代码如下:</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220714220815116.png" alt="image-20220714220815116"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TODO_06：使用全局错误处理中间件，捕获解析 JWT 失败后产生的错误</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="function">(<span class="params">err, req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err.<span class="property">name</span> === <span class="string">&#x27;UnauthorizedError&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">send</span>(&#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="number">401</span>,</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;无效的token&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>: <span class="number">500</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;未知错误&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/12/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,7 +458,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-14 23:10:52" itemprop="dateModified" datetime="2022-07-14T23:10:52+08:00">2022-07-14</time>
+                <time title="修改时间：2022-07-14 23:15:18" itemprop="dateModified" datetime="2022-07-14T23:15:18+08:00">2022-07-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -932,88 +1171,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/GIT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="FØund404">
-      <meta itemprop="description" content="is not FOund">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FØund404">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/found404.io/2022/06/27/GIT/" class="post-title-link" itemprop="url">GIT</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-27 14:15:13" itemprop="dateCreated datePublished" datetime="2022-06-27T14:15:13+08:00">2022-06-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-14 12:47:13" itemprop="dateModified" datetime="2022-07-14T12:47:13+08:00">2022-07-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/found404.io/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h1><p>Git是一个开源的分布式版本控制系统，是目前世界上最先进、最流行的版本控制系统。可以快速高效地处理从很小到非常大的项目版本管理。</p>
-<p><strong>特点:项目越大越复杂，协同开发者越多，越能体现出Git的高性能和高可用性!</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/found404.io/2022/06/27/GIT/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1085,7 +1242,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/found404.io/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1098,7 +1255,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/found404.io/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
