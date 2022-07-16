@@ -1,104 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>BOMplus</title>
-    <url>/found404.io/2022/06/27/BOMplus/</url>
-    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
-<span id="more"></span>
-
-<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
-<table>
-<thead>
-<tr>
-<th align="center">location对象属性</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">返回路径</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">返回参数</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">返回片段 #后面内容，常用于链接锚点</td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">返回协议</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">location对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign()</td>
-<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
-</tr>
-<tr>
-<td align="center">location.replace()</td>
-<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
-</tr>
-<tr>
-<td align="center">location.reload()</td>
-<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
-<table>
-<thead>
-<tr>
-<th align="center">history对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">back()</td>
-<td align="center">可以后退功能</td>
-</tr>
-<tr>
-<td align="center">forward()</td>
-<td align="center">前进功能</td>
-</tr>
-<tr>
-<td align="center">go(参数)</td>
-<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>BOM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AJAX</title>
     <url>/found404.io/2022/06/27/AJAX/</url>
     <content><![CDATA[<h1 id="基于jQuery的AJAX"><a href="#基于jQuery的AJAX" class="headerlink" title="基于jQuery的AJAX"></a>基于jQuery的AJAX</h1><h2 id="URL地址组成部分"><a href="#URL地址组成部分" class="headerlink" title="URL地址组成部分"></a>URL地址组成部分</h2><blockquote>
@@ -535,6 +437,104 @@
       </tags>
   </entry>
   <entry>
+    <title>BOMplus</title>
+    <url>/found404.io/2022/06/27/BOMplus/</url>
+    <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
+<span id="more"></span>
+
+<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
+<table>
+<thead>
+<tr>
+<th align="center">location对象属性</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.href</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.host</td>
+<td align="center">返回主机(域名) <del><a href="http://www.baidu.com/">www.baidu.com</a></del></td>
+</tr>
+<tr>
+<td align="center">location.port</td>
+<td align="center">获取或设置整个url地址</td>
+</tr>
+<tr>
+<td align="center">location.pathname</td>
+<td align="center">返回路径</td>
+</tr>
+<tr>
+<td align="center">location.search</td>
+<td align="center">返回参数</td>
+</tr>
+<tr>
+<td align="center">location.hash</td>
+<td align="center">返回片段 #后面内容，常用于链接锚点</td>
+</tr>
+<tr>
+<td align="center">location.protocol</td>
+<td align="center">返回协议</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">location对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">location.assign()</td>
+<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
+</tr>
+<tr>
+<td align="center">location.replace()</td>
+<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
+</tr>
+<tr>
+<td align="center">location.reload()</td>
+<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
+<table>
+<thead>
+<tr>
+<th align="center">history对象方法</th>
+<th align="center">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">back()</td>
+<td align="center">可以后退功能</td>
+</tr>
+<tr>
+<td align="center">forward()</td>
+<td align="center">前进功能</td>
+</tr>
+<tr>
+<td align="center">go(参数)</td>
+<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>BOM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS函数</title>
     <url>/found404.io/2022/06/27/CSS%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="attr"><a href="#attr" class="headerlink" title="attr()"></a>attr()</h1><p><strong>获取元素内属性的值</strong></p>
@@ -557,6 +557,109 @@
       </categories>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES6新特性</title>
+    <url>/found404.io/2022/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
+<ol>
+<li>变量不能重复声明</li>
+<li>块级作用域</li>
+<li>不存在变量提升</li>
+<li>不影响作用域链</li>
+</ol>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><blockquote>
+<ol>
+<li>一定要赋初始值</li>
+<li>一般常量是用大写（潜规则）</li>
+<li>常量的值不能修改</li>
+<li>块级作用域</li>
+<li>对于数组和对象的元素修改，不算是对常量的修改，不会报错</li>
+</ol>
+</blockquote>
+<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><blockquote>
+<p>ES6 允许按照一定模式从数组和对象中提取值,对变量进行赋值这被称为<strong>结构赋值</strong></p>
+</blockquote>
+<p><strong>数组的结构：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.数组的结构</span></span><br><span class="line"><span class="keyword">const</span> f4 = [<span class="string">&#x27;小沈阳&#x27;</span>, <span class="string">&#x27;刘能&#x27;</span>, <span class="string">&#x27;赵四&#x27;</span>, <span class="string">&#x27;宋小宝&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> [xiao, liu, zhao, song] = f4;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(xiao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(liu);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(zhao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象的结构：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">     name,</span><br><span class="line">     age,</span><br><span class="line">     xiaopin</span><br><span class="line">&#125; = zhao;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(xiaopin);</span><br><span class="line">   <span class="title function_">xiaopin</span>();</span><br></pre></td></tr></table></figure>
+
+<p>相当于 zhao.xiaopin(); 替换成了 xiaopin( );不用重复书写zhao.</p>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>不同于es5中的字符串用+拼接，es6的模板字符串可以使用&#96;&#96;符号和${变量名}进行拼接</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;沈腾&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;玛丽&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;魏翔&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;/ul&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.变量拼接</span></span><br><span class="line"><span class="keyword">let</span> lovest = <span class="string">&#x27;魏翔&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> out = <span class="string">`将<span class="subst">$&#123;lovest&#125;</span>替换成lovest`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(out);</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法"></a>对象的简化写法</h2><blockquote>
+<p>ES6 允许在大括号内直接写入变量和函数 作为对象的属性和方法，这样的书写更加简洁</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;尚硅谷&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我可以改变你&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> school = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="comment">//旧的写法:</span></span><br><span class="line">    <span class="comment">// import: function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;声明方法&#x27;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// es6写法:</span></span><br><span class="line">    <span class="keyword">import</span> () &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;声明方法&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(school);</span><br></pre></td></tr></table></figure>
+
+<h2 id="箭头函数以及声明特点🏹🏹"><a href="#箭头函数以及声明特点🏹🏹" class="headerlink" title="箭头函数以及声明特点🏹🏹"></a>箭头函数以及声明特点🏹🏹</h2><blockquote>
+<p>es6 允许使用[箭头] (&#x3D;&gt;) 定义函数.</p>
+</blockquote>
+<p><strong>声明一个函数：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">let</span> reslut = <span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(reslut); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>this是静态的,this始终是指向函数声明时所在作用域下的this的值（其父级作用域的this）</li>
+<li>不能做为构造实例化对象  就是无法构造函数</li>
+<li>不能使用arguments 变量</li>
+</ol>
+<h3 id="箭头函数的简写"><a href="#箭头函数的简写" class="headerlink" title="箭头函数的简写"></a>箭头函数的简写</h3><p><strong>(1)省略小括号,当形参有且只有一个时候</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">add</span> = n =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> n + n;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">1</span>)); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>(2)省略花括号,当代码只有一条语句时候,此时return必须省略</strong></p>
+<p>而且语句的执行结果就是函数的返回值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n * n;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">pow</span>(<span class="number">9</span>)); <span class="comment">//81</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="箭头函数的this指向问题"><a href="#箭头函数的this指向问题" class="headerlink" title="箭头函数的this指向问题"></a>箭头函数的this指向问题</h3><p>this是静态的,this始终是指向函数声明时所在作用域下的this的值<strong>（其父级作用域的this）</strong></p>
+<p>何为父级作用域的this，一个简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;id&#x27;</span>, <span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">    <span class="comment">// setTimeout(function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;id&#x27;, this.id);</span></span><br><span class="line">    <span class="comment">// &#125;, 500)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> id = <span class="number">10</span>;</span><br><span class="line">foo.<span class="title function_">call</span>(&#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">50</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><em>箭头函数</em>的结果是50</p>
+</li>
+<li><p><em>普通函数</em>的结果是10</p>
+</li>
+</ul>
+<p><strong>foo.call(  )<strong>方法改变了foo函数的this指向，定时器中的函数this指向的是window，所以普通函数的</strong>this.id</strong>为window下的10。而箭头函数因为foo函数的this改变使得其this也改变成了对象**{id:50}**</p>
+<h2 id="函数参数的默认值和rest参数"><a href="#函数参数的默认值和rest参数" class="headerlink" title="函数参数的默认值和rest参数"></a>函数参数的默认值和rest参数</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><blockquote>
+<p>ES6 允许给函数参数赋值初始值</p>
+</blockquote>
+<ol>
+<li>形参初始值  具有默认值的参数  一般位置要靠后(潜规则)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b, c = <span class="number">2</span></span>) &#123; <span class="comment">//此处给形参设置默认值</span></span><br><span class="line">    <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line"><span class="comment">//当没有第三个实参传入时,可以在形参中设置默认值,否则就是NaN</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>与结构赋值结合</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">connect</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">    host,</span></span><br><span class="line"><span class="params">    username,</span></span><br><span class="line"><span class="params">    password,</span></span><br><span class="line"><span class="params">    port</span></span><br><span class="line"><span class="params">&#125;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(host);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(username);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(password);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(port);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">connect</span>(&#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">username</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3306</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>es6 引入 <strong>rest</strong> 参数 用于获取函数的实参 用来替代<strong>arguments</strong></p>
+<p>es5获取函数实参的方法是 <strong>arguments</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// rest 参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">date</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args); <span class="comment">//filter some every map方法</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">date</span>(<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>); <span class="comment">//数组</span></span><br></pre></td></tr></table></figure>
+
+<p>rest参数 必须 放在<strong>参数末尾</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//rest参数 必须 放在参数最后</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">a, b, ...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p><strong>[…] <strong>扩展运算符能将[数组]转换为逗号分割的</strong>[参数序列]</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个数组 ... </span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// [&#x27;黑&#x27;, &#x27;白&#x27;, &#x27;灰&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...colors); <span class="comment">// 黑 白 灰</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展运算符的运用"><a href="#扩展运算符的运用" class="headerlink" title="扩展运算符的运用"></a>扩展运算符的运用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//1. 数组的合并 黑 白 灰</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> anSe = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> liangSe = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;黄&#x27;</span>, <span class="string">&#x27;绿&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//老方法 使用concat拼接数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// const heBing = anSe.concat(liangSe);</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> heBing = [...anSe, ...liangSe];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(heBing);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//2.数组的克隆</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q1 = [<span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;M&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q2 = [...q1];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(q2);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//3.将伪数组转换为真正的数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divs = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divs); <span class="comment">//此时还为伪数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divArr = [...divs]; <span class="comment">//转换</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divArr);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>es6</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -1140,109 +1243,6 @@
       <tags>
         <tag>BOM</tag>
         <tag>DOM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ES6新特性</title>
-    <url>/found404.io/2022/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
-<ol>
-<li>变量不能重复声明</li>
-<li>块级作用域</li>
-<li>不存在变量提升</li>
-<li>不影响作用域链</li>
-</ol>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><blockquote>
-<ol>
-<li>一定要赋初始值</li>
-<li>一般常量是用大写（潜规则）</li>
-<li>常量的值不能修改</li>
-<li>块级作用域</li>
-<li>对于数组和对象的元素修改，不算是对常量的修改，不会报错</li>
-</ol>
-</blockquote>
-<h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><blockquote>
-<p>ES6 允许按照一定模式从数组和对象中提取值,对变量进行赋值这被称为<strong>结构赋值</strong></p>
-</blockquote>
-<p><strong>数组的结构：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.数组的结构</span></span><br><span class="line"><span class="keyword">const</span> f4 = [<span class="string">&#x27;小沈阳&#x27;</span>, <span class="string">&#x27;刘能&#x27;</span>, <span class="string">&#x27;赵四&#x27;</span>, <span class="string">&#x27;宋小宝&#x27;</span>];</span><br><span class="line"><span class="keyword">let</span> [xiao, liu, zhao, song] = f4;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(xiao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(liu);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(zhao);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(song);</span><br></pre></td></tr></table></figure>
-
-<p><strong>对象的结构：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">     name,</span><br><span class="line">     age,</span><br><span class="line">     xiaopin</span><br><span class="line">&#125; = zhao;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(xiaopin);</span><br><span class="line">   <span class="title function_">xiaopin</span>();</span><br></pre></td></tr></table></figure>
-
-<p>相当于 zhao.xiaopin(); 替换成了 xiaopin( );不用重复书写zhao.</p>
-<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p>不同于es5中的字符串用+拼接，es6的模板字符串可以使用&#96;&#96;符号和${变量名}进行拼接</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;ul&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;沈腾&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;玛丽&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;li&gt;魏翔&lt;/li&gt;</span></span><br><span class="line"><span class="string">            &lt;/ul&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.变量拼接</span></span><br><span class="line"><span class="keyword">let</span> lovest = <span class="string">&#x27;魏翔&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> out = <span class="string">`将<span class="subst">$&#123;lovest&#125;</span>替换成lovest`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(out);</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的简化写法"><a href="#对象的简化写法" class="headerlink" title="对象的简化写法"></a>对象的简化写法</h2><blockquote>
-<p>ES6 允许在大括号内直接写入变量和函数 作为对象的属性和方法，这样的书写更加简洁</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;尚硅谷&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> change = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我可以改变你&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> school = &#123;</span><br><span class="line">    name,</span><br><span class="line">    change,</span><br><span class="line">    <span class="comment">//旧的写法:</span></span><br><span class="line">    <span class="comment">// import: function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;声明方法&#x27;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// es6写法:</span></span><br><span class="line">    <span class="keyword">import</span> () &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;声明方法&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(school);</span><br></pre></td></tr></table></figure>
-
-<h2 id="箭头函数以及声明特点🏹🏹"><a href="#箭头函数以及声明特点🏹🏹" class="headerlink" title="箭头函数以及声明特点🏹🏹"></a>箭头函数以及声明特点🏹🏹</h2><blockquote>
-<p>es6 允许使用[箭头] (&#x3D;&gt;) 定义函数.</p>
-</blockquote>
-<p><strong>声明一个函数：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line"><span class="keyword">let</span> reslut = <span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(reslut); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>this是静态的,this始终是指向函数声明时所在作用域下的this的值（其父级作用域的this）</li>
-<li>不能做为构造实例化对象  就是无法构造函数</li>
-<li>不能使用arguments 变量</li>
-</ol>
-<h3 id="箭头函数的简写"><a href="#箭头函数的简写" class="headerlink" title="箭头函数的简写"></a>箭头函数的简写</h3><p><strong>(1)省略小括号,当形参有且只有一个时候</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">add</span> = n =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> n + n;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">1</span>)); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>(2)省略花括号,当代码只有一条语句时候,此时return必须省略</strong></p>
-<p>而且语句的执行结果就是函数的返回值</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">pow</span> = n =&gt; n * n;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">pow</span>(<span class="number">9</span>)); <span class="comment">//81</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="箭头函数的this指向问题"><a href="#箭头函数的this指向问题" class="headerlink" title="箭头函数的this指向问题"></a>箭头函数的this指向问题</h3><p>this是静态的,this始终是指向函数声明时所在作用域下的this的值<strong>（其父级作用域的this）</strong></p>
-<p>何为父级作用域的this，一个简单的例子：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;id&#x27;</span>, <span class="variable language_">this</span>.<span class="property">id</span>);</span><br><span class="line">    &#125;, <span class="number">500</span>);</span><br><span class="line">    <span class="comment">// setTimeout(function() &#123;</span></span><br><span class="line">    <span class="comment">//     console.log(&#x27;id&#x27;, this.id);</span></span><br><span class="line">    <span class="comment">// &#125;, 500)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> id = <span class="number">10</span>;</span><br><span class="line">foo.<span class="title function_">call</span>(&#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">50</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><em>箭头函数</em>的结果是50</p>
-</li>
-<li><p><em>普通函数</em>的结果是10</p>
-</li>
-</ul>
-<p><strong>foo.call(  )<strong>方法改变了foo函数的this指向，定时器中的函数this指向的是window，所以普通函数的</strong>this.id</strong>为window下的10。而箭头函数因为foo函数的this改变使得其this也改变成了对象**{id:50}**</p>
-<h2 id="函数参数的默认值和rest参数"><a href="#函数参数的默认值和rest参数" class="headerlink" title="函数参数的默认值和rest参数"></a>函数参数的默认值和rest参数</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><blockquote>
-<p>ES6 允许给函数参数赋值初始值</p>
-</blockquote>
-<ol>
-<li>形参初始值  具有默认值的参数  一般位置要靠后(潜规则)</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b, c = <span class="number">2</span></span>) &#123; <span class="comment">//此处给形参设置默认值</span></span><br><span class="line">    <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line"><span class="comment">//当没有第三个实参传入时,可以在形参中设置默认值,否则就是NaN</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>与结构赋值结合</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">connect</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">    host,</span></span><br><span class="line"><span class="params">    username,</span></span><br><span class="line"><span class="params">    password,</span></span><br><span class="line"><span class="params">    port</span></span><br><span class="line"><span class="params">&#125;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(host);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(username);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(password);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(port);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">connect</span>(&#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">username</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">    <span class="attr">port</span>: <span class="number">3306</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h3><p>es6 引入 <strong>rest</strong> 参数 用于获取函数的实参 用来替代<strong>arguments</strong></p>
-<p>es5获取函数实参的方法是 <strong>arguments</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// rest 参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">date</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args); <span class="comment">//filter some every map方法</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">date</span>(<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>); <span class="comment">//数组</span></span><br></pre></td></tr></table></figure>
-
-<p>rest参数 必须 放在<strong>参数末尾</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//rest参数 必须 放在参数最后</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">a, b, ...args</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p><strong>[…] <strong>扩展运算符能将[数组]转换为逗号分割的</strong>[参数序列]</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个数组 ... </span></span><br><span class="line"><span class="keyword">const</span> colors = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(colors); <span class="comment">// [&#x27;黑&#x27;, &#x27;白&#x27;, &#x27;灰&#x27;]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...colors); <span class="comment">// 黑 白 灰</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="扩展运算符的运用"><a href="#扩展运算符的运用" class="headerlink" title="扩展运算符的运用"></a>扩展运算符的运用</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//1. 数组的合并 黑 白 灰</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> anSe = [<span class="string">&#x27;黑&#x27;</span>, <span class="string">&#x27;白&#x27;</span>, <span class="string">&#x27;灰&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> liangSe = [<span class="string">&#x27;红&#x27;</span>, <span class="string">&#x27;黄&#x27;</span>, <span class="string">&#x27;绿&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//老方法 使用concat拼接数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// const heBing = anSe.concat(liangSe);</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> heBing = [...anSe, ...liangSe];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(heBing);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//2.数组的克隆</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q1 = [<span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;M&#x27;</span>];</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> q2 = [...q1];</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(q2);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//3.将伪数组转换为真正的数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divs = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divs); <span class="comment">//此时还为伪数组</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> divArr = [...divs]; <span class="comment">//转换</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(divArr);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>es6</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -2279,7 +2279,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置中间件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过express.urlencoded()解析表单中的url-encoded格式的数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建路由</span></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/book&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    <span class="comment">// 在服务器中可以使用req.body这个属性来获取json格式的表单和url-encoded格式数据</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">body</span>);</span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;ok&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">80</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http://127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="第三方的中间件"><a href="#第三方的中间件" class="headerlink" title="第三方的中间件"></a>第三方的中间件</h3><p>非Express官方内置的，而是由第三方开发出来的中间，叫做第三方中间件，在项目中，大家可以按需下载并配置第三方中间件，从而提高项目的开发效率。</p>
-<p>例如：在<a href="mailto:&#x65;&#x78;&#x70;&#x72;&#x65;&#x73;&#x73;&#x40;&#x34;&#x2e;&#x31;&#x36;&#x2e;&#x30;">&#x65;&#x78;&#x70;&#x72;&#x65;&#x73;&#x73;&#x40;&#x34;&#x2e;&#x31;&#x36;&#x2e;&#x30;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
+<p>例如：在<a href="mailto:&#x65;&#120;&#112;&#114;&#x65;&#115;&#115;&#64;&#52;&#46;&#49;&#54;&#46;&#x30;">&#x65;&#120;&#112;&#114;&#x65;&#115;&#115;&#64;&#52;&#46;&#49;&#54;&#46;&#x30;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
 <ol>
 <li>运行npm install body-parser安装中间件</li>
 <li>使用require导入中间件</li>
@@ -2400,7 +2400,7 @@
 </ol>
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220715210528567.png" alt="image-20220715210528567"></p>
 <ol start="2">
-<li>声明式编码。让编码人员无需直接操作DOM。提高开发效率。<br> <img src="/found404.io/2022/07/15/Vue/Users\无敌暴龙战士\AppData\Roaming\Typora\typora-user-images\image-20220715205742913.png" alt="image-20220715205742913"></li>
+<li>声明式编码。让编码人员无需直接操作DOM。提高开发效率。<br> <img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220715205742913.png" alt="image-20220715205742913"></li>
 </ol>
 <p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220715205803585.png" alt="image-20220715205803585"></p>
 <ol start="3">
@@ -2415,7 +2415,7 @@
 <p>关闭提示。</p>
 <h1 id="Hello-Vue"><a href="#Hello-Vue" class="headerlink" title="Hello Vue"></a>Hello Vue</h1><h2 id="准备一个容器"><a href="#准备一个容器" class="headerlink" title="准备一个容器"></a>准备一个容器</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!-- 准备好一个容器 --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 插值语法 --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;&#123; name &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>动态的数据要使用插值语法&lt;!–swig￼5–&gt;</p>
+<p>动态的数据要使用插值语法{{}}</p>
 <blockquote>
 <p>root容器中的代码被称为<strong>Vue模板</strong></p>
 </blockquote>
@@ -2442,8 +2442,8 @@
 <li>for(){}</li>
 <li>etc…</li>
 </ol>
-<h2 id="容器中的-lt-–swig￼6–-gt-“又称vue模板”"><a href="#容器中的-lt-–swig￼6–-gt-“又称vue模板”" class="headerlink" title="容器中的&lt;!–swig￼6–&gt; “又称vue模板”"></a>容器中的&lt;!–swig￼6–&gt; “又称vue模板”</h2><p>在容器中的&lt;!–swig￼7–&gt;插值语法块中。可以存放表达式，并且也可以生效</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 准备好一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 插值语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;% raw %&#125;&#123; &#123; name &#125; &#125;,&#123; &#123; age+1 &#125; &#125;,&#123; &#123; 2+2 &#125; &#125;&#123;% endraw %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 阻止Vue在启动时生成生产提示</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;.root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>: <span class="string">&#x27;World&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">age</span>: <span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="容器中的“又称vue模板”"><a href="#容器中的“又称vue模板”" class="headerlink" title="容器中的“又称vue模板”"></a>容器中的{{}}“又称vue模板”</h2><p>在容器中的{{}}插值语法块中。可以存放表达式，并且也可以生效</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 准备好一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 插值语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello,&#123;&#123; name &#125;&#125;,&#123; &#123; age+1 &#125;&#125;,&#123;&#123; 2+2 &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 阻止Vue在启动时生成生产提示</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;.root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>: <span class="string">&#x27;World&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">age</span>: <span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>结果：<code>Hello, World,19,4</code></p>
 <h3 id="巧妙使用Vue扩展框架"><a href="#巧妙使用Vue扩展框架" class="headerlink" title="巧妙使用Vue扩展框架"></a>巧妙使用Vue扩展框架</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220715223904598.png" alt="image-20220715223904598"></p>
@@ -2451,13 +2451,14 @@
 <blockquote>
 <p>标签体就是起始标签和结束标签包裹的东西，例如<code>&lt;h3&gt;你好，&#123;&#123;name&#125;&#125;&lt;/h1&gt;</code></p>
 </blockquote>
-<h3 id="写法："><a href="#写法：" class="headerlink" title="写法："></a>写法：</h3><p>&lt;!–swig￼9–&gt;，xxx就是js表达式，且可以直接读取到data中的所有属性</p>
+<h3 id="写法："><a href="#写法：" class="headerlink" title="写法："></a>写法：</h3>{{}}，xxx就是js表达式，且可以直接读取到data中的所有属性
+
 <h2 id="2-指令语法"><a href="#2-指令语法" class="headerlink" title="2.指令语法"></a>2.指令语法</h2><h3 id="功能：-1"><a href="#功能：-1" class="headerlink" title="功能："></a>功能：</h3><p>用于解析标签（包括：标签属性，标签体内容，绑定事件。。。。。。）</p>
 <h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><p><code>v-bind:href=&quot;xxx&quot;</code> 或者 简写为 <code>:href=&quot;xxx&quot; </code>，xxx同样要写js表达式，且可以直接读取到data中的所有属性。</p>
 <blockquote>
 <p>简单来说就是加了v-bind:的属性后“  ”内的部分会变成表达式</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 准备好一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 插值语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>插值语法<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>你好，&#123;% raw %&#125;&#123;&#123;name&#125;&#125;&#123;% endraw %&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>指令语法<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;school.url&quot;</span> <span class="attr">:index</span>=<span class="string">&quot;name&quot;</span>&gt;</span>点击跳转&#123;% raw %&#125;&#123; &#123; school.name &#125; &#125;&#123;% endraw %&#125;官网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 阻止Vue在启动时生成生产提示</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;.root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">school</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;Vue&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&#x27;https://staging-cn.vuejs.org/guide/introduction.html&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 准备好一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 插值语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>插值语法<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>你好，&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>指令语法<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">&quot;school.url&quot;</span> <span class="attr">:index</span>=<span class="string">&quot;name&quot;</span>&gt;</span>点击跳转&#123;&#123; school.name &#125;&#125;官网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 阻止Vue在启动时生成生产提示</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 创建Vue实例</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&#x27;.root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">school</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;Vue&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&#x27;https://staging-cn.vuejs.org/guide/introduction.html&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h3><p>Vue中有很多指令，且形式都是v-？？？，此处我们只是拿v-bind举例子</p>
 <h1 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h1><blockquote>
@@ -2672,18 +2673,6 @@
       <tags>
         <tag>Node.js</tag>
         <tag>前后端合作开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my_firstBlog</title>
-    <url>/found404.io/2022/06/25/my-firstBlog/</url>
-    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
-<p>第一篇blog</p>
-<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hello hexo!</tag>
       </tags>
   </entry>
   <entry>
@@ -2951,6 +2940,18 @@
       </categories>
       <tags>
         <tag>认识jQuery框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>my_firstBlog</title>
+    <url>/found404.io/2022/06/25/my-firstBlog/</url>
+    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
+<p>第一篇blog</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hello hexo!</tag>
       </tags>
   </entry>
   <entry>
