@@ -20,23 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="BOM操作">
+  <meta name="description" content="fetch和await的结合起因是在写一个React发送ajax请求的案例中，遇到了一个关于fetch发送请求的问题，直接上代码:  使用fetch发送请求后在第一个.then之前的fetch(https:xxxx&#x2F;&#x2F;$&amp;#123;value&amp;#125;)返回的是一个promise实例对象，所以它的后面可以跟.then，但是这个.then中触发的成功回调或者失败回调仅仅是判断这个请求是否连接到服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BOMplus">
-<meta property="og:url" content="http://example.com/2022/06/27/BOMplus/index.html">
+<meta property="og:title" content="fetch&#x2F;async&#x2F;await">
+<meta property="og:url" content="http://example.com/2022/08/11/fetch-async-await/index.html">
 <meta property="og:site_name" content="FØund404">
-<meta property="og:description" content="BOM操作">
+<meta property="og:description" content="fetch和await的结合起因是在写一个React发送ajax请求的案例中，遇到了一个关于fetch发送请求的问题，直接上代码:  使用fetch发送请求后在第一个.then之前的fetch(https:xxxx&#x2F;&#x2F;$&amp;#123;value&amp;#125;)返回的是一个promise实例对象，所以它的后面可以跟.then，但是这个.then中触发的成功回调或者失败回调仅仅是判断这个请求是否连接到服务">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png">
-<meta property="article:published_time" content="2022-06-27T06:25:40.000Z">
-<meta property="article:modified_time" content="2022-07-14T04:46:24.646Z">
+<meta property="article:published_time" content="2022-08-11T14:23:55.000Z">
+<meta property="article:modified_time" content="2022-08-11T14:54:01.153Z">
 <meta property="article:author" content="FØund404">
-<meta property="article:tag" content="BOM">
+<meta property="article:tag" content="es6">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="fetch">
+<meta property="article:tag" content="async&#x2F;await">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png">
 
-<link rel="canonical" href="http://example.com/2022/06/27/BOMplus/">
+<link rel="canonical" href="http://example.com/2022/08/11/fetch-async-await/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>BOMplus | FØund404</title>
+  <title>fetch/async/await | FØund404</title>
   
 
 
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/27/BOMplus/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/11/fetch-async-await/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
@@ -208,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          BOMplus
+          fetch/async/await
         </h1>
 
         <div class="post-meta">
@@ -217,16 +217,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-06-27 14:25:40" itemprop="dateCreated datePublished" datetime="2022-06-27T14:25:40+08:00">2022-06-27</time>
+              <time title="创建时间：2022-08-11 22:23:55 / 修改时间：22:54:01" itemprop="dateCreated datePublished" datetime="2022-08-11T22:23:55+08:00">2022-08-11</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-14 12:46:24" itemprop="dateModified" datetime="2022-07-14T12:46:24+08:00">2022-07-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -255,93 +249,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
+        <h2 id="fetch和await的结合"><a href="#fetch和await的结合" class="headerlink" title="fetch和await的结合"></a>fetch和await的结合</h2><p>起因是在写一个React发送ajax请求的案例中，遇到了一个关于fetch发送请求的问题，直接上代码:</p>
+<blockquote>
+<p>使用fetch发送请求后在第一个.then之前的<code>fetch(https:xxxx//$&#123;value&#125;)</code>返回的是一个promise实例对象，所以它的后面可以跟.then，但是这个.then中触发的成功回调或者失败回调仅仅是判断这个请求是否连接到服务器，并不会返回服务器发送回来的数据。</p>
+<p>要想得到数据就需要调用res原型上的方法<code>res.json()</code>得到一个新的promise，并且return出去，紧跟后面的.then就可以采用链式.then的方法再次获得成功的回调(服务器返回的数据在里面)。</p>
+</blockquote>
 <span id="more"></span>
 
-<h2 id="什么是BOM？"><a href="#什么是BOM？" class="headerlink" title="什么是BOM？"></a>什么是BOM？</h2><p>BOM<code>（Browser Object Model）</code>即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其顶级对象是 window，并且每个对象都提供了很多方法与属性</p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>window 对象给我们提供了一个 location 属性用于获取或设置窗体的 URL，并且可以用于解析 URL</p>
-<table>
-<thead>
-<tr>
-<th align="center">location对象属性</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.href</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.host</td>
-<td align="center">返回主机(域名) <del><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></del></td>
-</tr>
-<tr>
-<td align="center">location.port</td>
-<td align="center">获取或设置整个url地址</td>
-</tr>
-<tr>
-<td align="center">location.pathname</td>
-<td align="center">返回路径</td>
-</tr>
-<tr>
-<td align="center">location.search</td>
-<td align="center">返回参数</td>
-</tr>
-<tr>
-<td align="center">location.hash</td>
-<td align="center">返回片段 #后面内容，常用于链接锚点</td>
-</tr>
-<tr>
-<td align="center">location.protocol</td>
-<td align="center">返回协议</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">location对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">location.assign()</td>
-<td align="center">跟href一样，可以跳转页面(也称为重定向页面)</td>
-</tr>
-<tr>
-<td align="center">location.replace()</td>
-<td align="center">替换当前页面，因为不记录历史，所以不能后退页面</td>
-</tr>
-<tr>
-<td align="center">location.reload()</td>
-<td align="center">重新加载页面，相当于刷新按钮或者f5 如果参数为true 强制刷新ctrl+f5</td>
-</tr>
-</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">  search = <span class="function">()=&gt;</span>&#123;</span><br><span class="line"><span class="comment">// 使用fetch发送网络请求(未优化版本)</span></span><br><span class="line">    <span class="title function_">fetch</span>(<span class="string">`https://api.github.com/search/users?q=<span class="subst">$&#123;value&#125;</span>`</span>).<span class="title function_">then</span>(</span><br><span class="line">      <span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;联系服务器成功&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// error=&gt;&#123;</span></span><br><span class="line">      <span class="comment">//   console.log(&#x27;联系服务器失败&#x27;);</span></span><br><span class="line">      <span class="comment">//   // 如果第一个then没有返回值，那么它会返回一个undefined，</span></span><br><span class="line">      <span class="comment">//   // 而undefined所在的.then返回的promise则是一个成功状态的promise</span></span><br><span class="line">      <span class="comment">//   // 使用return new Promise();返回一个初始状态的Promise实例，则下面的then则不会走了</span></span><br><span class="line">      <span class="comment">//   return new Promise();</span></span><br><span class="line">      <span class="comment">// &#125;</span></span><br><span class="line">    ).<span class="title function_">then</span>(</span><br><span class="line">      <span class="function"><span class="params">ress</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// console.log(ress.items);</span></span><br><span class="line">        <span class="title class_">PubSub</span>.<span class="title function_">publish</span>(<span class="string">&#x27;change&#x27;</span>,&#123;<span class="attr">isFirst</span>:<span class="literal">false</span>,<span class="attr">users</span>:ress.<span class="property">items</span>,<span class="attr">isLoading</span>:<span class="literal">false</span>&#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// error=&gt;&#123;</span></span><br><span class="line">      <span class="comment">//   console.log(&#x27;获取数据失败&#x27;);</span></span><br><span class="line">      <span class="comment">//   PubSub.publish(&#x27;change&#x27;,&#123;isFirst:false,err:error.message&#125;)</span></span><br><span class="line">      <span class="comment">// &#125;</span></span><br><span class="line">    ).<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当然可以不用每个.then都捕获错误回调，可以在结尾统一拦截错误使用<code>.catch()</code></p>
+</blockquote>
+<p>还有一个小bug就是，如果在第一个.then中的错误回调没有返回一个promise或者其他什么的，他会默认返回undefined，而这个undefined则代表其所在.then返回的是一个成功状态的promise，这就导致后面的.then执行的是成功回调。</p>
 <hr>
-<h3 id="点击按钮跳转页面案例"><a href="#点击按钮跳转页面案例" class="headerlink" title="点击按钮跳转页面案例:"></a>点击按钮跳转页面案例:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>location<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">         location.<span class="property">href</span> = <span class="string">&#x27;https://blog.csdn.net/WYF857446152/article/details/124860285?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165595085816782391824458%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=165595085816782391824458&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-124860285-null-null.142^v20^control,157^v15^new_3&amp;utm_term=bom%E6%93%8D%E4%BD%9C&amp;spm=1018.2226.3001.4187&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="location-search接收返回的参数实现数据交互案例："><a href="#location-search接收返回的参数实现数据交互案例：" class="headerlink" title="location.search接收返回的参数实现数据交互案例："></a>location.search接收返回的参数实现数据交互案例：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;64-index.html&quot;</span>&gt;</span></span><br><span class="line">        用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;uname&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>); <span class="comment">// ?uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 1.先去掉？ substr(&#x27;起始的位置&#x27;,截取几个字符);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> params = location.<span class="property">search</span>.<span class="title function_">substr</span>(<span class="number">1</span>); <span class="comment">// uname=andy</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(params);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 2.利用等号把字符串分割为数组 split(&#x27;=&#x27;);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> arr = params.<span class="title function_">split</span>(<span class="string">&#x27;=&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 3.把数据写进div中</span></span></span><br><span class="line"><span class="language-javascript">        div.<span class="property">innerHTML</span> = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您!&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 <code>userAgent</code>，该属性可以返回由客户机发送服务器的 <code>user-agent</code> 头部的值。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>window对象给我们提供了一个 history对象，与浏览器历史记录进行交互。该对象包含用户（在浏览器窗口中）访问过的URL。</p>
-<table>
-<thead>
-<tr>
-<th align="center">history对象方法</th>
-<th align="center">返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">back()</td>
-<td align="center">可以后退功能</td>
-</tr>
-<tr>
-<td align="center">forward()</td>
-<td align="center">前进功能</td>
-</tr>
-<tr>
-<td align="center">go(参数)</td>
-<td align="center">前进后退功能 参数如果是1前进一个页面如果是-1后退一个页面</td>
-</tr>
-</tbody></table>
+<p><strong>然后再说说async和await优化版本：</strong></p>
+<blockquote>
+<p>使用async和await可以更大限度优化代码，</p>
+<p>等待<code>fetch(https://api.github.com/search/users?q=$&#123;value&#125;)</code>返回一个成功态promise给response，response接收到后调用它原型上的方法<code>response.json()</code>当然也要等待它返回一个成功态promise，并将其赋值给data，此时的data就是<strong>服务器返回的真正数据</strong></p>
+<p>另外，捕获错误可以使用try-catch捕获错误</p>
+<p>这种写法可以使用同步执行的思考来看待这个请求，对于promise的理解更深一步加强</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">search = <span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="comment">// 解构赋值的连续写法</span></span><br><span class="line">    <span class="comment">// keyWordElement是未被定义的</span></span><br><span class="line">    <span class="keyword">const</span> &#123;<span class="attr">keyWordElement</span>:&#123;value&#125;&#125;=<span class="variable language_">this</span></span><br><span class="line">    <span class="comment">// 发送请求前通知List更新状态</span></span><br><span class="line">    <span class="title class_">PubSub</span>.<span class="title function_">publish</span>(<span class="string">&#x27;change&#x27;</span>,&#123;<span class="attr">isFirst</span>:<span class="literal">false</span>,<span class="attr">isLoading</span>:<span class="literal">true</span>&#125;)<span class="comment">//不用关注</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">`https://api.github.com/search/users?q=<span class="subst">$&#123;value&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line">      <span class="comment">// console.log(data);//服务器返回的真正数据</span></span><br><span class="line">      <span class="title class_">PubSub</span>.<span class="title function_">publish</span>(<span class="string">&#x27;change&#x27;</span>,&#123;<span class="attr">isFirst</span>:<span class="literal">false</span>,<span class="attr">users</span>:data.<span class="property">items</span>,<span class="attr">isLoading</span>:<span class="literal">false</span>&#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;请求出错&#x27;</span>,error);</span><br><span class="line">      <span class="title class_">PubSub</span>.<span class="title function_">publish</span>(<span class="string">&#x27;change&#x27;</span>,&#123;<span class="attr">isFirst</span>:<span class="literal">false</span>,<span class="attr">err</span>:error.<span class="property">message</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -351,7 +281,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/found404.io/tags/BOM/" rel="tag"># BOM</a>
+              <a href="/found404.io/tags/es6/" rel="tag"># es6</a>
+              <a href="/found404.io/tags/React/" rel="tag"># React</a>
+              <a href="/found404.io/tags/fetch/" rel="tag"># fetch</a>
+              <a href="/found404.io/tags/async-await/" rel="tag"># async/await</a>
           </div>
 
         
@@ -360,13 +293,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/found404.io/2022/06/27/GIT/" rel="prev" title="GIT">
-      <i class="fa fa-chevron-left"></i> GIT
+    <a href="/found404.io/2022/08/08/React/" rel="prev" title="React">
+      <i class="fa fa-chevron-left"></i> React
     </a></div>
-      <div class="post-nav-item">
-    <a href="/found404.io/2022/06/27/%E5%85%B3%E4%BA%8EThis/" rel="next" title="关于This">
-      关于This <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -430,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BOM%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">BOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFBOM%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是BOM？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">location对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%A1%88%E4%BE%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">点击按钮跳转页面案例:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location-search%E6%8E%A5%E6%94%B6%E8%BF%94%E5%9B%9E%E7%9A%84%E5%8F%82%E6%95%B0%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%E6%A1%88%E4%BE%8B%EF%BC%9A"><span class="nav-number">1.2.2.</span> <span class="nav-text">location.search接收返回的参数实现数据交互案例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigator%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.</span> <span class="nav-text">navigator对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.4.</span> <span class="nav-text">history对象</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch%E5%92%8Cawait%E7%9A%84%E7%BB%93%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">fetch和await的结合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
