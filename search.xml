@@ -438,7 +438,7 @@
   </entry>
   <entry>
     <title>BOMplus</title>
-    <url>/found404.io/2022/06/27/BOMplus/</url>
+    <url>/found404.io/2021/06/27/BOMplus/</url>
     <content><![CDATA[<h1 id="BOM操作"><a href="#BOM操作" class="headerlink" title="BOM操作"></a>BOM操作</h1><p><img src="https://img-blog.csdnimg.cn/d4d075ee9982467290c30398aa3eee59.png" alt="png"><br><img src="https://img-blog.csdnimg.cn/4d2bfa28bf4148d987d27444373e4d19.png" alt="png"></p>
 <span id="more"></span>
 
@@ -604,7 +604,7 @@
   </entry>
   <entry>
     <title>ES6新特性</title>
-    <url>/found404.io/2022/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <url>/found404.io/2021/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
 <ol>
 <li>变量不能重复声明</li>
@@ -1189,7 +1189,7 @@
   </entry>
   <entry>
     <title>DOM/BOM</title>
-    <url>/found404.io/2022/06/28/DOM-BOM/</url>
+    <url>/found404.io/2021/06/28/DOM-BOM/</url>
     <content><![CDATA[<h1 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h1><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1654481169296-a0d9f0e5-2ada-4ab7-ad58-2d34e893cd58.png" alt="img"></p>
 <span id="more"></span>
 
@@ -2419,7 +2419,7 @@
   </entry>
   <entry>
     <title>Node.js</title>
-    <url>/found404.io/2022/06/30/Node-js/</url>
+    <url>/found404.io/2021/06/30/Node-js/</url>
     <content><![CDATA[<h1 id="什么是Node-js"><a href="#什么是Node-js" class="headerlink" title="什么是Node.js"></a>什么是Node.js</h1><p><strong>Node.js</strong>是一个基于Chrome V8引擎的JavaScript运行环境</p>
 <h2 id="Node-js中的JavaScript运行环境"><a href="#Node-js中的JavaScript运行环境" class="headerlink" title="Node.js中的JavaScript运行环境"></a>Node.js中的JavaScript运行环境</h2><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655822357450-119a84ee-f87e-471f-adeb-96b9c664695e.png" alt="img"></p>
 <p>注意：</p>
@@ -3034,7 +3034,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置中间件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过express.urlencoded()解析表单中的url-encoded格式的数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建路由</span></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/book&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    <span class="comment">// 在服务器中可以使用req.body这个属性来获取json格式的表单和url-encoded格式数据</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">body</span>);</span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;ok&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">80</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http://127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="第三方的中间件"><a href="#第三方的中间件" class="headerlink" title="第三方的中间件"></a>第三方的中间件</h3><p>非Express官方内置的，而是由第三方开发出来的中间，叫做第三方中间件，在项目中，大家可以按需下载并配置第三方中间件，从而提高项目的开发效率。</p>
-<p>例如：在<a href="mailto:&#x65;&#x78;&#112;&#114;&#101;&#x73;&#x73;&#64;&#52;&#46;&#x31;&#54;&#46;&#x30;">&#x65;&#x78;&#112;&#114;&#101;&#x73;&#x73;&#64;&#52;&#46;&#x31;&#54;&#46;&#x30;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
+<p>例如：在<a href="mailto:&#101;&#120;&#x70;&#x72;&#101;&#x73;&#x73;&#x40;&#52;&#x2e;&#49;&#54;&#x2e;&#x30;">&#101;&#120;&#x70;&#x72;&#101;&#x73;&#x73;&#x40;&#52;&#x2e;&#49;&#54;&#x2e;&#x30;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
 <ol>
 <li>运行<code>npm install body-parser</code>安装中间件</li>
 <li>使用require导入中间件</li>
@@ -5308,7 +5308,7 @@ addDecorator((storyFn)=&gt;(
 
 <hr>
 <p>起初想使用<code>useState</code>改变状态，但是不彳亍😥，看了文档发现不支持，可以使用<code>form.setFieldsValue(&#123;&#125;)</code></p>
-<p>但是我实在不知道这里面的对象到底该怎么传！！</p>
+<p>x <!DOCTYPE html><html lang="en">​<head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>    <style>         :root {            –blue: blue;            –red: red;        }                div {            width: 300px;            height: 300px;            background-color: var(–blue);        }                div:hover {            background-color: var(–red);        }    </style></head>​<body>    <div></div></body>​</html>html</p>
 <p>要知道，input有两个，该如何区分，如何赋值，官网也不详细。后来看了一个demo才发现，原来每个<code>&lt;From.Item&gt;</code>上都有一个<code>name</code>值，这就是区分不同input的关键！</p>
 <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;<span class="title class_">Form</span>.<span class="property">Item</span> </span><br><span class="line">    name=<span class="string">&quot;password&quot;</span> </span><br><span class="line">    label=<span class="string">&quot;密码&quot;</span></span><br><span class="line">    initialValue=<span class="string">&quot;admin&quot;</span> <span class="comment">//这是默认值</span></span><br><span class="line">    &gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Input</span> <span class="attr">type</span>=<span class="string">&quot;textarea&quot;</span>/&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Form</span>.<span class="property">Item</span>&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
