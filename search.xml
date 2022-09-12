@@ -1143,49 +1143,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于express制作服务器</title>
-    <url>/found404.io/2022/06/30/Express%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="基于express制作服务器"><a href="#基于express制作服务器" class="headerlink" title="基于express制作服务器"></a>基于express制作服务器</h1><h2 id="安装必要的包"><a href="#安装必要的包" class="headerlink" title="安装必要的包"></a>安装必要的包</h2><ul>
-<li><code>npm i express</code></li>
-<li>创建<code>app.js</code>文件</li>
-<li>创建<code>router.js</code>路由文件</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="路由文件"><a href="#路由文件" class="headerlink" title="路由文件"></a>路由文件</h2><p><strong>router.js文件</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> rouder =express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line">rouder.<span class="title function_">get</span>(<span class="string">&#x27;/user/list&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">data</span>:[</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">01</span>,<span class="attr">title</span>:<span class="string">&#x27;demo1&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">02</span>,<span class="attr">title</span>:<span class="string">&#x27;demo2&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">03</span>,<span class="attr">title</span>:<span class="string">&#x27;demo3&#x27;</span>&#125;,</span><br><span class="line">        ]</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">rouder.<span class="title function_">post</span>(<span class="string">&#x27;/user/add&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">success</span>:<span class="string">&#x27;post发送成功&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">rouder.<span class="title function_">post</span>(<span class="string">&#x27;/user/posform&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.<span class="property">body</span> </span><br><span class="line">    <span class="comment">//post请求返回的数据使用body接收，但是也要配置全局中间件对表单数据进行解析</span></span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">success</span>:<span class="string">&#x27;post发送成功&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:query</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暴露路由模块</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = rouder;</span><br></pre></td></tr></table></figure>
-
-<h2 id="app-js文件"><a href="#app-js文件" class="headerlink" title="app.js文件"></a>app.js文件</h2><h3 id="内置的表单转换中间件"><a href="#内置的表单转换中间件" class="headerlink" title="内置的表单转换中间件"></a>内置的表单转换中间件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置中间件</span></span><br><span class="line"><span class="comment">// 通过express.json()解析表单中的json格式数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"><span class="comment">// 通过express.urlencoded()解析表单中的url-encoded格式的数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br></pre></td></tr></table></figure>
-
-<h3 id="第三方中间件"><a href="#第三方中间件" class="headerlink" title="第三方中间件"></a>第三方中间件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br></pre></td></tr></table></figure>
-
-<h3 id="app文件"><a href="#app文件" class="headerlink" title="app文件"></a>app文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="comment">// 导入路由模块</span></span><br><span class="line"><span class="keyword">const</span> router=<span class="built_in">require</span>(<span class="string">&#x27;./02-路由模块&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载静态资源</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/&#x27;</span>, express.<span class="title function_">static</span>(__dirname + <span class="string">&#x27;/public&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决跨域问题---------------------------------------------------</span></span><br><span class="line">app.<span class="title function_">all</span>(<span class="string">&#x27;*&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res, next</span>) &#123;</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span>, <span class="string">&#x27;Content-Type,Content-Length,Authorization,Origin,Accept,X-Requested-With&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;GET,POST,OPTIONS.PUT,PATCH,DELETE&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;X-Powered-By&#x27;</span>, <span class="string">&#x27;3.2.1&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="title function_">next</span>();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// --------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个路由全局中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(router);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port http://localhost:8080`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态资源文件index-html"><a href="#静态资源文件index-html" class="headerlink" title="静态资源文件index.html"></a>静态资源文件index.html</h2><blockquote>
-<p>存放在public文件夹下</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello Express!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;get&quot;</span>&gt;</span>GET请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;post&quot;</span>&gt;</span>POST请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/user/posform&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">id</span>=<span class="string">&quot;f1&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>发送<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;.get&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&quot;http://192.168.210.146:8080/user/posform/user/list&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">response</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;.post&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&quot;http://192.168.210.146:8080/user/posform/user/add&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">response</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 获取页面已有的一个form表单</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 第二种阻止表单默认提交行为(跟第一种一样)</span></span></span><br><span class="line"><span class="language-javascript">            e.<span class="title function_">preventDefault</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 利用serialize()获取表单中的所有数据</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 前提是被获取表单必须有name属性</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// serializeArray()也可以获取表单中的数据</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">let</span> shujv = $(<span class="variable language_">this</span>).<span class="title function_">serialize</span>();</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">post</span>(<span class="string">&#x27;http://192.168.210.146:8080/user/posform&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                shujv, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用CORS解决跨域问题"><a href="#使用CORS解决跨域问题" class="headerlink" title="使用CORS解决跨域问题"></a>使用CORS解决跨域问题</h2><blockquote>
-<p>可以使用CORS这个第三方包解决跨域问题，其实还有另一种解决方案JSONP，但后者仅支持GET请求</p>
-</blockquote>
-<ol>
-<li>运行<code>npm install cors</code>安装中间件</li>
-<li>使用<code>const cors = require(&#39;cors&#39;)</code>导入中间件</li>
-<li>在路由之前调用<code>app.use(cors())</code>配置中间件</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="comment">// 导入路由模块</span></span><br><span class="line"><span class="keyword">const</span> router=<span class="built_in">require</span>(<span class="string">&#x27;./02-路由模块&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决跨域---------------------------------------------------</span></span><br><span class="line"><span class="comment">// 在路由之前配置cors</span></span><br><span class="line"><span class="keyword">const</span> cors=<span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cors</span>());</span><br><span class="line"><span class="comment">// ----------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载静态资源</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/&#x27;</span>, express.<span class="title function_">static</span>(__dirname + <span class="string">&#x27;/public&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个路由全局中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(router);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port http://localhost:8080`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>node.js</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
-        <tag>express</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ES6新特性</title>
     <url>/found404.io/2021/06/30/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h1 id="ES6新特性🥳🥳"><a href="#ES6新特性🥳🥳" class="headerlink" title="ES6新特性🥳🥳"></a>ES6新特性🥳🥳</h1><h2 id="let，const新的声明方式🧐🧐"><a href="#let，const新的声明方式🧐🧐" class="headerlink" title="let，const新的声明方式🧐🧐"></a>let，const新的声明方式🧐🧐</h2><h3 id="Let"><a href="#Let" class="headerlink" title="Let"></a>Let</h3><blockquote>
@@ -1768,6 +1725,49 @@
       <tags>
         <tag>es6</tag>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于express制作服务器</title>
+    <url>/found404.io/2022/06/30/Express%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="基于express制作服务器"><a href="#基于express制作服务器" class="headerlink" title="基于express制作服务器"></a>基于express制作服务器</h1><h2 id="安装必要的包"><a href="#安装必要的包" class="headerlink" title="安装必要的包"></a>安装必要的包</h2><ul>
+<li><code>npm i express</code></li>
+<li>创建<code>app.js</code>文件</li>
+<li>创建<code>router.js</code>路由文件</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="路由文件"><a href="#路由文件" class="headerlink" title="路由文件"></a>路由文件</h2><p><strong>router.js文件</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> rouder =express.<span class="title class_">Router</span>();</span><br><span class="line"></span><br><span class="line">rouder.<span class="title function_">get</span>(<span class="string">&#x27;/user/list&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">data</span>:[</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">01</span>,<span class="attr">title</span>:<span class="string">&#x27;demo1&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">02</span>,<span class="attr">title</span>:<span class="string">&#x27;demo2&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">id</span>:<span class="number">03</span>,<span class="attr">title</span>:<span class="string">&#x27;demo3&#x27;</span>&#125;,</span><br><span class="line">        ]</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">rouder.<span class="title function_">post</span>(<span class="string">&#x27;/user/add&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">success</span>:<span class="string">&#x27;post发送成功&#x27;</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">rouder.<span class="title function_">post</span>(<span class="string">&#x27;/user/posform&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> query = req.<span class="property">body</span> </span><br><span class="line">    <span class="comment">//post请求返回的数据使用body接收，但是也要配置全局中间件对表单数据进行解析</span></span><br><span class="line">    res.<span class="title function_">send</span>(&#123;</span><br><span class="line">        <span class="attr">status</span>:<span class="number">200</span>,</span><br><span class="line">        <span class="attr">success</span>:<span class="string">&#x27;post发送成功&#x27;</span>,</span><br><span class="line">        <span class="attr">data</span>:query</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 暴露路由模块</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = rouder;</span><br></pre></td></tr></table></figure>
+
+<h2 id="app-js文件"><a href="#app-js文件" class="headerlink" title="app.js文件"></a>app.js文件</h2><h3 id="内置的表单转换中间件"><a href="#内置的表单转换中间件" class="headerlink" title="内置的表单转换中间件"></a>内置的表单转换中间件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置中间件</span></span><br><span class="line"><span class="comment">// 通过express.json()解析表单中的json格式数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">json</span>());</span><br><span class="line"><span class="comment">// 通过express.urlencoded()解析表单中的url-encoded格式的数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三方中间件"><a href="#第三方中间件" class="headerlink" title="第三方中间件"></a>第三方中间件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br></pre></td></tr></table></figure>
+
+<h3 id="app文件"><a href="#app文件" class="headerlink" title="app文件"></a>app文件</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="comment">// 导入路由模块</span></span><br><span class="line"><span class="keyword">const</span> router=<span class="built_in">require</span>(<span class="string">&#x27;./02-路由模块&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载静态资源</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/&#x27;</span>, express.<span class="title function_">static</span>(__dirname + <span class="string">&#x27;/public&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决跨域问题---------------------------------------------------</span></span><br><span class="line">app.<span class="title function_">all</span>(<span class="string">&#x27;*&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res, next</span>) &#123;</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span>, <span class="string">&#x27;Content-Type,Content-Length,Authorization,Origin,Accept,X-Requested-With&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span>, <span class="string">&#x27;GET,POST,OPTIONS.PUT,PATCH,DELETE&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;X-Powered-By&#x27;</span>, <span class="string">&#x27;3.2.1&#x27;</span>);</span><br><span class="line">    res.<span class="title function_">header</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json;charset=utf-8&#x27;</span>);</span><br><span class="line">    <span class="title function_">next</span>();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// --------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个路由全局中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(router);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port http://localhost:8080`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态资源文件index-html"><a href="#静态资源文件index-html" class="headerlink" title="静态资源文件index.html"></a>静态资源文件index.html</h2><blockquote>
+<p>存放在public文件夹下</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello Express!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;get&quot;</span>&gt;</span>GET请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;post&quot;</span>&gt;</span>POST请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/user/posform&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">id</span>=<span class="string">&quot;f1&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>发送<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;.get&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&quot;http://192.168.210.146:8080/user/posform/user/list&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">response</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;.post&#x27;</span>).<span class="title function_">click</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&quot;GET&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">url</span>: <span class="string">&quot;http://192.168.210.146:8080/user/posform/user/add&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">                <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">response</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 获取页面已有的一个form表单</span></span></span><br><span class="line"><span class="language-javascript">        $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 第二种阻止表单默认提交行为(跟第一种一样)</span></span></span><br><span class="line"><span class="language-javascript">            e.<span class="title function_">preventDefault</span>();</span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 利用serialize()获取表单中的所有数据</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// 前提是被获取表单必须有name属性</span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// serializeArray()也可以获取表单中的数据</span></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">let</span> shujv = $(<span class="variable language_">this</span>).<span class="title function_">serialize</span>();</span></span><br><span class="line"><span class="language-javascript">            $.<span class="title function_">post</span>(<span class="string">&#x27;http://192.168.210.146:8080/user/posform&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">                shujv, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span></span><br><span class="line"><span class="language-javascript">                &#125;);</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用CORS解决跨域问题"><a href="#使用CORS解决跨域问题" class="headerlink" title="使用CORS解决跨域问题"></a>使用CORS解决跨域问题</h2><blockquote>
+<p>可以使用CORS这个第三方包解决跨域问题，其实还有另一种解决方案JSONP，但后者仅支持GET请求</p>
+</blockquote>
+<ol>
+<li>运行<code>npm install cors</code>安装中间件</li>
+<li>使用<code>const cors = require(&#39;cors&#39;)</code>导入中间件</li>
+<li>在路由之前调用<code>app.use(cors())</code>配置中间件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="comment">// 导入路由模块</span></span><br><span class="line"><span class="keyword">const</span> router=<span class="built_in">require</span>(<span class="string">&#x27;./02-路由模块&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.导入解析表单数据的中间件</span></span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="comment">// 2.使用app.use()注册中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(parser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解决跨域---------------------------------------------------</span></span><br><span class="line"><span class="comment">// 在路由之前配置cors</span></span><br><span class="line"><span class="keyword">const</span> cors=<span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>);</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">cors</span>());</span><br><span class="line"><span class="comment">// ----------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 挂载静态资源</span></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/&#x27;</span>, express.<span class="title function_">static</span>(__dirname + <span class="string">&#x27;/public&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用这个路由全局中间件</span></span><br><span class="line">app.<span class="title function_">use</span>(router);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Example app listening on port http://localhost:8080`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>node.js</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
+        <tag>express</tag>
       </tags>
   </entry>
   <entry>
@@ -2522,12 +2522,85 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Router</span> <span class="keyword">from</span> <span class="string">&#x27;next/router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Home</span> = (<span class="params"></span>) =&gt;&#123;</span><br><span class="line">  <span class="comment">// routeChangeStart     路由发生变化之前</span></span><br><span class="line">  <span class="comment">// routeChangeComplete  路由发生变化之后</span></span><br><span class="line">  <span class="comment">// beforeHistoryChange  Next.js全部都用History模式</span></span><br><span class="line">  <span class="comment">// routeChangeError     路由发生错误时,404不算</span></span><br><span class="line">  <span class="comment">// hashChangeStart      Hash路由切换之前</span></span><br><span class="line">  <span class="comment">// hashChangeComplete   Hash路由切换完成</span></span><br><span class="line"></span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;routeChangeStart&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;1.routeChangeStart,路由开始变化,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;routeChangeComplete&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;2.routeChangeComplete,路由变化结束,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;beforeHistoryChange&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;3.beforeHistoryChange,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;routeChangeError&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;4.routeChangeError,路由发生错误时,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;hashChangeStart&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;5.hashChangeStart,Hash路由切换之前,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="title class_">Router</span>.<span class="property">events</span>.<span class="title function_">on</span>(<span class="string">&#x27;hashChangeComplete&#x27;</span>,<span class="function">(<span class="params">...argus</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// ...argus 返回路径和&#123;shallow: false&#125;对象</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;6.hashChangeComplete,Hash路由切换完成,参数为:&#x27;</span>,...argus);</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">goto</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title class_">Router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">      <span class="attr">pathname</span>:<span class="string">&#x27;/chuancan&#x27;</span>,</span><br><span class="line">      <span class="attr">query</span>:&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;张三&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是首页<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&quot;/chuancan?name=张三&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">a</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&#123;&#123;pathname:</span>&#x27;/<span class="attr">chuancan</span>&#x27;,<span class="attr">query:</span>&#123;<span class="attr">name:</span>&#x27;李四&#x27;&#125;&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">a</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;goto&#125;</span>&gt;</span>点击跳转并携带参数<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Home</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Next-js中使用Axios"><a href="#Next-js中使用Axios" class="headerlink" title="Next.js中使用Axios"></a>Next.js中使用Axios</h2><p> getiInitialProps是 Next.js 最伟大的发明，它确定了一个规范，一个页面组件只要把访问 API 外部资源的代码放在 getInitialProps 中就足够，其余的不用管，Next.js 自然会在服务器端或者浏览器端调用getInitialProps来获取外部资源，并把外部资源以 props 的方式传递给页面组件。</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;withRouter&#125; <span class="keyword">from</span> <span class="string">&#x27;next/router&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Chuancan</span> = (<span class="params">&#123;router,data&#125;</span>)=&gt;&#123; <span class="comment">// 仅仅在withRouter下使用</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;router.query.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;</span></span><br><span class="line"><span class="language-xml">                    data.map(ele=&gt;&#123;</span></span><br><span class="line"><span class="language-xml">                        return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;ele.title&#125;</span>&gt;</span>&#123;ele.title&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                    &#125;)</span></span><br><span class="line"><span class="language-xml">                &#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&#x27;/&#x27;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>返回首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Chuancan</span>.<span class="property">getInitialProps</span> = <span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="title function_">axios</span>(<span class="string">&#x27;http://192.168.210.146:9527/api/goodList?page=1&#x27;</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;数据:&#x27;</span>,res);</span><br><span class="line">            <span class="title function_">resolve</span>(res)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">await</span> promise</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">withRouter</span>(<span class="title class_">Chuancan</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用Style-jsx编写页面"><a href="#使用Style-jsx编写页面" class="headerlink" title="使用Style jsx编写页面"></a>使用Style jsx编写页面</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>,&#123;useState&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Jspang</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [color,setColor] = <span class="title function_">useState</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">changeColor</span>=(<span class="params"></span>)=&gt;&#123;</span><br><span class="line">        <span class="title function_">setColor</span>(color===<span class="string">&#x27;blue&#x27;</span>?<span class="string">&#x27;red&#x27;</span>:<span class="string">&#x27;blue&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>测试文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;changeColor&#125;</span>&gt;</span>改变颜色<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">style</span> <span class="attr">jsx</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">                &#123;`</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">                    <span class="selector-tag">div</span>&#123;<span class="attribute">color</span>:$&#123;<span class="attribute">color</span>&#125;;&#125;               </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">                `&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">            </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Jspang</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="LazyLoading懒加载"><a href="#LazyLoading懒加载" class="headerlink" title="LazyLoading懒加载"></a>LazyLoading懒加载</h2><h3 id="外部库实现方式"><a href="#外部库实现方式" class="headerlink" title="外部库实现方式"></a>外部库实现方式</h3><p>采用异步引入的方式，仅在需要的时候引入使用</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>,&#123;useState&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Time</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [nowTime,setTime] = <span class="title function_">useState</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">changeTime</span> = <span class="keyword">async</span> (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">        <span class="keyword">const</span> moment = <span class="keyword">await</span> <span class="title function_">import</span>(<span class="string">&#x27;moment&#x27;</span>) <span class="comment">// 异步引入</span></span><br><span class="line">        <span class="title function_">setTime</span>(moment.<span class="title function_">default</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>()).<span class="title function_">format</span>())</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>显示时间:&#123;nowTime&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;changeTime&#125;</span>&gt;</span>改变时间格式<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Time</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义库"><a href="#自定义库" class="headerlink" title="自定义库"></a>自定义库</h3><p>自定义一个组件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ()=&gt;<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Lazy Loading ...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>引入next的<code>dynamic</code></p>
+<p>仅在使用的时候生效</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>,&#123;useState&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> dynamic <span class="keyword">from</span> <span class="string">&#x27;next/dynamic&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">One</span> = <span class="title function_">dynamic</span>(<span class="title function_">import</span>(<span class="string">&#x27;../components/one&#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Time</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> [nowTime,setTime] = <span class="title function_">useState</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>())</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">changeTime</span> = <span class="keyword">async</span> (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">        <span class="keyword">const</span> moment = <span class="keyword">await</span> <span class="title function_">import</span>(<span class="string">&#x27;moment&#x27;</span>)</span><br><span class="line">        <span class="title function_">setTime</span>(moment.<span class="title function_">default</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>()).<span class="title function_">format</span>())</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>显示时间:&#123;nowTime&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">One</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;changeTime&#125;</span>&gt;</span>改变时间格式<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Time</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义Head"><a href="#自定义Head" class="headerlink" title="自定义Head"></a>自定义Head</h2><p>为优化SEO，请求头是必不可少的，自定义请求头可以是SEO更加便捷找到页面</p>
+<p>为方便可以将头做成组件,当然也可以每个页面使用不同的<code>Head</code></p>
+<blockquote>
+<p>使用Next提供的组件<code>&lt;Head/&gt;</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">MyHeader</span> = (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">title</span>&gt;</span>JSPang.com<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">MyHeader</span></span><br></pre></td></tr></table></figure>
+
+<p>在需要的时候引入</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">MyHeader</span> <span class="keyword">from</span> <span class="string">&quot;../components/myHeader&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">MyHeader</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Next-js中使用css"><a href="#Next-js中使用css" class="headerlink" title="Next.js中使用css"></a>Next.js中使用css</h2><p>Next中是无法正常引入css进行使用的，参考官方文档</p>
+<ol>
+<li>在pages文件下新建<code>_app.js</code></li>
+<li>新建<code>style.css</code>全局样式文件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// _app.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./styles.css&#x27;</span>; <span class="comment">//你的全局css样式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">MyApp</span>(<span class="params">&#123;Component,pageProps&#125;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...pageProps</span>&#125;&gt;</span><span class="tag">&lt;/<span class="name">Component</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>如果是组件的话可以在组件内引入</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;antd/dist/antd.css&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Button</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Header</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Button</span>&gt;</span>按钮<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
         <category>服务端渲染</category>
       </categories>
       <tags>
         <tag>Next.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React中阻止冒泡</title>
+    <url>/found404.io/2022/08/26/React%E4%B8%AD%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/</url>
+    <content><![CDATA[<h1 id="React中阻止冒泡"><a href="#React中阻止冒泡" class="headerlink" title="React中阻止冒泡"></a>React中阻止冒泡</h1><p>原因：在制作一个关于日历组件的时候，遇到一个bug😥,点击input框让日历显示，点击日历以外的区域日历框隐藏。但是无效！且有闪烁bug！</p>
+<blockquote>
+<p>原本的思路是利用获取焦点失去焦点实现，点击input获取焦点显示日历框，失去焦点后再隐藏日历框。</p>
+<p>但是!  日历框中有切换月份的按钮，当点击按钮时会失去焦点，又再次触发失去焦点的事件，有闪烁bug。如图：</p>
+</blockquote>
+<span id="more"></span>
+
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220826223515130.png" alt="image-20220826223515130"></p>
+<p>所以我就给div添加了<code>tabIndex=&quot;-1&quot;</code>使div也可以添加获取焦点失去焦点方法。为最外层的div添加click事件获取焦点显示日历盒子，但是当点击日历盒子内部的标签后会依次触发<span style="color:red">失去焦点，获取焦点</span>事件，形成闪烁(我的显示与隐藏是提前写好的动画类名)；</p>
+<p>以上就是我最初尝试的方法一，无效。后来想到可以利用点击html触发隐藏日历盒子的方法</p>
+<blockquote>
+<p>为document添加点击事件，</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 点击除去日历以外的部分隐藏日历</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">onclick</span> = <span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="title function_">setShow</span>(<span class="literal">false</span>) <span class="comment">// 隐藏日历盒子</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,[])<span class="comment">//仅仅在第一次return后触发</span></span><br></pre></td></tr></table></figure>
+
+<p>但是，如果不在点击div显示日历盒子的方法内添加阻止冒泡，当点击日历盒子内的任何地方，都会冒泡到document上触发隐藏盒子的方法；所以就要利用阻止冒泡！</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// div获取焦点</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">divFocus</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="property">nativeEvent</span>.<span class="title function_">stopImmediatePropagation</span>();</span><br><span class="line">    <span class="title function_">setFocus</span>(<span class="literal">true</span>) <span class="comment">// 设置触发div后的样式为开启</span></span><br><span class="line">    <span class="title function_">setShow</span>(<span class="literal">true</span>) <span class="comment">// 设置日历盒子显示</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时，点击日历盒子以外的地方就会将日历盒子隐藏！😋</p>
+<p><a href="https://blog.csdn.net/w799766/article/details/82591372?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166152398716782184695484%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166152398716782184695484&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-82591372-null-null.142%5Ev42%5Epc_ran_alice,185%5Ev2%5Econtrol&utm_term=react%20%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1&spm=1018.2226.3001.4187">参考帖子(力推)</a></p>
+]]></content>
+      <categories>
+        <category>框架</category>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+        <tag>框架</tag>
+        <tag>阻止冒泡行为</tag>
       </tags>
   </entry>
   <entry>
@@ -3147,7 +3220,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置中间件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过express.urlencoded()解析表单中的url-encoded格式的数据</span></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建路由</span></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/book&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    <span class="comment">// 在服务器中可以使用req.body这个属性来获取json格式的表单和url-encoded格式数据</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">body</span>);</span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">&#x27;ok&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">80</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;http://127.0.0.1&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="第三方的中间件"><a href="#第三方的中间件" class="headerlink" title="第三方的中间件"></a>第三方的中间件</h3><p>非Express官方内置的，而是由第三方开发出来的中间，叫做第三方中间件，在项目中，大家可以按需下载并配置第三方中间件，从而提高项目的开发效率。</p>
-<p>例如：在<a href="mailto:&#x65;&#x78;&#x70;&#x72;&#101;&#x73;&#x73;&#x40;&#x34;&#x2e;&#49;&#x36;&#46;&#48;">&#x65;&#x78;&#x70;&#x72;&#101;&#x73;&#x73;&#x40;&#x34;&#x2e;&#49;&#x36;&#46;&#48;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
+<p>例如：在<a href="mailto:&#101;&#x78;&#x70;&#114;&#101;&#x73;&#115;&#x40;&#52;&#x2e;&#x31;&#54;&#46;&#48;">&#101;&#x78;&#x70;&#114;&#101;&#x73;&#115;&#x40;&#52;&#x2e;&#x31;&#54;&#46;&#48;</a>之前的版本中，经常使用body-parser这个第三方中间件，来解析请求体数据，使用步骤如下：</p>
 <ol>
 <li>运行<code>npm install body-parser</code>安装中间件</li>
 <li>使用require导入中间件</li>
@@ -3245,40 +3318,6 @@
       </categories>
       <tags>
         <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>React中阻止冒泡</title>
-    <url>/found404.io/2022/08/26/React%E4%B8%AD%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/</url>
-    <content><![CDATA[<h1 id="React中阻止冒泡"><a href="#React中阻止冒泡" class="headerlink" title="React中阻止冒泡"></a>React中阻止冒泡</h1><p>原因：在制作一个关于日历组件的时候，遇到一个bug😥,点击input框让日历显示，点击日历以外的区域日历框隐藏。但是无效！且有闪烁bug！</p>
-<blockquote>
-<p>原本的思路是利用获取焦点失去焦点实现，点击input获取焦点显示日历框，失去焦点后再隐藏日历框。</p>
-<p>但是!  日历框中有切换月份的按钮，当点击按钮时会失去焦点，又再次触发失去焦点的事件，有闪烁bug。如图：</p>
-</blockquote>
-<span id="more"></span>
-
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220826223515130.png" alt="image-20220826223515130"></p>
-<p>所以我就给div添加了<code>tabIndex=&quot;-1&quot;</code>使div也可以添加获取焦点失去焦点方法。为最外层的div添加click事件获取焦点显示日历盒子，但是当点击日历盒子内部的标签后会依次触发<span style="color:red">失去焦点，获取焦点</span>事件，形成闪烁(我的显示与隐藏是提前写好的动画类名)；</p>
-<p>以上就是我最初尝试的方法一，无效。后来想到可以利用点击html触发隐藏日历盒子的方法</p>
-<blockquote>
-<p>为document添加点击事件，</p>
-</blockquote>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 点击除去日历以外的部分隐藏日历</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">onclick</span> = <span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="title function_">setShow</span>(<span class="literal">false</span>) <span class="comment">// 隐藏日历盒子</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,[])<span class="comment">//仅仅在第一次return后触发</span></span><br></pre></td></tr></table></figure>
-
-<p>但是，如果不在点击div显示日历盒子的方法内添加阻止冒泡，当点击日历盒子内的任何地方，都会冒泡到document上触发隐藏盒子的方法；所以就要利用阻止冒泡！</p>
-<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="comment">// div获取焦点</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">divFocus</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="property">nativeEvent</span>.<span class="title function_">stopImmediatePropagation</span>();</span><br><span class="line">    <span class="title function_">setFocus</span>(<span class="literal">true</span>) <span class="comment">// 设置触发div后的样式为开启</span></span><br><span class="line">    <span class="title function_">setShow</span>(<span class="literal">true</span>) <span class="comment">// 设置日历盒子显示</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此时，点击日历盒子以外的地方就会将日历盒子隐藏！😋</p>
-<p><a href="https://blog.csdn.net/w799766/article/details/82591372?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166152398716782184695484%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166152398716782184695484&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-82591372-null-null.142%5Ev42%5Epc_ran_alice,185%5Ev2%5Econtrol&utm_term=react%20%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1&spm=1018.2226.3001.4187">参考帖子(力推)</a></p>
-]]></content>
-      <categories>
-        <category>框架</category>
-        <category>React</category>
-      </categories>
-      <tags>
-        <tag>React</tag>
-        <tag>框架</tag>
-        <tag>阻止冒泡行为</tag>
       </tags>
   </entry>
   <entry>
@@ -5479,132 +5518,6 @@ addDecorator((storyFn)=&gt;(
       </tags>
   </entry>
   <entry>
-    <title>git提交规范化</title>
-    <url>/found404.io/2022/09/08/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83%E5%8C%96/</url>
-    <content><![CDATA[<h2 id="非规范痛点"><a href="#非规范痛点" class="headerlink" title="非规范痛点"></a>非规范痛点</h2><ul>
-<li>多人合作开发，commit注释，随机编写<strong>规范提交格式</strong></li>
-<li>提交日志太多，无法查找(<strong>规范后可以过滤查找</strong>)</li>
-<li>读不懂别人的提交日志 <strong>掌握提交语法</strong></li>
-</ul>
-<span id="more"></span>
-
-<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p><code>git commit</code>规范的主要目的是为了规范化commit格式，使每次commit清晰指明本次提交的目的，备注信息以及影响范围</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>git commit -m &#39;type(scope): subject&#39;</code></p>
-<h2 id="commit格式"><a href="#commit格式" class="headerlink" title="commit格式"></a>commit格式</h2><ul>
-<li><ul>
-<li>type 必填</li>
-<li>scope 可选项，一般用户写入模块</li>
-<li>subject 陈述信息</li>
-</ul>
-</li>
-</ul>
-<h3 id="head详解"><a href="#head详解" class="headerlink" title="head详解"></a>head详解</h3><table>
-<thead>
-<tr>
-<th>关键字type</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>feat</td>
-<td>新增功能</td>
-</tr>
-<tr>
-<td>fix</td>
-<td>bug修复</td>
-</tr>
-<tr>
-<td>docs</td>
-<td>文档更新,README.md等</td>
-</tr>
-<tr>
-<td>style</td>
-<td>不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)</td>
-</tr>
-<tr>
-<td>refactor</td>
-<td>重构代码，不是修改不bug，也不是新增功能feart</td>
-</tr>
-<tr>
-<td>perf</td>
-<td>性能, 体验优化</td>
-</tr>
-<tr>
-<td>test</td>
-<td>新增测试用例或是更新已存在测试</td>
-</tr>
-<tr>
-<td>build</td>
-<td>修改构建系统，例如（gulp rollup webpack）等配置文件修改</td>
-</tr>
-<tr>
-<td>ci</td>
-<td>修改持续集成文件，例如：<code>ravis，Jenkins，GitLab CI，Circl</code>等提交</td>
-</tr>
-<tr>
-<td>revert</td>
-<td>回退版本到某个更早提交</td>
-</tr>
-<tr>
-<td>chore</td>
-<td>没有上述变动，其他；例如需修改test src目录 打包发布前，提交用chore</td>
-</tr>
-<tr>
-<td>depc</td>
-<td>升级依赖</td>
-</tr>
-</tbody></table>
-<h2 id="练习测试"><a href="#练习测试" class="headerlink" title="练习测试"></a>练习测试</h2><p>例如：新增功能首页<br><code>git commit -m &#39;feat(Home): 新增首页功能&#39;</code><br>例如：修改详情页bug<br><code>git commit -m &#39;fix(Detail): 修改bug&#39;</code></p>
-<p>例如：打包发布button组件<br><code>git commit -m &#39;chore(all): 打包发布button组件&#39;</code></p>
-<h3 id="过滤查找"><a href="#过滤查找" class="headerlink" title="过滤查找"></a>过滤查找</h3><p><code>git log --pretty=oneline --grep=feat</code></p>
-<h2 id="git分支命名规范"><a href="#git分支命名规范" class="headerlink" title="git分支命名规范"></a>git分支命名规范</h2><table>
-<thead>
-<tr>
-<th align="center">分支</th>
-<th align="center">命名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">主分支</td>
-<td align="center">master</td>
-<td align="center">主分支，所有提供给用户使用的正式版本，都在这个主分支上发布，不能直接在该分支上开发</td>
-</tr>
-<tr>
-<td align="center">开发分支</td>
-<td align="center">dev</td>
-<td align="center">开发分支，永远是功能最新最全的分支，该分支只做只合并操作，不能直接在该分支上开发</td>
-</tr>
-<tr>
-<td align="center">功能分支</td>
-<td align="center">feature-xxx</td>
-<td align="center">功能开发分支，在develop上创建分支，以自己开发功能模块命名，功能测试正常后合并到develop分支</td>
-</tr>
-<tr>
-<td align="center">预发布分支</td>
-<td align="center">release-xxx</td>
-<td align="center">发布定期要上线的功能，它是指发布正式版之前，(即合并到Master分支之前)，我们可以需要有一个与发布版本进行测试。预发布分支是从Dev分支上面分出来的，预发布结束后，必须要合并进Dev和Master分支</td>
-</tr>
-<tr>
-<td align="center">修复分支</td>
-<td align="center">fix-xxx</td>
-<td align="center">功能bug修复分支，feature分支合并之后发现bug，在develop上创建分支修复，之后合并回develop分支</td>
-</tr>
-<tr>
-<td align="center">紧急修复分支</td>
-<td align="center">hotfix-xxx</td>
-<td align="center">紧急bug修复分支，在master分支上创建，修复完成后合并到master</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue</title>
     <url>/found404.io/2022/07/15/Vue/</url>
     <content><![CDATA[<h1 id="Vue核心"><a href="#Vue核心" class="headerlink" title="Vue核心"></a>Vue核心</h1><h2 id="Vue简介"><a href="#Vue简介" class="headerlink" title="Vue简介"></a>Vue简介</h2><h3 id="什么是VUE"><a href="#什么是VUE" class="headerlink" title="什么是VUE"></a>什么是VUE</h3><blockquote>
@@ -7319,6 +7232,144 @@ addDecorator((storyFn)=&gt;(
       </tags>
   </entry>
   <entry>
+    <title>my_firstBlog</title>
+    <url>/found404.io/2021/06/25/my-firstBlog/</url>
+    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
+<p>第一篇blog</p>
+<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hello hexo!</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git提交规范化</title>
+    <url>/found404.io/2022/09/08/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83%E5%8C%96/</url>
+    <content><![CDATA[<h2 id="非规范痛点"><a href="#非规范痛点" class="headerlink" title="非规范痛点"></a>非规范痛点</h2><ul>
+<li>多人合作开发，commit注释，随机编写<strong>规范提交格式</strong></li>
+<li>提交日志太多，无法查找(<strong>规范后可以过滤查找</strong>)</li>
+<li>读不懂别人的提交日志 <strong>掌握提交语法</strong></li>
+</ul>
+<span id="more"></span>
+
+<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p><code>git commit</code>规范的主要目的是为了规范化commit格式，使每次commit清晰指明本次提交的目的，备注信息以及影响范围</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>git commit -m &#39;type(scope): subject&#39;</code></p>
+<h2 id="commit格式"><a href="#commit格式" class="headerlink" title="commit格式"></a>commit格式</h2><ul>
+<li><ul>
+<li>type 必填</li>
+<li>scope 可选项，一般用户写入模块</li>
+<li>subject 陈述信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="head详解"><a href="#head详解" class="headerlink" title="head详解"></a>head详解</h3><table>
+<thead>
+<tr>
+<th>关键字type</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>feat</td>
+<td>新增功能</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>bug修复</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>文档更新,README.md等</td>
+</tr>
+<tr>
+<td>style</td>
+<td>不影响程序逻辑的代码修改(修改空白字符，格式缩进，补全缺失的分号等，没有改变代码逻辑)</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>重构代码，不是修改不bug，也不是新增功能feart</td>
+</tr>
+<tr>
+<td>perf</td>
+<td>性能, 体验优化</td>
+</tr>
+<tr>
+<td>test</td>
+<td>新增测试用例或是更新已存在测试</td>
+</tr>
+<tr>
+<td>build</td>
+<td>修改构建系统，例如（gulp rollup webpack）等配置文件修改</td>
+</tr>
+<tr>
+<td>ci</td>
+<td>修改持续集成文件，例如：<code>ravis，Jenkins，GitLab CI，Circl</code>等提交</td>
+</tr>
+<tr>
+<td>revert</td>
+<td>回退版本到某个更早提交</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>没有上述变动，其他；例如需修改test src目录 打包发布前，提交用chore</td>
+</tr>
+<tr>
+<td>depc</td>
+<td>升级依赖</td>
+</tr>
+</tbody></table>
+<h2 id="练习测试"><a href="#练习测试" class="headerlink" title="练习测试"></a>练习测试</h2><p>例如：新增功能首页<br><code>git commit -m &#39;feat(Home): 新增首页功能&#39;</code><br>例如：修改详情页bug<br><code>git commit -m &#39;fix(Detail): 修改bug&#39;</code></p>
+<p>例如：打包发布button组件<br><code>git commit -m &#39;chore(all): 打包发布button组件&#39;</code></p>
+<h3 id="过滤查找"><a href="#过滤查找" class="headerlink" title="过滤查找"></a>过滤查找</h3><p><code>git log --pretty=oneline --grep=feat</code></p>
+<h2 id="git分支命名规范"><a href="#git分支命名规范" class="headerlink" title="git分支命名规范"></a>git分支命名规范</h2><table>
+<thead>
+<tr>
+<th align="center">分支</th>
+<th align="center">命名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">主分支</td>
+<td align="center">master</td>
+<td align="center">主分支，所有提供给用户使用的正式版本，都在这个主分支上发布，不能直接在该分支上开发</td>
+</tr>
+<tr>
+<td align="center">开发分支</td>
+<td align="center">dev</td>
+<td align="center">开发分支，永远是功能最新最全的分支，该分支只做只合并操作，不能直接在该分支上开发</td>
+</tr>
+<tr>
+<td align="center">功能分支</td>
+<td align="center">feature-xxx</td>
+<td align="center">功能开发分支，在develop上创建分支，以自己开发功能模块命名，功能测试正常后合并到develop分支</td>
+</tr>
+<tr>
+<td align="center">预发布分支</td>
+<td align="center">release-xxx</td>
+<td align="center">发布定期要上线的功能，它是指发布正式版之前，(即合并到Master分支之前)，我们可以需要有一个与发布版本进行测试。预发布分支是从Dev分支上面分出来的，预发布结束后，必须要合并进Dev和Master分支</td>
+</tr>
+<tr>
+<td align="center">修复分支</td>
+<td align="center">fix-xxx</td>
+<td align="center">功能bug修复分支，feature分支合并之后发现bug，在develop上创建分支修复，之后合并回develop分支</td>
+</tr>
+<tr>
+<td align="center">紧急修复分支</td>
+<td align="center">hotfix-xxx</td>
+<td align="center">紧急bug修复分支，在master分支上创建，修复完成后合并到master</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>认识jQuery</title>
     <url>/found404.io/2021/07/04/jQuery/</url>
     <content><![CDATA[<h1 id="认识jQuery"><a href="#认识jQuery" class="headerlink" title="认识jQuery"></a>认识jQuery</h1><h1 id="DOM对象和jQuery对象"><a href="#DOM对象和jQuery对象" class="headerlink" title="DOM对象和jQuery对象"></a>DOM对象和jQuery对象</h1><h2 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h2><h3 id="1-DOM对象-用原生js获取过来的对象就是DOM对象"><a href="#1-DOM对象-用原生js获取过来的对象就是DOM对象" class="headerlink" title="1. DOM对象:用原生js获取过来的对象就是DOM对象"></a>1. DOM对象:用原生js获取过来的对象就是DOM对象</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/1655434695673-716396bb-2625-4a7c-8bf5-f657e6f7fdc9.png" alt="img"></p>
@@ -7583,18 +7634,6 @@ addDecorator((storyFn)=&gt;(
       </categories>
       <tags>
         <tag>认识jQuery框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my_firstBlog</title>
-    <url>/found404.io/2021/06/25/my-firstBlog/</url>
-    <content><![CDATA[<h1 id="Hello-hexo"><a href="#Hello-hexo" class="headerlink" title="Hello hexo!"></a>Hello hexo!</h1><blockquote>
-<p>第一篇blog</p>
-<img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/01.png" style="zoom: 33%;">
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hello hexo!</tag>
       </tags>
   </entry>
   <entry>
