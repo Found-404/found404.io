@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="is not FOund">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+  <meta name="description" content="手写newnew的过程 要了解new，肯定要知道原生new都在‘后台’执行了哪些操作。  在内存中创建一个新的空对象 将这个对象的__proto__指向构造函数的prototype原型对象 将构造函数的作用域赋给这个对象(就是改变构造函数的this指向这个新的对象) 执行构造函数内部的代码，并将其属性和方法添加给那个新的对象 返回这个新的对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手写New">
+<meta property="og:url" content="http://example.com/2022/09/14/%E6%89%8B%E5%86%99New/index.html">
 <meta property="og:site_name" content="FØund404">
-<meta property="og:description" content="is not FOund">
+<meta property="og:description" content="手写newnew的过程 要了解new，肯定要知道原生new都在‘后台’执行了哪些操作。  在内存中创建一个新的空对象 将这个对象的__proto__指向构造函数的prototype原型对象 将构造函数的作用域赋给这个对象(就是改变构造函数的this指向这个新的对象) 执行构造函数内部的代码，并将其属性和方法添加给那个新的对象 返回这个新的对象">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-27T14:43:26.000Z">
-<meta property="article:modified_time" content="2022-07-18T03:53:08.087Z">
+<meta property="article:published_time" content="2022-09-14T08:38:38.000Z">
+<meta property="article:modified_time" content="2022-09-14T08:55:23.933Z">
 <meta property="article:author" content="FØund404">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/tags/">
+<link rel="canonical" href="http://example.com/2022/09/14/%E6%89%8B%E5%86%99New/">
 
 
 <script id="page-configurations">
@@ -40,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>tags | FØund404</title>
+  <title>手写New | FØund404</title>
   
 
 
@@ -183,8 +184,6 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content post posts-expand">
             
@@ -193,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/tags/index.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/14/%E6%89%8B%E5%86%99New/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
@@ -206,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          tags
+          手写New
         </h1>
 
         <div class="post-meta">
@@ -215,16 +214,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-06-27 22:43:26" itemprop="dateCreated datePublished" datetime="2022-06-27T22:43:26+08:00">2022-06-27</time>
+              <time title="创建时间：2022-09-14 16:38:38 / 修改时间：16:55:23" itemprop="dateCreated datePublished" datetime="2022-09-14T16:38:38+08:00">2022-09-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-18 11:53:08" itemprop="dateModified" datetime="2022-07-18T11:53:08+08:00">2022-07-18</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -244,7 +246,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h1><h2 id="new的过程"><a href="#new的过程" class="headerlink" title="new的过程"></a>new的过程</h2><blockquote>
+<p>要了解new，肯定要知道原生new都在‘后台’执行了哪些操作。</p>
+<ol>
+<li>在内存中创建一个新的空对象</li>
+<li>将这个对象的<code>__proto__</code>指向构造函数的<code>prototype</code>原型对象</li>
+<li>将构造函数的作用域赋给这个对象(就是改变构造函数的this指向这个新的对象)</li>
+<li>执行构造函数内部的代码，并将其属性和方法添加给那个新的对象</li>
+<li>返回这个新的对象</li>
+</ol>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="编写"><a href="#编写" class="headerlink" title="编写"></a>编写</h2><h3 id="new示范"><a href="#new示范" class="headerlink" title="new示范"></a>new示范</h3><blockquote>
+<p>要写一个new就要先看看new是怎么使用的</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name,age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHi</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello world!&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myPerson = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;张三&#x27;</span>,<span class="number">19</span>);</span><br><span class="line">myPerson.<span class="title function_">sayHi</span>(); <span class="comment">// Hello world</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myPerson); <span class="comment">// Person &#123;name: &#x27;张三&#x27;, age: 19&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自制"><a href="#自制" class="headerlink" title="自制"></a>自制</h3><blockquote>
+<p>按照原生new的流程一步一步的书写就可以实现</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myNew</span>(<span class="params">Con,...args</span>) &#123;</span><br><span class="line">    <span class="comment">// 1.在内存中创建一个空对象</span></span><br><span class="line">    <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2.将新对象的原型指针指向构造函数的原型属性</span></span><br><span class="line">    obj.<span class="property">__proto__</span> = <span class="title class_">Con</span>.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3.构造函数内部的this被赋值为这个新对象(即this指向新对象)</span></span><br><span class="line">    <span class="comment">// 4.执行构造函数内部的代码(给新对象添加属性)</span></span><br><span class="line">    <span class="keyword">let</span> res = <span class="title class_">Con</span>.<span class="title function_">apply</span>(obj,args);<span class="comment">// apply会执行Con函数,当然此时的this已经是obj了</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 5.如果构造函数返回非空对象,则返回该对象;否则,返回刚创建的新对象</span></span><br><span class="line">    <span class="keyword">if</span> (res <span class="keyword">instanceof</span> <span class="title class_">Object</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> obj</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> res = <span class="title class_">Con</span>.<span class="title function_">apply</span>(obj,args);</span><br></pre></td></tr></table></figure>
+
+<p>这一部分是改变传入构造函数的this指向为创建的空对象。而第二个参数是要传递给那个构造函数的。apply方法是会执行一次Con的，所以你传入的args就传递给了那个构造函数，当然你的构造函数里面写的无非就是<code>this.xxx = xxx</code>这种….</p>
+<p>如果传入的构造函数有返回值，那么就要返回那个返回的值，前提是返回的是非空对象。都不满足则返回创建的新对象</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name,age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHi</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello world!&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> myPerson = <span class="title function_">myNew</span>(<span class="title class_">Person</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="number">19</span>)</span><br><span class="line">myPerson.<span class="title function_">sayHi</span>();  <span class="comment">// Hello world</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myPerson);  <span class="comment">// Person &#123;name: &#x27;张三&#x27;, age: 19&#125;</span></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -252,11 +282,21 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/found404.io/tags/js/" rel="tag"># js</a>
+          </div>
 
         
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/09/12/UmiJS%E5%9F%BA%E7%A1%80/" rel="prev" title="UmiJS基础">
+      <i class="fa fa-chevron-left"></i> UmiJS基础
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
     
   </article>
@@ -319,6 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E5%86%99new"><span class="nav-number">1.</span> <span class="nav-text">手写new</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">new的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99"><span class="nav-number">1.2.</span> <span class="nav-text">编写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new%E7%A4%BA%E8%8C%83"><span class="nav-number">1.2.1.</span> <span class="nav-text">new示范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%88%B6"><span class="nav-number">1.2.2.</span> <span class="nav-text">自制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

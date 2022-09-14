@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/found404.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/found404.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/found404.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/found404.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/found404.io/css/main.css">
+
+
+<link rel="stylesheet" href="/found404.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="UmiJS介绍官方文档  可扩展 Umi 实现了完整的生命周期，并使其插件化，Umi 内部功能也全由插件完成。此外还支持插件和插件集，以满足功能和垂直域的分层需求。  开箱即用 Umi 内置了路由、构建、部署、测试等，仅需一个依赖即可上手开发。并且还提供针对 React 的集成插件集，内涵丰富的功能，可满足日常 80% 的开发需求。  企业级 经蚂蚁内部 3000+ 项目以及阿里、优酷、网易、飞猪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UmiJS基础">
+<meta property="og:url" content="http://example.com/2022/09/12/UmiJS%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="FØund404">
+<meta property="og:description" content="UmiJS介绍官方文档  可扩展 Umi 实现了完整的生命周期，并使其插件化，Umi 内部功能也全由插件完成。此外还支持插件和插件集，以满足功能和垂直域的分层需求。  开箱即用 Umi 内置了路由、构建、部署、测试等，仅需一个依赖即可上手开发。并且还提供针对 React 的集成插件集，内涵丰富的功能，可满足日常 80% 的开发需求。  企业级 经蚂蚁内部 3000+ 项目以及阿里、优酷、网易、飞猪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/TB1JpeLwxD1gK0jSZFsXXbldVXa-1540-950.png">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220912192655885.png">
+<meta property="article:published_time" content="2022-09-12T11:20:27.000Z">
+<meta property="article:modified_time" content="2022-09-12T14:23:52.359Z">
+<meta property="article:author" content="FØund404">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="框架">
+<meta property="article:tag" content="UmiJS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/TB1JpeLwxD1gK0jSZFsXXbldVXa-1540-950.png">
+
+<link rel="canonical" href="http://example.com/2022/09/12/UmiJS%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>UmiJS基础 | FØund404</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/found404.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FØund404</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/found404.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/found404.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/found404.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Found-404" class="github-corner" title="前往Github主页" aria-label="前往Github主页" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/12/UmiJS%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UmiJS基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-12 19:20:27 / 修改时间：22:23:52" itemprop="dateCreated datePublished" datetime="2022-09-12T19:20:27+08:00">2022-09-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">框架</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="UmiJS"><a href="#UmiJS" class="headerlink" title="UmiJS"></a>UmiJS</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a target="_blank" rel="noopener" href="https://v3.umijs.org/zh-CN">官方文档</a></p>
+<ul>
+<li><p>可扩展</p>
+<p>Umi 实现了完整的生命周期，并使其插件化，Umi 内部功能也全由插件完成。此外还支持插件和插件集，以满足功能和垂直域的分层需求。</p>
+</li>
+<li><p>开箱即用</p>
+<p>Umi 内置了路由、构建、部署、测试等，仅需一个依赖即可上手开发。并且还提供针对 React 的集成插件集，内涵丰富的功能，可满足日常 80% 的开发需求。</p>
+</li>
+<li><p>企业级</p>
+<p>经蚂蚁内部 3000+ 项目以及阿里、优酷、网易、飞猪、口碑等公司项目的验证，值得信赖。</p>
+</li>
+<li><p>大量自研</p>
+<p>包含微前端、组件打包、文档工具、请求库、hooks 库、数据流等，满足日常项目的周边需求。</p>
+</li>
+<li><p>完备路由</p>
+<p>同时支持配置式路由和约定式路由，同时保持功能的完备性，比如动态路由、嵌套路由、权限路由等等。</p>
+</li>
+<li><p>面向未来</p>
+<p>在满足需求的同时，我们也不会停止对新技术的探索。比如 modern mode、webpack@5、自动化 external、bundler less 等等。</p>
+</li>
+</ul>
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>创建空目录</p>
+<blockquote>
+<p><code>kdir myapp &amp;&amp; cd myapp</code></p>
+</blockquote>
+<p>使用官方提供脚手架</p>
+<blockquote>
+<p><code>yarn create @umijs/umi-app</code></p>
+</blockquote>
+<p>安装依赖</p>
+<blockquote>
+<p><code>yarn start</code></p>
+</blockquote>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/TB1JpeLwxD1gK0jSZFsXXbldVXa-1540-950.png" alt="img"></p>
+<p>部署发布—–打包好的文件生成在<strong>dist</strong>文件下</p>
+<blockquote>
+<p><code>yarn build</code></p>
+</blockquote>
+<h3 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h3><p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220912192655885.png" alt="image-20220912192655885"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- .<span class="property">editorconfig</span>     <span class="comment">// 对编辑器的默认配置</span></span><br><span class="line">- .<span class="property">gitignore</span>        <span class="comment">// git忽略文件配置</span></span><br><span class="line">- .<span class="property">prettierignore</span>   <span class="comment">// 代码格式化忽略的文件</span></span><br><span class="line">- .<span class="property">prettierrc</span>       <span class="comment">// 代码格式化的配置</span></span><br><span class="line">- .<span class="property">umirc</span>.<span class="property">ts</span>         <span class="comment">// umijs核心配置文件</span></span><br><span class="line">- package.<span class="property">json</span>      <span class="comment">// 依赖管理</span></span><br><span class="line">- <span class="variable constant_">README</span>.<span class="property">md</span>         <span class="comment">// 项目介绍</span></span><br><span class="line">- tsconfig.<span class="property">json</span>     <span class="comment">// ts配置文件</span></span><br><span class="line">- typings.<span class="property">d</span>.<span class="property">ts</span>      <span class="comment">// ts类型文件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Umi 在 <code>.umirc.ts</code> 或 <code>config/config.ts</code> 中配置项目和插件，支持 es6。一份常见的配置如下<a target="_blank" rel="noopener" href="https://v3.umijs.org/zh-CN/docs/config">官方配置文档</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;/docs/&#x27;</span>,</span><br><span class="line">  <span class="attr">publicPath</span>: <span class="string">&#x27;/static/&#x27;</span>,</span><br><span class="line">  <span class="attr">hash</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">history</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;hash&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>路由配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">routes</span>: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span>, <span class="comment">// 路由模板</span></span><br><span class="line">    <span class="attr">title</span>:<span class="string">&#x27;首页&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/list&#x27;</span>,</span><br><span class="line">    <span class="attr">redirect</span>:<span class="string">&#x27;user/one&#x27;</span> <span class="comment">// 重定向</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>:<span class="string">&#x27;@/layouts/index&#x27;</span>, <span class="comment">// 公共路由模板，子路由也会在其中通过&#123;props.children&#125;</span></span><br><span class="line">    <span class="attr">routes</span>:[</span><br><span class="line">      &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/one&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/two&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/user&#x27;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jsx部分，公共路由模板，存放进layouts文件下</span></span><br><span class="line"> <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;props.children&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Footer<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+
+<p>拦截</p>
+<p>路由跳转可以进行拦截操作，当要跳转的时候拦截跳转至另一个组件</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">path</span>:<span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  <span class="attr">component</span>:<span class="string">&#x27;@/layouts/index&#x27;</span>, <span class="comment">// 公共路由模板，子路由也会在其中通过&#123;props.children&#125;</span></span><br><span class="line">  <span class="attr">wrappers</span>:[</span><br><span class="line">    <span class="string">&#x27;@/wrappers/auth&#x27;</span> <span class="comment">// 拦截路由</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">routes</span>:[</span><br><span class="line">    &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/one&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/two&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/user&#x27;</span>&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wrappers/auth.jsx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Redirect</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;umi&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">auth</span> = (<span class="params">props:any</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> isLoadin = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">if</span> (isLoadin) &#123; <span class="comment">// 这部分功能可以实现当登陆状态为false强制跳转到首页</span></span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Redirect</span> <span class="attr">to</span>=<span class="string">&quot;/&quot;</span>/&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> auth</span><br></pre></td></tr></table></figure>
+
+<p>未知路径</p>
+<blockquote>
+<p>当路径查找不到，可以设置默认路径</p>
+</blockquote>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">routes</span>: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span>, <span class="comment">// 路由模板</span></span><br><span class="line">    <span class="attr">title</span>:<span class="string">&#x27;首页&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/list&#x27;</span>,</span><br><span class="line">    <span class="attr">redirect</span>:<span class="string">&#x27;user/one&#x27;</span> <span class="comment">// 重定向</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>:<span class="string">&#x27;@/layouts/index&#x27;</span>, <span class="comment">// 公共路由模板，子路由也会在其中通过&#123;props.children&#125;</span></span><br><span class="line">    <span class="attr">wrappers</span>:[</span><br><span class="line">      <span class="string">&#x27;@/wrappers/auth&#x27;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">routes</span>:[</span><br><span class="line">      &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/one&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">path</span>:<span class="string">&#x27;/user/two&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/user&#x27;</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">component</span>:<span class="string">&#x27;@/pages/404&#x27;</span>&#125; <span class="comment">// 当查找不到上方路径的时候，页面就会跳转到该组件路径</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;<span class="attr">component</span>:<span class="string">&#x27;@/pages/404&#x27;</span>&#125;<span class="comment">// 当查找不到上方路径的时候，页面就会跳转到该组件路径</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<p>传递参数</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">path</span>:<span class="string">&#x27;/user/one/:id?&#x27;</span>,<span class="attr">component</span>:<span class="string">&#x27;@/pages/index&#x27;</span> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>以上都是配置式路由，而如果没有routes配置，则自动进入约定式路由，跟Next的page路由规则类似。src下的文件目录就是路由表，</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/found404.io/tags/React/" rel="tag"># React</a>
+              <a href="/found404.io/tags/%E6%A1%86%E6%9E%B6/" rel="tag"># 框架</a>
+              <a href="/found404.io/tags/UmiJS/" rel="tag"># UmiJS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/09/08/Next-js/" rel="prev" title="Next.js">
+      <i class="fa fa-chevron-left"></i> Next.js
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/09/14/%E6%89%8B%E5%86%99New/" rel="next" title="手写New">
+      手写New <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81Njc5NC8zMzI1OA=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UmiJS"><span class="nav-number">1.</span> <span class="nav-text">UmiJS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="nav-number">1.2.</span> <span class="nav-text">快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">项目目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FØund404"
+      src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+  <p class="site-author-name" itemprop="name">FØund404</p>
+  <div class="site-description" itemprop="description">is not FOund</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/found404.io/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/found404.io/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/found404.io/tags/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Found-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Found-404" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.yuque.com/books/share/a4ac6052-679a-45e9-b5a6-4966d872c65a#" title="语雀 → https:&#x2F;&#x2F;www.yuque.com&#x2F;books&#x2F;share&#x2F;a4ac6052-679a-45e9-b5a6-4966d872c65a?#" rel="noopener" target="_blank"><i class="fa fa-rocket fa-fw"></i>语雀</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/bl_ack233" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;bl_ack233" rel="noopener" target="_blank"><i class="fab fa-git-square fa-fw"></i>Gitee</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FØund404</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+<span id="busuanzi_container_site_uv">
+  本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/found404.io/lib/anime.min.js"></script>
+  <script src="/found404.io/lib/velocity/velocity.min.js"></script>
+  <script src="/found404.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/found404.io/js/utils.js"></script>
+
+<script src="/found404.io/js/motion.js"></script>
+
+
+<script src="/found404.io/js/schemes/pisces.js"></script>
+
+
+<script src="/found404.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/found404.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+  
+
+<script type="text/javascript"
+color="77,77,77" opacity='0.7' zIndex="-2" count="180" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'FOund_Chat/community'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+
+</html>
