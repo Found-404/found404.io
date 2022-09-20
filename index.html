@@ -188,6 +188,119 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/React-TypeScript-Less%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/found404.io/2022/09/17/React-TypeScript-Less%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">React+TypeScript+Less项目配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-17 11:12:20 / 修改时间：11:14:33" itemprop="dateCreated datePublished" datetime="2022-09-17T11:12:20+08:00">2022-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h2><p>本项目采用React+Ant Design+TypeScript开发，React主要使用Function Component的形式做开发，结合路由与请求实现。</p>
+<h3 id="1-创建React项目"><a href="#1-创建React项目" class="headerlink" title="1.创建React项目"></a>1.创建React项目</h3><p>由于项目结合ts与antd开发，因此请使用以下方式创建项目并安装依赖：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建名为cms-manage的项目</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npx create-react-app cms-manage --template typescript</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn create react-app cms-manage --template typescript</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加antd</span></span><br><span class="line">npm install antd --save</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">yarn add antd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加axios</span></span><br><span class="line">npm install axios --save</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">yarn add axios</span><br></pre></td></tr></table></figure>
+
+<p>清空src下所有的内容，并且新建App.tsx与index.tsx，代码如下：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h2</span>&gt;</span>App<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>) <span class="keyword">as</span> <span class="title class_">HTMLElement</span></span><br><span class="line">);</span><br><span class="line">root.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>先把项目跑起来：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm run start</span></span><br></pre></td></tr></table></figure>
+
+<p>看到跑起来的界面即可。</p>
+<p><a target="_blank" rel="noopener" href="https://tva1.sinaimg.cn/large/008i3skNgy1gxdfylnqtdj31hc0q13z8.jpg"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxdfylnqtdj31hc0q13z8.jpg" alt="image-20211206091130083"></a></p>
+<h3 id="2-Antd组件"><a href="#2-Antd组件" class="headerlink" title="2.Antd组件"></a>2.Antd组件</h3><p>打开Antd的官网：<a target="_blank" rel="noopener" href="https://ant.design/index-cn">https://ant.design/index-cn (opens new window)</a>。</p>
+<p>在App.tsx中：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Button</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">App</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>; </span><br></pre></td></tr></table></figure>
+
+<p>看到蓝色按钮代表成功：<a target="_blank" rel="noopener" href="https://tva1.sinaimg.cn/large/008i3skNgy1gxdfymsgwzj302300w0sh.jpg"><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/008i3skNgy1gxdfymsgwzj302300w0sh.jpg" alt="image-20211206092850276"></a></p>
+<h3 id="3-解包"><a href="#3-解包" class="headerlink" title="3.解包"></a>3.解包</h3><p>解包之前必须做Git提交</p>
+<h4 id="a-Git提交"><a href="#a-Git提交" class="headerlink" title="a. Git提交"></a>a. Git提交</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git add .</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git commit -m <span class="string">&#x27;xxx&#x27;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git remote origin xxxx</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git push origin master</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="b-解包"><a href="#b-解包" class="headerlink" title="b. 解包"></a>b. 解包</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm run eject</span> </span><br></pre></td></tr></table></figure>
+
+<p>解包后项目根目录出现config文件夹，代表解包成功。</p>
+<h3 id="4-配置Less"><a href="#4-配置Less" class="headerlink" title="4.配置Less"></a>4.配置Less</h3><h4 id="a-安装Less"><a href="#a-安装Less" class="headerlink" title="a. 安装Less"></a>a. 安装Less</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install less less-loader@6.0.0 --save-dev</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">yarn add less less-loader@6.0.0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="b-Webpack配置"><a href="#b-Webpack配置" class="headerlink" title="b. Webpack配置"></a>b. Webpack配置</h4><p>找到 <code>webpack.config.js</code> ，搜索 <code>sassModuleRegex</code> 后，在其下方添加：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">    ...,</span><br><span class="line">    <span class="comment">// less加载器 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.less$/</span>,</span><br><span class="line">        <span class="attr">use</span>: <span class="title function_">getStyleLoaders</span>(</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//暂不配置</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&#x27;less-loader&#x27;</span></span><br><span class="line">        ),</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改了配置文件，记得重新 <code>yarn start</code> 哦！</p>
+<h4 id="c-Less测试"><a href="#c-Less测试" class="headerlink" title="c. Less测试"></a>c. Less测试</h4><p>删掉 <code>index.tsx</code> 中的 <code>antd.css</code> 引入，在src下新建 <code>App.less</code>：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;~antd/dist/antd.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@bg:</span> <span class="number">#efefef</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">@bg</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#root</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: NotoSansHans;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333333</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：以上顺便把文字三属性等基本配置写了</p>
+</blockquote>
+<p>然后在 <code>App.tsx</code> 中引入：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./App.less&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>打开看到页面样式发生变化，即代表Less测试成功。</p>
+<h3 id="5-tsconfig"><a href="#5-tsconfig" class="headerlink" title="5.tsconfig"></a>5.tsconfig</h3><p>打开 <code>tsconfig.json</code>，修改下面出现的字段：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ESNext&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;baseUrl&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./src&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;jsx&quot;</span><span class="punctuation">:</span> <span class="string">&quot;preserve&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>baseUrl配置其指向src，所有的相对路径都可以直接从src下的文件或文件夹写起，如：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原本的引入</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在的引入</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;App&#x27;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/Promise%E7%9C%9F%E9%A2%98%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -383,7 +496,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-14 23:42:11" itemprop="dateModified" datetime="2022-09-14T23:42:11+08:00">2022-09-14</time>
+                <time title="修改时间：2022-09-19 22:37:23" itemprop="dateModified" datetime="2022-09-19T22:37:23+08:00">2022-09-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -901,10 +1014,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-31 22:19:22 / 修改时间：22:24:11" itemprop="dateCreated datePublished" datetime="2022-08-31T22:19:22+08:00">2022-08-31</time>
+              <time title="创建时间：2022-08-31 22:19:22" itemprop="dateCreated datePublished" datetime="2022-08-31T22:19:22+08:00">2022-08-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-20 23:25:04" itemprop="dateModified" datetime="2022-09-20T23:25:04+08:00">2022-09-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -933,89 +1052,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/found404.io/2022/08/31/Hygen/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/26/React%E4%B8%AD%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="FØund404">
-      <meta itemprop="description" content="is not FOund">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FØund404">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/found404.io/2022/08/26/React%E4%B8%AD%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/" class="post-title-link" itemprop="url">React中阻止冒泡</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-08-26 22:28:17 / 修改时间：22:54:42" itemprop="dateCreated datePublished" datetime="2022-08-26T22:28:17+08:00">2022-08-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/found404.io/categories/%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">框架</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/found404.io/categories/%E6%A1%86%E6%9E%B6/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="React中阻止冒泡"><a href="#React中阻止冒泡" class="headerlink" title="React中阻止冒泡"></a>React中阻止冒泡</h1><p>原因：在制作一个关于日历组件的时候，遇到一个bug😥,点击input框让日历显示，点击日历以外的区域日历框隐藏。但是无效！且有闪烁bug！</p>
-<blockquote>
-<p>原本的思路是利用获取焦点失去焦点实现，点击input获取焦点显示日历框，失去焦点后再隐藏日历框。</p>
-<p>但是!  日历框中有切换月份的按钮，当点击按钮时会失去焦点，又再次触发失去焦点的事件，有闪烁bug。如图：</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/found404.io/2022/08/26/React%E4%B8%AD%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1106,7 +1142,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/found404.io/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1119,7 +1155,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/found404.io/tags/">
           
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
