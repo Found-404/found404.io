@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/found404.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/found404.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/found404.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/found404.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/found404.io/css/main.css">
+
+
+<link rel="stylesheet" href="/found404.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/found404.io/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="想拥有自己的网站但是苦于没有钱购买昂贵的服务器，为何不用github免费部署属于自己的网站，不管是组件库还是个人笔记… 本次案例使用Dumi作为演示Demo  将Dumi自动部署到Github,构建自己的网站安装123456789101112&#x2F;&#x2F; 下载脚手架$ npx @umijs&#x2F;create-dumi-app# or$ yarn create @umijs&#x2F;dumi-app&#x2F;&#x2F; 安装npm包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将Dumi自动部署到Github,构建自己的网站">
+<meta property="og:url" content="http://example.com/2022/09/29/%E5%B0%86Dumi%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="FØund404">
+<meta property="og:description" content="想拥有自己的网站但是苦于没有钱购买昂贵的服务器，为何不用github免费部署属于自己的网站，不管是组件库还是个人笔记… 本次案例使用Dumi作为演示Demo  将Dumi自动部署到Github,构建自己的网站安装123456789101112&#x2F;&#x2F; 下载脚手架$ npx @umijs&#x2F;create-dumi-app# or$ yarn create @umijs&#x2F;dumi-app&#x2F;&#x2F; 安装npm包">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173738357.png">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173505885.png">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203550264.png">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203717333.png">
+<meta property="og:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203816825.png">
+<meta property="article:published_time" content="2022-09-29T08:37:41.000Z">
+<meta property="article:modified_time" content="2022-09-29T12:43:02.253Z">
+<meta property="article:author" content="FØund404">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Dumi">
+<meta property="article:tag" content="UmiJs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173738357.png">
+
+<link rel="canonical" href="http://example.com/2022/09/29/%E5%B0%86Dumi%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>将Dumi自动部署到Github,构建自己的网站 | FØund404</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/found404.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FØund404</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/found404.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/found404.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/found404.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/found404.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Found-404" class="github-corner" title="前往Github主页" aria-label="前往Github主页" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/29/%E5%B0%86Dumi%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="FØund404">
+      <meta itemprop="description" content="is not FOund">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FØund404">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          将Dumi自动部署到Github,构建自己的网站
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-29 16:37:41 / 修改时间：20:43:02" itemprop="dateCreated datePublished" datetime="2022-09-29T16:37:41+08:00">2022-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/found404.io/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>想拥有自己的网站但是苦于没有钱购买昂贵的服务器，为何不用github免费部署属于自己的网站，不管是组件库还是个人笔记…</p>
+<p>本次案例使用Dumi作为演示Demo</p>
+</blockquote>
+<h1 id="将Dumi自动部署到Github-构建自己的网站"><a href="#将Dumi自动部署到Github-构建自己的网站" class="headerlink" title="将Dumi自动部署到Github,构建自己的网站"></a>将Dumi自动部署到Github,构建自己的网站</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 下载脚手架</span><br><span class="line">$ npx @umijs/create-dumi-app</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">$ yarn create @umijs/dumi-app</span><br><span class="line"></span><br><span class="line">// 安装npm包</span><br><span class="line">$ npm install</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">$ yarn</span><br><span class="line"></span><br><span class="line">// 运行项目</span><br><span class="line">$ npm run serve</span><br></pre></td></tr></table></figure>
+
+<p><em>启动后如图所示：</em></p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173738357.png" alt="image-20220929173738357"></p>
+<p>剩下的页面搭建就需要各位自己动手了…</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>开发阶段的代码经过打包才可以部署到服务器，但是又不想重复性手动打包上传，这时就可以利用GitHub提供的Actions功能了</p>
+<p>在根目录新建<code>.github/workflows/ci.yml</code>文件：</p>
+<blockquote>
+<p>请根据情况自行编写</p>
+<p>不要一味的复制粘贴，请根据应用场景修改代码</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目名</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">dumi</span> <span class="string">book</span> <span class="string">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只有在main分支发生push事件时触发</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 工作流</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span> <span class="comment"># 运行环境</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># 拉代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 下载node，我这里指定了15.x，这个版本可随意，高于dumi规定的node版本即可</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">15.</span><span class="string">x</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 打包代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Project</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install</span></span><br><span class="line"><span class="string">          npm run build</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="comment"># 部署到github</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">Github</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">JamesIves/github-pages-deploy-action@4.0.0</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">build</span> <span class="comment"># 打包的内容放到build分支下</span></span><br><span class="line">          <span class="attr">folder:</span> <span class="string">dist</span> <span class="comment"># 你打包后存放的文件</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>.umirc.ts</code>文件：</p>
+<blockquote>
+<p>文件配置项肯定不止这些，这些仅仅是需要的</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;dumi&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> repo = <span class="string">&#x27;dumi-book-test&#x27;</span>; <span class="comment">// 项目名(也就是你的仓库名)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;dumi-book-test&#x27;</span>,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;site&#x27;</span>,</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">1998</span> <span class="comment">// 自定义端口号</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">base</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span> ? <span class="string">`/<span class="subst">$&#123;repo&#125;</span>/`</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">publicPath</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span> ? <span class="string">`/<span class="subst">$&#123;repo&#125;</span>/`</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 更多配置项config: https://d.umijs.org/config  </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>在整个项目都准备好之后就要上传到github仓库了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化git</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;首次提交&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173505885.png" alt="image-20220929173505885"></p>
+<p>你的项目源代码上传在main主分支，而打包后的在build分支。可以进入看执行过程：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203550264.png" alt="image-20220929203550264"></p>
+<h2 id="设置Pages"><a href="#设置Pages" class="headerlink" title="设置Pages"></a>设置Pages</h2><p>在Setings设置Pages，设置在分支部署服务，选择build分支</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203717333.png" alt="image-20220929203717333"></p>
+<p>生成一个网址，就是你的最终网址：</p>
+<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203816825.png" alt="image-20220929203816825"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/found404.io/tags/React/" rel="tag"># React</a>
+              <a href="/found404.io/tags/Dumi/" rel="tag"># Dumi</a>
+              <a href="/found404.io/tags/UmiJs/" rel="tag"># UmiJs</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/09/29/React-Tookit/" rel="prev" title="React Tookit">
+      <i class="fa fa-chevron-left"></i> React Tookit
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/found404.io/2022/10/08/React%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%AF%E7%94%B1%E4%BB%A5%E5%8F%8A%E8%B7%AF%E7%94%B1%E5%AE%88%E5%8D%AB/" rel="next" title="React自定义路由以及路由守卫">
+      React自定义路由以及路由守卫 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81Njc5NC8zMzI1OA=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86Dumi%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99"><span class="nav-number">1.</span> <span class="nav-text">将Dumi自动部署到Github,构建自己的网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">1.2.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">1.3.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEPages"><span class="nav-number">1.4.</span> <span class="nav-text">设置Pages</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FØund404"
+      src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/%E7%BD%91%E7%AB%99%E5%A4%B4%E5%83%8F.png">
+  <p class="site-author-name" itemprop="name">FØund404</p>
+  <div class="site-description" itemprop="description">is not FOund</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/found404.io/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/found404.io/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/found404.io/tags/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Found-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Found-404" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.yuque.com/books/share/a4ac6052-679a-45e9-b5a6-4966d872c65a#" title="语雀 → https:&#x2F;&#x2F;www.yuque.com&#x2F;books&#x2F;share&#x2F;a4ac6052-679a-45e9-b5a6-4966d872c65a?#" rel="noopener" target="_blank"><i class="fa fa-rocket fa-fw"></i>语雀</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/bl_ack233" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;bl_ack233" rel="noopener" target="_blank"><i class="fab fa-git-square fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/bl_ack233?type=blog" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;bl_ack233?type&#x3D;blog" rel="noopener" target="_blank"><i class="fa fa-edit fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-bell fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://nanxiangscholar.github.io/" title="https:&#x2F;&#x2F;nanxiangscholar.github.io&#x2F;" rel="noopener" target="_blank">南巷书生</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FØund404</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+<span id="busuanzi_container_site_uv">
+  本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+</span>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/found404.io/lib/anime.min.js"></script>
+  <script src="/found404.io/lib/velocity/velocity.min.js"></script>
+  <script src="/found404.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/found404.io/js/utils.js"></script>
+
+<script src="/found404.io/js/motion.js"></script>
+
+
+<script src="/found404.io/js/schemes/pisces.js"></script>
+
+
+<script src="/found404.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/found404.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+  
+
+<script type="text/javascript"
+color="77,77,77" opacity='0.7' zIndex="-2" count="180" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'FOund_Chat/community'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</body>
+
+</html>
