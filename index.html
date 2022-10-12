@@ -296,10 +296,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-09-29 16:37:41 / 修改时间：20:43:02" itemprop="dateCreated datePublished" datetime="2022-09-29T16:37:41+08:00">2022-09-29</time>
+              <time title="创建时间：2022-09-29 16:37:41" itemprop="dateCreated datePublished" datetime="2022-09-29T16:37:41+08:00">2022-09-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-11 17:13:35" itemprop="dateModified" datetime="2022-10-11T17:13:35+08:00">2022-10-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -326,35 +332,14 @@
 <p>本次案例使用Dumi作为演示Demo</p>
 </blockquote>
 <h1 id="将Dumi自动部署到Github-构建自己的网站"><a href="#将Dumi自动部署到Github-构建自己的网站" class="headerlink" title="将Dumi自动部署到Github,构建自己的网站"></a>将Dumi自动部署到Github,构建自己的网站</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 下载脚手架</span><br><span class="line">$ npx @umijs/create-dumi-app</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">$ yarn create @umijs/dumi-app</span><br><span class="line"></span><br><span class="line">// 安装npm包</span><br><span class="line">$ npm install</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">$ yarn</span><br><span class="line"></span><br><span class="line">// 运行项目</span><br><span class="line">$ npm run serve</span><br></pre></td></tr></table></figure>
-
-<p><em>启动后如图所示：</em></p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173738357.png" alt="image-20220929173738357"></p>
-<p>剩下的页面搭建就需要各位自己动手了…</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>开发阶段的代码经过打包才可以部署到服务器，但是又不想重复性手动打包上传，这时就可以利用GitHub提供的Actions功能了</p>
-<p>在根目录新建<code>.github/workflows/ci.yml</code>文件：</p>
-<blockquote>
-<p>请根据情况自行编写</p>
-<p>不要一味的复制粘贴，请根据应用场景修改代码</p>
-</blockquote>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目名</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">dumi</span> <span class="string">book</span> <span class="string">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只有在main分支发生push事件时触发</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 工作流</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span> <span class="comment"># 运行环境</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># 拉代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 下载node，我这里指定了15.x，这个版本可随意，高于dumi规定的node版本即可</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">15.</span><span class="string">x</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 打包代码</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Project</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install</span></span><br><span class="line"><span class="string">          npm run build</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="comment"># 部署到github</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">Github</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">JamesIves/github-pages-deploy-action@4.0.0</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">build</span> <span class="comment"># 打包的内容放到build分支下</span></span><br><span class="line">          <span class="attr">folder:</span> <span class="string">dist</span> <span class="comment"># 你打包后存放的文件</span></span><br></pre></td></tr></table></figure>
-
-<p>修改<code>.umirc.ts</code>文件：</p>
-<blockquote>
-<p>文件配置项肯定不止这些，这些仅仅是需要的</p>
-</blockquote>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;dumi&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> repo = <span class="string">&#x27;dumi-book-test&#x27;</span>; <span class="comment">// 项目名(也就是你的仓库名)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;dumi-book-test&#x27;</span>,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;site&#x27;</span>,</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">1998</span> <span class="comment">// 自定义端口号</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">base</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span> ? <span class="string">`/<span class="subst">$&#123;repo&#125;</span>/`</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">publicPath</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span> ? <span class="string">`/<span class="subst">$&#123;repo&#125;</span>/`</span> : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 更多配置项config: https://d.umijs.org/config  </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>在整个项目都准备好之后就要上传到github仓库了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化git</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;首次提交&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929173505885.png" alt="image-20220929173505885"></p>
-<p>你的项目源代码上传在main主分支，而打包后的在build分支。可以进入看执行过程：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203550264.png" alt="image-20220929203550264"></p>
-<h2 id="设置Pages"><a href="#设置Pages" class="headerlink" title="设置Pages"></a>设置Pages</h2><p>在Setings设置Pages，设置在分支部署服务，选择build分支</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203717333.png" alt="image-20220929203717333"></p>
-<p>生成一个网址，就是你的最终网址：</p>
-<p><img src="https://found-img-blog.oss-cn-hangzhou.aliyuncs.com/img/image-20220929203816825.png" alt="image-20220929203816825"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/found404.io/2022/09/29/%E5%B0%86Dumi%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%88%B0Github-%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
